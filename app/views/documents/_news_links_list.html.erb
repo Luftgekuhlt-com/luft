@@ -1,0 +1,26 @@
+<div class="row">
+  <div id="doc_part_<%= part.id %>" class="col s12 doc-part news-links-list-part">
+    <% if part.title.present? %>
+      <h3><%= part.title.html_safe %></h3>
+    <% end %>
+    <ul class="in-the-news-list">
+      <% part.news_links.each do |news_link| %>
+        <li>
+          <div class="news-date">
+            <div class="date"><%= news_link&.publish_date&.strftime('%b') %>
+              <div class="day"><%= news_link&.publish_date&.day %></div>
+            </div>
+            <div class="year"><%= news_link&.publish_date&.year %></div>
+          </div>
+          <div class="news-title-url">
+            <a href="<%= news_link&.url_link %>" target="_blank"><%= news_link&.title %></a>
+          </div>
+          <div class="news-author">
+            <span>— <%= news_link&.author %></span>
+          </div>
+          <br>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

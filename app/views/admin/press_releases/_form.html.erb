@@ -1,0 +1,30 @@
+<%= simple_form_for @press_release, { url: [:admin, @press_release], remote: true } do |f| %>
+  <div class="modal-content" style="max-height: 480px;">
+    <h4 class="modal-title"><%= @press_release.persisted? ? "Edit" : "New" %> News Item</h4>
+    <%= f.error_notification %>
+
+    <div class="row">
+        <%= f.input :title, wrapper_html: { class: "col m12" }  %>
+    </div>
+    <div class="row">
+        <%= f.input :publish_date, as: :date, label: 'Publish Date', input_html: {value: @press_release.publish_date}, wrapper_html: { class: "col m6" }  %>
+        <%= f.input :keywords, wrapper_html: { class: "col m6" }  %>
+    </div>
+    <div class="row">
+        <%= f.input :word_doc, wrapper_html: { class: "col m6" }  %>
+        <%= f.input :pdf_doc, wrapper_html: { class: "col m6" }  %>
+    </div>
+    <div class="row">
+        <%= f.input :content, label: "Content", wrapper_html: { class: "col m12 html-editor" }  %>
+    </div>
+    <div class="row">
+        <div class="col m3">
+            <%= f.input :hidden, wrapper_html: { class: "radio-input-wrap" }  %>
+        </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+      <a href="javascript:;" class="btn modal-close">Cancel</a>
+      <%= f.button :submit, "Save", class: "btn btn-primary btn-submit", data: { disable_with: "Save" } %>
+  </div>
+<% end %>

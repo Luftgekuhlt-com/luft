@@ -1,0 +1,7 @@
+<% content_for(:admin_header) do %>
+  <%= link_to(admin_document_path(@document), class: "btn-floating teal right") do %><i class="material-icons">arrow_back</i><% end %>
+  <h1>Edit <%= [@document_part.friendly_type, @document_part.title].select{|x| x.present?}.join(": ") %></h1>
+<% end %>
+<div class="document-part-form">
+    <%= render partial: "#{@document_part.partial_name(true)}_form", locals: { document: @document, document_part: @document_part } %>
+</div>

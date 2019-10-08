@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
+	version="1.1" y="0px" x="0px" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+   width="100%"
+   style="max-height:750px;"
+   preserveAspectRatio="xMinYMin meet"
+	viewBox="0 0 429.30377 1102.2483">
+	<style type="text/css">
+		.section-group path{fill-rule:evenodd;stroke:#000;stroke-width:1px;cursor:pointer;}
+		.section-group text{font-size:20px;letter-spacing:0px;word-spacing:0px;font-family:Arial;line-height:125%;cursor:pointer;}
+		.section-group:hover path{fill: #004 !important;}
+		.section-group:hover text{fill: #FFF !important;}
+    .section-group.active path{fill: #090 !important;}
+		.section-group.active text{fill: #FFF !important;}
+    svg.orchestra-1 #orchestra_1 path,
+    svg.orchestra-2 #orchestra_2 path,
+    svg.orchestra-3 #orchestra_3 path,
+    svg.dress-circle-1 #dress_circle_1 path,
+    svg.dress-circle-2 #dress_circle_2 path,
+    svg.dress-circle-3 #dress_circle_3 path,
+    svg.lower-loge #lower_loge path,
+    svg.mezzanine-1 #mezzanine_1 path,
+    svg.mezzanine-2 #mezzanine_2 path,
+    svg.mezzanine-3 #mezzanine_3 path,
+    svg.upper-loge #upper_loge path,
+    svg.balcony-1 #balcony_1 path,
+    svg.balcony-2 #balcony_2 path,
+    svg.balcony-3 #balcony_3 path {
+    fill: #004 !important;
+    }
+
+    svg.orchestra-1 #orchestra_1 text,
+    svg.orchestra-2 #orchestra_2 text,
+    svg.orchestra-3 #orchestra_3 text,
+    svg.dress-circle-1 #dress_circle_1 text,
+    svg.dress-circle-2 #dress_circle_2 text,
+    svg.dress-circle-3 #dress_circle_3 text,
+    svg.lower-loge #lower_loge text,
+    svg.mezzanine-1 #mezzanine_1 text,
+    svg.mezzanine-2 #mezzanine_2 text,
+    svg.mezzanine-3 #mezzanine_3 text,
+    svg.upper-loge #upper_loge text,
+    svg.balcony-1 #balcony_1 text,
+    svg.balcony-2 #balcony_2 text,
+    svg.balcony-3 #balcony_3 text {
+    fill: #FFF !important;
+    }
+	</style>
+	
+<g id="orchestra_1" data-screen="1" data-section-group="orchestra-1" class="section-group orchestra-1" transform="translate(.018269 -171.92)">
+	<path id="OR1" data-vfas="OR1.jpg" data-screen="1" data-section-group="orchestra-1" class="section orchestra orchestra-1" d="m 125,1269.6 -0.479,-152.8742 183.7185,-0.2395 L 308,1268.08 l -14.085,5.591 c -52.266,-21.702 -105.32,-22.947 -159.3,0 z" style="fill:#3D1951"><title>Premier Orchestra</title></path>
+	<text class="section-text" data-vfas="OR1.jpg" style="fill:#ffffff" xml:space="preserve" y="1217.1826" x="195.42464"><tspan x="195.42464" y="1217.1826">OR1</tspan></text>
+</g>
+<g id="orchestra_3" data-screen="1" data-section-group="orchestra-3" class="section-group orchestra-3" transform="translate(.018269 -171.92)">
+	<path id="OR3" data-vfas="OR2.jpg" data-screen="1" data-section-group="orchestra-3" class="section orchestra orchestra-3"  d="m 110.37784,1261.9564 c 8.9443,7.1563 2.22216,2.1216 14.25816,7.8726 l 0.14194,-121.63 182.97,-0.018 0.40456,119.26 c 9.12664,-6.4898 6.81248,-2.2771 7.66137,-11.1988 l 42.6409,-149.1827 -21.27019,-3.6434 -9.9249,-101.8987 -228.270805,0.1197 -5.388701,98.4725 -25.617575,10.0589 z" style="fill:#9059A5"><title>Orchestra</title></path>
+	<text class="section-text" data-vfas="OR2.jpg" style="fill:#FFF" xml:space="preserve" y="1030.4924" x="194.11604"><tspan x="194.11604" y="1030.4924">OR3</tspan></text>
+</g>
+<g id="orchestra_2" data-screen="1" data-section-group="orchestra-2" class="section-group orchestra-2" transform="translate(.018269 -171.92)">
+	<path id="OR2" data-vfas="OR2.jpg" data-screen="1" data-section-group="orchestra-2" class="section orchestra orchestra-2"  d="m 105.58788,1223.8762 c 8.70481,0.6899 11.32308,0.9242 19.76661,1.4062 l -0.57655,-77.0834 182.97,-0.018 0.40456,73.5159 c 6.49216,0.2161 8.24947,-0.1216 12.93032,-1.3794 l 13.42216,-96.0142 -18.63571,-1.0089 -1.30298,-77.7094 -202.40503,0.3592 -0.59875,78.1152 -19.390628,-0.2395 z" style="fill:#583C67"><title>Preferred Orchestra</title></path>
+	<text class="section-text" data-vfas="OR2.jpg" style="fill:#ffffff" xml:space="preserve" y="1105.4924" x="194.11604"><tspan x="194.11604" y="1105.4924">OR2</tspan></text>
+</g>
+<g id="orchestra_4" data-screen="1" data-section-group="orchestra-4" class="section-group orchestra-4" transform="">
+	<path id="OR4_R" data-vfas="OR3R.jpg" data-screen="1" data-section-group="orchestra-4" class="section orchestra orchestra-4"  d="m 110.63561,1090.1759 -42.87374,-152.08426 25.857074,-9.81942 5.209078,-98.53235 -76.309753,-0.0599 1.7974,5.9804 -23.805,21.819 c -0.39685,29.872 10.742,52.646 16.843,78.52 12.189,34.347 26.608,67.10203 42.741,98.63303 12.041,23.569 20.875017,36.981 30.663017,43.651 z" style="fill:#A074B3"><title>Orchestra Left</title></path>
+	<path id="OR4_L" data-vfas="OR3L.jpg" data-screen="1" data-section-group="orchestra-4" class="section orchestra orchestra-4"  d="m 314.60983,1092.2739 c 16.632,-14.81 55.39544,-55.2039 72.59144,-95.3729 13.726,-31.58 27.412,-63.182 35.083,-98.064 4.017,-14.337 7.3328,-28.478 6.3404,-41.424 l -23.988,-21.768 2.0078,-5.994 -79.39008,-0.0693 9.78884,101.73051 21.5524,3.83935 z" style="fill:#A074B3"><title>Orchestra Right</title></path>
+	<text class="section-text" data-vfas="OR3L.jpg" style="fill:#000000" xml:space="preserve" y="920.0688" x="351.34805"><tspan x="351.34805" y="920.0688">OR4</tspan></text>
+	<text class="section-text" data-vfas="OR3R.jpg" style="fill:#000000" xml:space="preserve" y="920.0021" x="36.542793"><tspan x="36.542793" y="920.0021">OR4</tspan></text>
+</g>
+<g id="dress_circle_1" data-screen="2" data-section-group="dress-circle-1" class="section-group dress-circle-1" transform="translate(.018269 -171.92)">
+	<path id="DC_1" data-vfas="DC1.jpg" data-screen="2" data-section-group="dress-circle-1" class="section dress-circle dress-circle-1" style="fill:#583C67" d="m124 993.05v-21h78v-119.73l12.601-2.3911 13.399 2.5976v119.52h77v21z"><title>Premier Dress Circle</title></path>
+	<text class="section-text" data-vfas="DC1.jpg" style="fill:#ffffff" xml:space="preserve" y="989.81732" x="196.87482"><tspan x="196.87482" y="989.81732">DC1</tspan></text>
+</g>
+<g id="dress_circle_2" data-screen="2" data-section-group="dress-circle-2" class="section-group dress-circle-2" transform="translate(.018269 -171.92)">
+	<path id="DC2_R" data-vfas="DC2.jpg" data-screen="2" data-section-group="dress-circle-2" class="section dress-circle dress-circle-2" style="fill:#9059A5" d="m110 993.05h14v-21h78v-119.5l-92 18.6z"><title>Preferred Dress Circle Left</title></path>
+	<path id="DC2_L" data-vfas="DC2.jpg" data-screen="2" data-section-group="dress-circle-2" class="section dress-circle dress-circle-2" style="fill:#9059A5" d="m305 993.05v-21h-77v-119.5l87 17.7v122.8z"><title>Preferred Dress Circle Right</title></path>
+	<text class="section-text" data-vfas="DC2.jpg" style="fill:#ffffff" xml:space="preserve" y="923.81238" x="252.80157"><tspan x="252.80157" y="923.81238">DC2</tspan></text>
+	<text class="section-text" data-vfas="DC2.jpg" style="fill:#ffffff" xml:space="preserve" y="923.21301" x="138.4957"><tspan x="138.4957" y="923.21301">DC2</tspan></text>
+</g>
+<g id="dress_circle_3" data-screen="2" data-section-group="dress-circle-3" class="section-group dress-circle-3" transform="translate(.018269 -171.92)">
+	<path id="DC3_R" data-vfas="DC3R.jpg" data-screen="2" data-section-group="dress-circle-3" class="section dress-circle dress-circle-3" d="m110 993.05v-122l-95 19v90l4.5 13z" style="fill:#A074B3"><title>Dress Circle Left</title></path>
+	<path id="DC3_L" data-vfas="DC3L.jpg" data-screen="2" data-section-group="dress-circle-3" class="section dress-circle dress-circle-3" d="m315 993.05h94.3l4.4-13v-89.5l-98.7-20.3z" style="fill:#A074B3"><title>Dress Circle Right</title></path>
+	<text class="section-text" data-vfas="DC3L.jpg" style="fill:#000000" xml:space="preserve" y="941.81732" x="346.54279"><tspan x="346.54279" y="941.81732">DC3</tspan></text>
+	<text class="section-text" data-vfas="DC3R.jpg" style="fill:#000000" xml:space="preserve" y="941.81238" x="44.801567"><tspan x="44.801567" y="941.81238">DC3</tspan></text>
+</g>
+<g id="lower_loge" data-screen="8" data-section-group="lower-loge" class="section-group lower-loge" transform="translate(.018269 -171.92)">
+	<path id="LL_R" data-vfas="LLR.jpg" data-screen="8" data-section-group="lower-loge" class="section lower-loge" style="fill:#583C67" d="m362.23 588.79c-1.5553 11.854 1.8302 24.5 4.776 34.396 5.342 11.806 9.6852 20.908 8.9746 30.566l-2.8585 91.593c12.501 3.7296 24.999 7.4537 31.179-0.29193 6.5289-26.082 15.409-52.947 15.64-76.93l0.19266-68.42z" transform="translate(0,86)"><title>Lower Loge Right</title></path>
+	<text class="section-text" data-vfas="LLR.jpg" style="fill:#ffffff" xml:space="preserve" y="745.72717" x="387.13666"><tspan x="387.13666" y="745.72717">LL</tspan></text>
+	<path id="LL_L" data-vfas="LLL.jpg" data-screen="8" data-section-group="lower-loge" class="section lower-loge"  style="fill:#583C67" d="m12.3 600.08v69.141c1.8096 33.398 11.021 51.994 16.654 77.744 12.776 6.5239 20.725 0.14503 30.446-1.4794l-3-74.816c0.58152-13.765-2.2258-27.756 6.1581-41.001 5.7245-12.065 9.9889-25.17 7.6084-40.869z" transform="translate(0,86)"><title>Lower Loge Left</title></path>
+	<text class="section-text" data-vfas="LLL.jpg" style="fill:#ffffff" xml:space="preserve" y="745.7674" x="23.537453"><tspan x="23.537453" y="745.7674">LL</tspan></text>
+</g>
+<g id="mezzanine_1" data-screen="5" data-section-group="mezzanine-1" class="section-group mezzanine-1" transform="translate(.018269 -171.92)">
+	<path id="MZ1" data-vfas="MZ1.jpg" data-screen="5" data-section-group="mezzanine-1" class="section mezzanine mezzanine-1" style="fill:#583C67" d="m105 667.75v-33.8l89.5-20.8v-73.3l21.706-4.2341 21.794 4.2341v73.5l89.8 20.2v34.163l-111.62-22.526z"><title>Premier Mezzanine</title></path>
+	<text class="section-text" data-vfas="MZ1.jpg" style="fill:#ffffff" xml:space="preserve" y="635.48047" x="196.40314"><tspan x="196.40314" y="635.48047">MZ1</tspan></text>
+</g>
+<g id="mezzanine_2" data-screen="5" data-section-group="mezzanine-2" class="section-group mezzanine-2" transform="translate(.018269 -171.92)">
+	<path id="MZ2_L" data-vfas="MZ2.jpg" data-screen="5" data-section-group="mezzanine-2" class="section mezzanine mezzanine-2" style="fill:#9059A5" d="m95.422 472.4 0.156 104.65-38.278 7.77v6.314l47.6-9.4806v-33.7l89.6-20.9v-73.3z" transform="translate(0,86)"><title>Preferred Mezzanine Left</title></path>
+	<path id="MZ2_R" data-vfas="MZ2.jpg" data-screen="5" data-section-group="mezzanine-2" class="section mezzanine mezzanine-2" style="fill:#9059A5" d="m238 453.75v73.8l89.7 20.2v34.05l47.3 9.3943v-5.7063l-38.1-8.038v-105.03z" transform="translate(0,86)"><title>Preferred Mezzanine Right</title></path>
+	<text class="section-text" data-vfas="MZ2.jpg" style="fill:#ffffff" xml:space="preserve" y="593.87903" x="126.2814"><tspan x="126.2814" y="593.87903">MZ2</tspan></text>
+	<text class="section-text" data-vfas="MZ2.jpg" style="fill:#ffffff" xml:space="preserve" y="593.50977" x="267.67755"><tspan x="267.67755" y="593.50977">MZ2</tspan></text>
+</g>
+<g id="mezzanine_3" data-screen="5" data-section-group="mezzanine-3" class="section-group mezzanine-3" transform="translate(.018269 -171.92)">
+	<path id="MZ3_R" data-vfas="MZ3R.jpg" data-screen="5" data-section-group="mezzanine-3" class="section mezzanine mezzanine-3" style="fill:#A074B3" d="m12.3 488.05 83-15.6 0.31702 104.62-38.317 7.9808v6.1l-45 8.9208z" transform="translate(0,86)"><title>Mezzanine Left</title></path>
+	<path id="MZ3_L" data-vfas="MZ3L.jpg" data-screen="5" data-section-group="mezzanine-3" class="section mezzanine mezzanine-3" style="fill:#A074B3" d="m336.9 472.35v105.1l38.1 8.2v5.4l45.1 8.5v-111.5z" transform="translate(0,86)"><title>Mezzanine Right</title></path>
+	<text class="section-text" data-vfas="MZ3L.jpg" style="fill:#000000" xml:space="preserve" y="626.74268" x="360.7515"><tspan x="360.7515" y="626.74268">MZ3</tspan></text>
+	<text class="section-text" data-vfas="MZ3R.jpg" style="fill:#000000" xml:space="preserve" y="625.8985" x="33.991943"><tspan x="33.991943" y="625.8985">MZ3</tspan></text>
+</g>
+<g id="upper_loge" data-screen="7" data-section-group="upper-loge" class="section-group upper-loge" transform="translate(.018269 -171.92)">
+	<path id="UL_L" data-vfas="ULL.jpg" data-screen="7" data-section-group="upper-loge" class="section upper-loge"  style="fill:#9059A5" d="m26.3 212.8v69.141c1.8096 33.398 11.021 51.994 16.654 77.744 12.776 6.5239 20.725 0.14503 30.446-1.4794l-3-74.816c0.58152-13.765-2.2258-27.756 6.1581-41.001 5.7245-12.065 9.9889-25.17 7.6084-40.869z" transform="translate(-6,172)"><title>Upper Loge Left</title></path>
+	<path id="UL_R" data-vfas="ULR.jpg" data-screen="7" data-section-group="upper-loge" class="section upper-loge"  style="fill:#9059A5" d="m362.23 201.75c-1.5553 11.854 1.8302 24.5 4.776 34.396 5.342 11.806 9.6852 20.908 8.9746 30.566l-2.8585 91.593c12.501 3.7296 24.999 7.4537 31.179-0.29193 6.5289-26.082 15.409-52.947 15.64-76.93l0.19266-68.42z" transform="translate(-6,172)"><title>Upper Loge Right</title></path>
+	<text class="section-text" data-vfas="ULR.jpg" style="fill:#ffffff" xml:space="preserve" y="441.13959" x="378.10303"><tspan x="378.10303" y="441.13959">UL</tspan></text>
+	<text class="section-text" data-vfas="ULL.jpg" style="fill:#ffffff" xml:space="preserve" y="440.66617" x="30.11084"><tspan x="30.11084" y="440.66617">UL</tspan></text>
+</g>
+<g id="balcony_1" data-screen="4" data-section-group="balcony-1" class="section-group balcony-1" transform="translate(.018269 -171.92)">
+	<path id="B1" data-vfas="B1.jpg" data-screen="4" data-section-group="balcony-1" class="section balcony balcony-1" style="fill:#765F81" d="m78 373.05v-26.875l68.5-16.25v-44.375l70.5-15.25 70.5 15.5v44.125l68.625 16.25v27.125l-135.87-29.64z"><title>Premier Balcony</title></path>
+	<text class="section-text" data-vfas="B1.jpg" style="fill:#ffffff" xml:space="preserve" y="317.20636" x="205.41585"><tspan x="205.41585" y="317.20636">B1</tspan></text>
+</g>
+<g id="balcony_2" data-screen="4" data-section-group="balcony-2" class="section-group balcony-2" transform="translate(.018269 -171.92)">
+	<path id="B2" data-vfas="B2.jpg" data-screen="4" data-section-group="balcony-2" class="section balcony balcony-2" style="fill:#9887A1" d="m26.25 212.68v-28.625l57.5-11.25v-88.25l67.125-15.25v-54.375l75.25-14.5 69.375 13.875v55.083l67 14.792v88.345l57.5 11.03v29.5l-58.125-12v-26.839l-68.625-16.411v-43.611l-69.224-16.062-70.589 14.794-0.42269 44.805-69.03 16.48v27.214z" transform="translate(-6,172)"><title>Preferred Balcony</title></path>
+	<text class="section-text" data-vfas="B2.jpg" style="fill:#000000" xml:space="preserve" y="235.35773" x="206.76935"><tspan x="206.76935" y="235.35773">B2</tspan></text>
+</g>
+<g id="balcony_3" data-screen="4" data-section-group="balcony-3" class="section-group balcony-3" style="display:inline;" transform="translate(.018269 -171.92)">
+	<path id="B3_R" data-vfas="B3R.jpg" data-screen="4" data-section-group="balcony-3" class="section balcony balcony-3" style="fill:#C5BCCC" d="m26.25 184.05v-145.38l124.35-23.625 0.14945 54-67 15.5v88.125z" transform="translate(-6,172)"><title>Balcony Left</title></path>
+	<path id="B3_L" data-vfas="B3L.jpg" data-screen="4" data-section-group="balcony-3" class="section balcony balcony-3" style="fill:#C5BCCC" d="m295.25 14.055v55.485l67.25 14.89v88l57.532 11.612-0.0638-144.97z" transform="translate(-6,172)"><title>Balcony Right</title></path>
+	<text class="section-text" data-vfas="B3L.jpg" style="fill:#000000" xml:space="preserve" y="237.91452" x="370.39948"><tspan x="370.39948" y="237.91452">B3</tspan></text>
+	<text class="section-text" data-vfas="B3R.jpg" style="fill:#000000" xml:space="preserve" y="237.91452" x="37.237167"><tspan x="37.237167" y="237.91452">B3</tspan></text>
+</g>
+</svg>

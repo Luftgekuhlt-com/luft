@@ -1,0 +1,18 @@
+octopus:
+  environments:
+    - development
+    - production
+  development:
+    sync:
+      host: "sdo-staging.cousch7azxnq.us-west-1.rds.amazonaws.com"
+      adapter: mysql2
+      username: admin
+      password: yAlYrFsJsa28KidelYYP
+      database: "sdo-staging"
+  production:
+    sync:
+      host: "sdo-staging.cousch7azxnq.us-west-1.rds.amazonaws.com"
+      adapter: mysql2
+      username: admin
+      password: yAlYrFsJsa28KidelYYP
+      database: "sdo-staging"

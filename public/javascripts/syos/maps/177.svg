@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%" preserveAspectRatio="xMinYMin meet" viewBox="0 0 750 600"
+   id="svg3634"
+   version="1.1">
+  <metadata
+     id="metadata3639">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style type="text/css">
+    path.section {
+    cursor: pointer;
+    fill:rgba(185, 142, 45, 0.4);
+    stroke:rgb(219, 173, 74);
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+
+    path.section:hover {
+    fill:rgba(229, 179, 71, 0.7);
+    }
+
+    .section-group{
+    cursor: pointer;
+    }
+    .section-group path {
+    fill:rgba(185, 142, 45, 0.4);
+    stroke:rgb(219, 173, 74);
+    stroke-width:2px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+
+    .section-group:hover path {
+    fill:rgba(229, 179, 71, 0.7);
+    }
+
+    text.section-label{
+    font-family:Arial, sans-serif;
+    font-size:22px;
+    font-style:normal;
+    font-weight:bold;
+    line-height:22px;
+    text-align: center;
+    letter-spacing:0px;
+    word-spacing:0px;
+    fill:rgb(185, 142, 45);
+    fill-opacity:1;
+    stroke:none;
+    }
+  </style>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <!--    -->
+    <g id="Floor1" transform="matrix(0.6364,-0.24749,0.6364,0.24749,-315.39,300.9)">
+      <g id="dress_circle" class="section-group dress-circle" data-section-group="dress-circle" data-screen="2">
+        <path id="DC3R" d="M 70.179,572.87 188.6,574.13 180.68,647 57.975,640.95 z" />
+        <path id="DC2R" d="M 57.955,641 180.45,646.77 188.59,574.12 362.8,575.55 361.87,638.12 206.52,635.82 204.89,659.57 55.445,653.05 z" />
+        <path id="DC1" d="M 204.87,659.62 206.54,635.86 361.87,638.13 362.86,575.57 418.47,575.29 419.5,637.81 571.84,636.13 573.27,660.2 400.4,663.92 381.08,663.97 z" />
+        <path id="DC2L" d="M 418.42,575.29 589.22,574.74 597.09,646.7 720.36,641 722.26,652.67 573.28,660.14 571.84,636.11 419.51,637.74 z" />
+        <path id="DC3L" d="M 589.22,574.74 707.06,572.84 720.33,640.95 597.09,646.97 z" />
+        
+        <text x="370" y="615" xml:space="preserve" class="section-label"><tspan x="370" y="615">DC1</tspan></text>
+        <text x="255" y="615" xml:space="preserve" class="section-label"><tspan x="255" y="615">DC2R</tspan></text>
+        <text x="475" y="615" xml:space="preserve" class="section-label"><tspan x="475" y="615">DC2L</tspan></text>
+        <text x="100" y="615" xml:space="preserve" class="section-label"><tspan x="100" y="615">DC3R</tspan></text>
+        <text x="625" y="615" xml:space="preserve" class="section-label"><tspan x="625" y="615">DC3L</tspan></text>
+      </g>
+      <g id="orchestra" class="section-group orchestra" data-section-group="orchestra" data-screen="1">
+        <path id="OR1" d="M 184.1,1005.5 209.62,825.91 543.06,825.91 586.5,923.11 591.93,1005.8 C 456.75,1014 320.72,1013.2 184.1,1005.5 z" />
+        <path id="OR2" d="M 216.73,727.07 571.89,727.79 572.61,741.74 596.77,742.14 596.79,742.24 604.96,851.43 688.64,890.39 617.81,990.82 618.09,1004.6 591.97,1005.8 586.5,922.57 543.69,825.37 209.67,825.91 184.05,1005.5 154.18,1004.6 155.31,991 144.95,949.09 98.293,892.16 166.72,852.52 174.86,756.4 216.68,741.73 z" />
+        <path id="OR3R" d="M 216.68,727.07 0,728.59 C -6.3553,801.53 4.1468,861.52 45.213,915.22 71.805,953.78 91.817,974.66 127.62,1004.1 L 154.23,1004.6 155.31,991.61 145,949.79 121.56,921.06 98.293,892.77 166.72,853.13 174.82,757.01 216.68,742.34 z" />
+        <path id="OR3L" d="M 571.84,727.8 752.27,727.89 C 789.43,785.8 760.85,847.32 744.09,900.89 717.79,938.03 687.98,976.92 648,1003 L 618,1004.6 617.86,990.69 688.59,890.3 604.96,851.43 596.82,742.28 572.61,741.92 z" />
+
+        <text x="370" y="950" xml:space="preserve" class="section-label"><tspan x="370" y="950">OR1</tspan></text>
+        <text x="370" y="780" xml:space="preserve" class="section-label"><tspan x="370" y="780">OR2</tspan></text>
+        <text x="65" y="820" xml:space="preserve" class="section-label"><tspan x="65" y="820">OR3R</tspan></text>
+        <text x="655" y="820" xml:space="preserve" class="section-label"><tspan x="655" y="820">OR3L</tspan></text>
+      </g>
+    </g>
+    <!--   -->
+    <g id="Floor2" transform="matrix(0.6364,-0.24749,0.6364,0.24749,-206.26,238.94)">
+      <g id="mezzanine" class="section-group mezzanine" data-section-group="mezzanine" data-screen="5">
+        <path id="MZ3R" d="M 52.154,423.02 72.241,343.68 194.42,344.55 183.47,422.08 118.98,416.96 117.58,428.84 z" />
+        <path id="MZ2R" d="M 117.81,428.84 118.74,416.73 183.7,422.08 194.64,344.55 367.94,346.23 366.71,414.63 208.85,410.21 205.82,436.41 z" />
+        <path id="MZ1" d="M 205.82,436.29 208.39,409.74 366.71,414.4 367.88,346.18 412.75,346.23 413.74,414.87 569.97,411.14 572.77,436.29 393.95,441.88 385.57,441.88 z" />
+        <path id="MZ2L" d="M 412.81,346.23 583.71,345.25 594.42,421.62 658.92,416.96 660.78,429.54 572.83,436.29 569.74,411.14 413.75,414.93 z" />
+        <path id="MZ3L" d="M 583.48,345.25 706.18,343.85 725.74,422.32 660.78,429.54 658.92,416.97 594.19,421.85 z" />
+
+        <text x="370" y="390" xml:space="preserve" class="section-label"><tspan x="370" y="390">MZ1</tspan></text>
+        <text x="255" y="390" xml:space="preserve" class="section-label"><tspan x="255" y="390">MZ2R</tspan></text>
+        <text x="475" y="390" xml:space="preserve" class="section-label"><tspan x="475" y="390">MZ2L</tspan></text>
+        <text x="100" y="390" xml:space="preserve" class="section-label"><tspan x="100" y="390">MZ3R</tspan></text>
+        <text x="625" y="390" xml:space="preserve" class="section-label"><tspan x="625" y="390">MZ3L</tspan></text>
+      </g>
+      <g id="lower_loge" class="section-group lower-loge" data-section-group="lower-loge" data-screen="8">
+        <path id="LLL" d="M 727.37,429.3 640.52,438.85 643.08,451.42 C 670.09,470.53 691.02,459.85 729.93,537.34 L 735.28,560.15 759.27,554.8 z" />
+        <path id="LLR" d="M 50.525,429.54 137.14,439.55 135.74,451.89 C 108.18,470.91 85.412,461.43 48.196,537.8 L 37.719,584.37 13.271,577.15 z" />
+        
+        <text x="55" y="470" xml:space="preserve" class="section-label"><tspan x="50" y="470">LLR</tspan></text>
+        <text x="695" y="470" xml:space="preserve" class="section-label"><tspan x="690" y="470">LLL</tspan></text>
+      </g>
+    </g>
+    <!--   -->
+    <g id="Floor3" transform="matrix(0.6364,-0.24749,0.6364,0.24749,-45.968,176.98)">
+      <g id="balcony" class="section-group balcony" data-section-group="balcony" data-screen="4">
+        <path id="B1R" d="M 141.58,155.78 C 188.71,162.73 242.37,167.17 297.34,171.1 L 294.59,212.04 C 236.11,207.54 181.77,201.67 134.26,193.52 z" />
+        <path id="B1C" d="M 458.59,144.33 462.02,212.62 C 414.24,214.77 365.98,214.56 317.44,212.9 L 320.58,144.04 C 366.93,145.87 413,146.31 458.59,144.33 z" />
+        <path id="B1L" d="M 482.02,170.61 C 533.03,167.71 584.25,163.49 636.02,156.04 L 642.88,193.47 C 590.71,201.99 537.99,208.57 484.3,211.76 z" />
+        <path id="B2R" d="M 142,42.037 305.37,47.536 300.3,129.47 126.86,116.32 z" />
+        <path id="B2C" d="M 325.73,33.752 453.45,34.037 458.63,144.37 C 413.09,145.53 367.2,145.59 320.58,144.33 z" />
+        <path id="B2L" d="M 473.75,47.584 479.16,130.33 650.07,116.04 634.88,42.609 z" />
+        <path id="B2Rb" d="M 45.058,139.31 119.62,152.81 112.53,189.63 35.223,173.39 z" />
+        <path id="B2Lb" d="M 657.17,153.47 732.6,139.47 742.03,172.9 664.88,189.76 z" />
+        <path id="B3R" d="M 84.289,-7.3928 308.87,-7.107 305.44,47.466 142.29,41.752 124.86,127.76 50.573,116.33 z" />
+        <path id="B3L" d="M 692.6,-7.3928 470.02,-7.107 473.73,47.466 635.17,42.323 C 640.98,70.895 646.41,98.328 652.6,128.04 L 726.89,117.18 z" />
+
+        <text x="195" y="190" xml:space="preserve" class="section-label"><tspan x="195" y="190">B1R</tspan></text>
+        <text x="370" y="185" xml:space="preserve" class="section-label"><tspan x="370" y="185">B1C</tspan></text>
+        <text x="545" y="190" xml:space="preserve" class="section-label"><tspan x="545" y="190">B1L</tspan></text>
+        <text x="195" y="90" xml:space="preserve" class="section-label"><tspan x="195" y="90">B2R</tspan></text>
+        <text x="370" y="100" xml:space="preserve" class="section-label"><tspan x="370" y="100">B2C</tspan></text>
+        <text x="545" y="90" xml:space="preserve" class="section-label"><tspan x="545" y="90">B2L</tspan></text>
+        <text x="57" y="170" xml:space="preserve" class="section-label"><tspan x="57" y="170">B2R</tspan></text>
+        <text x="680" y="170" xml:space="preserve" class="section-label"><tspan x="680" y="170">B2L</tspan></text>
+        <text x="187" y="30" xml:space="preserve" class="section-label"><tspan x="187" y="30">B3R</tspan></text>
+        <text x="550" y="30" xml:space="preserve" class="section-label"><tspan x="550" y="30">B3L</tspan></text>
+      </g>
+      <g id="upper_loge" class="section-group upper-loge" data-section-group="upper-loge" data-screen="7">
+        <path id="ULR" d="M 33.347,179.93 122,199.26 119.91,212.07 C 78.101,221.21 48.802,248.42 29.337,289.84 L 17.928,336.64 -7.2178,327.55 z" />
+        <path id="ULL" d="M 743.8,180.02 655.05,199.46 657.57,212.27 C 699.27,220.28 727.99,249.06 748.37,291.18 L 759.81,336.93 784.05,327.78 z" />
+
+        <text x="40" y="220" xml:space="preserve" class="section-label"><tspan x="40" y="220">ULR</tspan></text>
+        <text x="700" y="220" xml:space="preserve" class="section-label"><tspan x="700" y="220">ULL</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

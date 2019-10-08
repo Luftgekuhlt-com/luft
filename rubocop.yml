@@ -1,0 +1,52 @@
+# inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - config/boot.rb
+    - config/deploy.rb
+    - config/deploy/*
+    - db/**/*
+    - lib/capistrano/**/*
+    - app/views
+
+Metrics/LineLength:
+  Description: 'Limit lines to 225 characters.'
+  Max: 225
+
+Metrics/ClassLength:
+  Max: 250
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Style/SingleLineMethods:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/AlignHash:
+  EnforcedColonStyle: table

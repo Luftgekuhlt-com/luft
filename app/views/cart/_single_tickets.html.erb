@@ -1,0 +1,33 @@
+<% if @cart.single_tickets.any? %>
+    <div class="cart-section single-tickets">
+      <h3 class="panel-title">Single Tickets</h3>
+      <% @cart.single_tickets.each do |single| %>
+        <div class="cart-item">
+            <div class="product-info">
+                <h3><%= single.performance.try(:title) %></h3>
+                <div class="venue"><%= single.performance.location_display(true).html_safe %></div>
+                <div class="perf-date"><%= single.performance.short_date %></div>
+            </div>
+            <div class="seating-info">
+                <div class="seats">
+                    <h5><%= single.display_lines.first["zone_short_description"] %></h5>
+                    <% single.display_lines.each do |li| %>
+                    <div class="seat-info"><%= li["count"] %> <%=single.price_type_display(li["price_type_description"]) %> <%= "seat".pluralize(li["count"]) %> (<%= number_to_currency(li["price"]) %> each)</div>
+                    <div class="seat-info-details"><%= li["seat_location_description"] %></div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="amount">
+                <div class="price"><%= number_to_currency(single.total_amount) %></div>
+            </div>
+            <div class="actions">
+                <div class="remove">
+                    <%= link_to cart_remove_item_path(id: single.line_item_id), class: "text-danger", remote: true, method: :delete, data: { confirm: "Please click <b>Yes</b> to confirm you would like to remove this performance from your cart. Or click <b>Cancel</b> to leave it." } do %>
+                        <i class="far fa-times-circle"></i> Remove
+                     <% end %>
+                </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>

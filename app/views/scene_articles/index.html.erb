@@ -1,0 +1,67 @@
+<%= content_area("The Scene Header").try(:content).html_safe %>
+<div class="page-ctr">
+<div class="tile-grid the-scene">
+  <% @scene_articles.each do |article| %>
+    <div class="tile" style="display:none;">
+        <a href="<%= scene_articles_url(path: article.slug) %>" class="thumbnail">
+            <img src="<%= article.thumb_image %>" alt ="<%= article.title %>" />
+        </a>
+        <h4><a href="<%= scene_articles_url(path: article.slug) %>"><%= article.title %></a></h4>
+        <div class="article-date"><%= Time.parse(article.published_at).strftime("%A, %B %e, %Y") rescue "" %></div>
+        <div class="article-excerpt"><%= truncate(strip_tags(article.excerpt), length: 150, separator: " ") %> <a href="<%= scene_articles_url(path: article.slug) %>" class="more-link">More</a></div>
+    </div>
+  <% end %>
+</div>
+<% if @scene_articles.total_entries > @scene_articles.size %>
+<br/>
+<%= link_to("See the rest", scene_articles_url(path: params[:path], all: true), class: "btn btn-primary btn-see-rest")%>
+<% end %>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+  var grid = $('.tile-grid');
+  var cols = 4;
+  var items = $('.tile', grid);
+  var row = $('<div class="row"/>');
+  grid.append(row);
+  var colClasses = "col-lg-3 col-md-4 col-sm-6 col-xs-12";
+  if (cols == 2) {
+      colClasses = "col-lg-6 col-md-6 col-sm-12 col-xs-12";
+  }
+  if (cols == 3) {
+      colClasses = "col-lg-4 col-md-4 col-sm-6 col-xs-12";
+  }
+  for (var i = 1; i <= cols; i++) {
+      row.append('<div id="column_' + i + '" class="'+colClasses+'"/>');
+  }
+  function distributeItems(){
+    var cols = Math.floor(grid.width() / $('#column_1').width());
+    grid.append(items);
+    $(items).each(function(ind, el){
+      if (ind < cols) {
+          $('#column_' + (ind + 1)).append(el);
+      } else {
+          var shortestColumn = 1;
+          var shortestColumnHeight = $('#column_1').height();
+          for (var i = 2; i <= cols; i++) {
+              var h = $('#column_' + i).height();
+              if (h < shortestColumnHeight) {
+                  shortestColumn = i;
+                  shortestColumnHeight = h;
+              }
+          }
+          $('#column_' + shortestColumn).append(el);
+      }
+      $(el).show();
+    });
+  }
+  distributeItems();
+  $(window).on('load', function () {
+      distributeItems();
+       $(window).on('resize', function () {
+        distributeItems();
+    });
+  });
+
+</script>
+<% end %>

@@ -1,0 +1,13 @@
+<%= content_area("Legends Header").try(:content).html_safe %>
+<div class="page-ctr legends-<%= @legends.results.size % 3 %>">
+  <div class="row equalize-grid-items">
+      <% @legends.each_with_index do |legend, ind| %>
+      <div class="col-sm-3">
+        <a href="<%= legends_url(path: legend.slug) %>" class="thumbnail">
+          <img src="<%= legend.main_image.url(:cropped) %>" alt ="<%= legend.title %>" />
+          <div class="caption"><%= legend.title %></div>
+        </a>
+      </div>
+      <% end %>
+    </div>
+</div>

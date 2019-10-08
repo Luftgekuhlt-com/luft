@@ -1,0 +1,31 @@
+ <% if part.images.any? %>
+    <h3>Meet the Cast</h3>
+    <div class="production-cast">
+        <% part.images.each do |cm| %>
+        <a class="cast-member modal-trigger" href="#cast_member_<%= cm.title.parameterize.underscore %>">
+            <div class="cast-member-headshot" style="background-image: url(<%= cm.image_url %>);"></div>
+            <h3><%= sanitize(cm.title) %></h3>
+            <h5><%= sanitize(cm.caption) %></h5>
+        </a>
+        <% end %>
+    </div>
+    
+    <% part.images.each do |cm| %>
+    <div id="cast_member_<%= cm.title.parameterize.underscore %>" class="modal cast-modal" tabindex="-1" role="dialog">
+        <a class="btn-floating modal-close"><i class="material-icons">close</i></a>
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s12">
+                    <h4 class="modal-title"><%= cm.title %> - <%= sanitize(cm.caption) %></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4"><img src="<%= cm.image.url(:medium) %>" /></div>
+                <div class="col s8">
+                    <div style="max-height: 40vh;overflow:auto;"><%= sanitize(cm.content) %></div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+    <% end %>
+<% end %>

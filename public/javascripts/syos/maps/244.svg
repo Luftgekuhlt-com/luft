@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" viewBox="0 0 744.09448819 1052.3622047" preserveAspectRatio="xMinYMin meet" style="max-height:750px;" width="100%" version="1.1">
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style
+      id="style5"
+      type="text/css">
+    path.section,
+    polygon.section{
+    cursor: pointer;
+    }
+    .section{fill-rule:evenodd;clip-rule:evenodd;
+    stroke: #006;
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+    .zone-1{fill:#3D1951;stroke:#3D1951;}
+    .zone-2{fill:#9059A5;stroke:#9059A5;}
+    .zone-3{fill:#765F81;stroke:#765F81;}
+    .zone-4{fill:#C5BCCC;stroke:#C5BCCC;}
+
+    .section-group.active path,
+    .section-group.active polygon{fill: #090 !important;}
+    .section-group.active text{fill: #FFF !important;}
+
+    path.section:hover,
+    polygon.section:hover{
+    fill: #004;
+    }
+
+    .section-group{
+    cursor: pointer;
+    }
+    .section-group path {
+    }
+    svg.orchestra-1 #orchestra_1 path,
+    svg.orchestra-2 #orchestra_2 path,
+    svg.mezzanine-1 #mezzanine_1 path,
+    svg.mezzanine-2 #mezzanine_2 path,
+    svg.mezzanine-3 #mezzanine_3 path,
+    svg.loge-1 #loge_1 path,
+    svg.loge-2 #loge_2 path,
+    svg.balcony-1 #balcony_1 path,
+    svg.balcony-2 #balcony_2 path,
+    svg.balcony-2 #balcony_2 polygon,
+    .section-group:hover path,
+    .section-group:hover polygon {
+    fill: #004;
+    }
+
+    svg.orchestra-1 #orchestra_1 text,
+    svg.orchestra-2 #orchestra_2 text,
+    svg.mezzanine-1 #mezzanine_1 text,
+    svg.mezzanine-2 #mezzanine_2 text,
+    svg.mezzanine-3 #mezzanine_3 text,
+    svg.loge-1 #loge_1 text,
+    svg.loge-2 #loge_2 text,
+    svg.balcony-1 #balcony_1 text,
+    svg.balcony-2 #balcony_2 text,
+    .section-group:hover text {
+    fill: #FFF !important;
+    }
+
+    text.section-label{
+    font-family:Arial, sans-serif;
+    font-size:24px;
+    font-style:normal;
+    font-weight:bold;
+    line-height:50px;
+    text-align: center;
+    letter-spacing:0px;
+    word-spacing:0px;
+    fill:#FFF;
+    fill-opacity:1;
+    stroke:none;
+    text-shadow: 0 0 1px #666;
+    }
+  </style>
+
+<g id="level_1"
+	 transform="translate(0,-280)">
+  <g id="mezzanine_3"
+      data-screen="1"
+      data-section-group="mezzanine-3"
+      class="section-group mezzanine-3">
+    <path id="mz3_l" data-vfas="MZ3_R.jpg"
+      d="m10.859 628.6c-0.30754-32.404 6.79-64.486 21.971-96.217 13.112-22.462 33.544-42.771 58.084-61.872l106.57 93.944c-16.679 15.364-31.776 32.486-42.426 54.548-10.541 18.516-15.649 37.938-22.476 57.074z"
+      data-screen="1"
+      data-section-group="mezzanine-3"
+      class="section zone-4 mezzanine-3" />
+    <path id="mz3_r" data-vfas="MZ3_L.jpg"
+      d="m575.79 579.11 79.8-85.11c24.9 21.649 46.692 45.046 60.862 72.731 12.204 25.036 21.188 51.097 18.688 80.812l-103.04 36.87c-12.81-38.25-32.05-73.11-56.31-105.3z"
+      data-screen="1"
+      data-section-group="mezzanine-3"
+      class="section zone-4 mezzanine-3" />
+    <g id="label_or4" style="display:inline">
+      <text class="section-label section-text" data-vfas="MZ3_R.jpg" xml:space="preserve" x="80" y="575" id="label_or4_text"><tspan id="label_or4_span" x="80" y="575">MZ3</tspan></text>
+    </g>
+    <g id="label_or4r" style="display:inline">
+      <text class="section-label section-text" data-vfas="MZ3_L.jpg" xml:space="preserve" x="630" y="590" id="label_or4r_text"><tspan id="label_or4_span" x="630" y="590">MZ3</tspan></text>
+    </g>
+  </g>
+  <g id="mezzanine_2"
+      data-screen="1"
+      data-section-group="mezzanine-2"
+      class="section-group mezzanine-2">
+    <path id="mz2" data-vfas="MZ2_L.jpg"
+      d="m178.57 465.22-20-82.143c35.56-25.47 75.69-46.63 126.43-57.86l12.1 19.704c33.591-6.3266 68.161-12.414 114.33-10.797 60.909 2.417 94.277 13.341 127.86 25.022l13.86-16.99c24.638 9.8448 47.672 21.294 69.96 33.488l-2.7742 91.594c-55.72-32.01-95.71-67.65-212.02-74.15-134.65 1.14-170.42 41.25-229.75 72.14z"
+      data-screen="1"
+      data-section-group="mezzanine-2"
+      class="section zone-3 mezzanine-2" />
+    <g id="label_mz2" style="display:inline">
+      <text class="section-label section-text"  data-vfas="MZ2_L.jpg" xml:space="preserve" x="380" y="375" id="label_or4_text"><tspan id="label_mz2_span" x="380" y="375">MZ2</tspan></text>
+    </g>
+  </g>
+  <g id="mezzanine_1"
+      data-screen="1"
+      data-section-group="mezzanine-1"
+      class="section-group mezzanine-1">
+    <path id="mz1" data-vfas="MZ1_C.jpg"
+      d="m200.52 507.77-21.866-42.248c62.065-39.371 111.51-72.757 229.96-72.537 93.741 2.4888 152 36.93 211.63 73.994l-21.213 45.457c-51.41-32.55-91.66-71.69-191.94-75.26-107.11 3.97-154.81 38.02-206.57 70.59z"
+      data-screen="1"
+      data-section-group="mezzanine-1"
+      class="section zone-2 mezzanine-1" />
+    <g id="label_mz1" style="display:inline">
+      <text class="section-label section-text" data-vfas="MZ1_C.jpg" xml:space="preserve" x="380" y="425" id="label_mz1_text"><tspan id="label_mz1_span" x="380" y="425">MZ1</tspan></text>
+    </g>
+    </g>
+  <g id="orchestra_2"
+      data-screen="1"
+      data-section-group="orchestra-2"
+      class="section-group orchestra-2">
+    <path id="or2_l" data-vfas="OR2_R.jpg"
+      d="m252.03 704.87-43.437 0.50508-75.761-28.789c11.636-47.861 33.044-85.722 65.155-112.63l58.022 50.803c-4.2316 5.8762-8.7587 11.161-12.566 17.887l35.355 23.739c-13.336 15.917-22.003 32.094-26.769 48.487z"
+      data-screen="1"
+      data-section-group="orchestra-2"
+      class="section zone-2 orchestra-2" />
+    <g id="label_or2l" style="display:inline">
+      <text class="section-label section-text" data-vfas="OR2_R.jpg" xml:space="preserve" x="170" y="650" id="label_or2l_text"><tspan id="label_or2l_span" x="170" y="650">OR2</tspan></text>
+    </g>
+    <path id="or2_r" data-vfas="OR2_L.jpg"
+      d="m530.33 705.12c-6.5503-29.663-23.074-51.699-40.911-72.731l41.891-81.08-30.141-20.871 9.6857-18.272c27.663 11.584 54.56 27.311 78.191 52.67l-12.753 14.268c24.158 31.65 44.082 65.932 55.811 105.31l-54.296 20.961z"
+      data-screen="1"
+      data-section-group="orchestra-2"
+      class="section zone-2 orchestra-2" />
+    <g id="label_or2r" style="display:inline">
+      <text class="section-label section-text" data-vfas="OR2_L.jpg" xml:space="preserve" x="530" y="650" id="label_or2r_text"><tspan id="label_or2r_span" x="530" y="650">OR2</tspan></text>
+    </g>
+  </g>
+  <g id="orchestra_1"
+      data-screen="1"
+      data-section-group="orchestra-1"
+      class="section-group zone-1 orchestra-1">
+    <path id="or1" data-vfas="OR1.jpg"
+      d="m278.3 656.38-34.724-23.739c13.491-19.307 28.582-37.794 55.685-50.129l-55.69-101.52c40.827-22.56 87.089-39.685 147.36-42.805 72.078-2.6913 106.73 14.849 142.43 31.82 31.19 17.759 59.675 38.826 87.883 60.23l-32.325 34.85c-22.505-22.257-47.613-41.33-78.161-52.528l-9.7227 17.804 30.431 20.961-42.048 81.317c-29.008-19.769-63.098-33.345-113.52-27.022-53.936 9.9375-74.661 30.71-97.606 50.76z"
+      data-screen="1"
+      data-section-group="orchestra-1"
+      class="section zone-1 orchestra-1" />
+    <g id="label_or1" style="display:inline">
+      <text class="section-label section-text" data-vfas="OR1.jpg" xml:space="preserve" x="380" y="520" id="label_or1_text"><tspan id="label_or1_span" x="380" y="520">OR1</tspan></text>
+    </g>
+  </g>
+</g>
+</svg>

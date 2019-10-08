@@ -1,0 +1,29 @@
+<div class="row">
+  <div id="doc_part_<%= part.id %>" class="col s12 doc-part performance-histories-list-part">
+    <% if part.title.present? %>
+      <h3><%= part.title.html_safe %></h3>
+    <% end %>
+    <ul class="collapsible performance-histories-list" id="performance_history">
+      <% part.seasons.each do |season| %>
+        <% season_items = part.season_items(season) %>
+        <li>
+          <div class="collapsible-header">
+            <h4><%= sanitize("#{season - 1} &mdash; #{season}") %></h4>
+            <div class="titles"><%= season_items.map(&:title).join(', ') %></div>
+          </div>
+          <div class="collapsible-body">
+            <% season_items.each do |ph| %>
+              <div>
+                <div class="perf-dates"><%= ph.performance_dates %></div>
+                <div class="perf-title"><%= ph.title %></div>
+                <div class="perf-composer"><%= ph.composer %></div>
+                <div class="perf-summary"><%= sanitize(ph.content) %></div>
+              </div>
+              <hr/>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

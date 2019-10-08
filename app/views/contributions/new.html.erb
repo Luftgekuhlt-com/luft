@@ -1,0 +1,7 @@
+<div class="modal fade" tabindex="-1" role="dialog">
+	<a class="btn-floating modal-close"><i class="material-icons">close</i></a>
+  <div class="modal-content">
+    <h4 class="modal-title"><%= params[:title].presence || "Donate Now" %></h4>
+    <iframe class="contribution-modal-frame" src="<%= contributions_start_path %>"></iframe>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal -->

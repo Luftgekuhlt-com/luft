@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg2" viewBox="0 0 403.29999 870.65338" preserveAspectRatio="xMinYMin meet" style="max-height:750px;" width="100%" version="1.1">
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style
+     id="style5"
+     type="text/css">
+    path.section,
+    polygon.section{
+    cursor: pointer;
+    }
+    .section{fill-rule:evenodd;clip-rule:evenodd;
+    stroke: #006;
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+    .orchestra-1{fill:#3D1951;stroke:#3D1951;}
+    .orchestra-2{fill:#9059A5;stroke:#9059A5;}
+    .orchestra-3{fill:#765F81;stroke:#765F81;}
+    .loge-2{fill:#9059A5;stroke:#9059A5;}
+    .loge-1{fill:#3D1951;stroke:#3D1951;}
+    .balcony-1{fill:#C5BCCC;stroke:#C5BCCC;}
+
+    .section-group.active path,
+    .section-group.active polygon{fill: #090 !important;}
+    .section-group.active text{fill: #FFF !important;}
+
+    path.section:hover,
+    polygon.section:hover{
+    fill: #004;
+    }
+
+    .section-group{
+    cursor: pointer;
+    }
+    .section-group path {
+    }
+    svg.orchestra-1 #orchestra_1 path,
+    svg.orchestra-2 #orchestra_2 path,
+    svg.orchestra-3 #orchestra_3 path,
+    svg.orchestra-4 #orchestra_4 path,
+    svg.orchestra-5 #orchestra_5 path,
+    svg.loge-1 #loge_1 path,
+    svg.loge-2 #loge_2 path,
+    svg.balcony-1 #balcony_1 path,
+    svg.balcony-2 #balcony_2 path,
+    svg.balcony-2 #balcony_2 polygon,
+    .section-group:hover path,
+    .section-group:hover polygon {
+    fill: #004;
+    }
+
+    svg.orchestra-1 #orchestra_1 text,
+    svg.orchestra-2 #orchestra_2 text,
+    svg.orchestra-3 #orchestra_3 text,
+    svg.orchestra-4 #orchestra_4 text,
+    svg.orchestra-5 #orchestra_5 text,
+    svg.loge-1 #loge_1 text,
+    svg.loge-2 #loge_2 text,
+    svg.balcony-1 #balcony_1 text,
+    svg.balcony-2 #balcony_2 text,
+    .section-group:hover text {
+    fill: #FFF !important;
+    }
+
+    text.section-label{
+    font-family:Arial, sans-serif;
+    font-size:22px;
+    font-style:normal;
+    font-weight:bold;
+    line-height:50px;
+    text-align: center;
+    letter-spacing:0px;
+    word-spacing:0px;
+    fill:#FFF;
+    fill-opacity:1;
+    stroke:none;
+	text-shadow: 0 0 1px #666;
+    }
+  </style>
+ 
+  <g id="layer1">
+    <g id="level_1">      
+      <g id="orchestra_3" style="display:inline" class="section-group orchestra" data-section-group="orchestra-3" data-screen="6">
+		<path id="OR3" data-vfas="OR3.jpg" class="section orchestra orchestra-3" data-section-group="orchestra" data-screen="6"
+			d="m 18.178203,408.1651 c 16.715536,-11.59287 40.750338,-19.24682 84.416227,-17.25496 l -3.602638,66.21455 c 21.826368,-11.12398 55.129778,-16.02106 97.632538,-15.927 46.71143,-0.41948 73.32339,6.86271 96.7918,15.34944 l -0.98229,-65.21662 c 43.10214,-1.60009 65.69518,8.98918 85.81888,21.04608 L 371.625,552.33318 C 314.50314,536.57518 258.85226,517.01717 194.61282,519.64627 138.08569,519.45485 79.500565,533.13381 19.258067,552.75771 Z" />
+        <g style="display:inline" id="lbl_or3">
+          <text class="section-label section-text" data-vfas="OR3.jpg" y="490" x="140"><tspan y="490" x="140">Zone 3: OR3</tspan></text>
+        </g>
+      </g>
+      <g id="orchestra_2" style="display:inline" class="section-group orchestra" data-section-group="orchestra-2" data-screen="6">
+		<path id="OR2" data-vfas="OR2.jpg" class="section orchestra orchestra-2" data-section-group="orchestra" data-screen="6"
+			d="m 19.274121,553.11942 -3.867832,76.34695 27.430922,118.38991 39.10984,59.85879 13.52372,-9.27922 L 64.071334,714.6469 53.621323,632.80444 c 39.860062,-12.22959 78.832447,-24.84304 147.700497,-24.52863 46.97907,-1.0932 93.95813,10.83581 140.9372,24.0086 l -18.94192,87.47275 -26.32985,78.60316 15.59222,9.01775 54.17331,-83.97779 9.17173,-99.57001 -4.28228,-71.31691 C 312.74011,533.99176 254.5435,518.40981 200.4183,519.79206 136.47992,518.19765 77.670353,534.92044 19.274121,553.11942 Z" />
+        <g style="display:inline" id="lbl_or2">
+          <text class="section-label section-text" data-vfas="OR2.jpg" y="575" x="140"><tspan y="575" x="140">Zone 2: OR2</tspan></text>
+        </g>
+      </g>
+	  <g id="orchestra_1" style="display:inline" class="section-group orchestra" data-section-group="orchestra-1" data-screen="6">
+		<path id="OR1" data-vfas="OR1.jpg" class="section orchestra orchestra-1" data-section-group="orchestra" data-screen="6"
+			d="M 96.277478,797.83602 65.157036,714.25 c -12.3781,0.62819 -20.717896,4.2851 -26.660078,9.74023 l -6.645512,-28.47292 c 8.561914,-6.67836 17.977818,-11.9334 28.952048,-14.59122 l -6.30986,-49.79973 c 38.82642,-12.05973 81.520926,-22.18542 141.099486,-23.86908 71.65047,1.1843 104.70854,14.55568 147.74656,24.7755 l -18.73269,88.52709 -26.58834,77.34789 c -27.58749,-12.50932 -55.84373,-24.47726 -100.00841,-23.56694 -37.54876,1.46551 -70.60553,10.79201 -101.732762,23.4952 z" />
+         <g style="display:inline" id="lbl_or1">
+          <text class="section-label section-text" data-vfas="OR1.jpg" y="702" x="140"><tspan y="702" x="140">Zone 1: OR1</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="level_2">
+      <g id="loge_2" style="display:inline" class="section-group loge" data-section-group="loge-2" data-screen="7">
+		<path id="L2" data-vfas="L2_L.jpg" class="section loge loge-2" data-section-group="loge" data-screen="7"
+			d="m 12.735849,311.33734 0.353774,-59.43396 C 70.350544,238.06701 127.1539,223.87476 200.9434,222.89395 c 71.78236,0.0739 114.08686,11.55859 157.42924,22.64151 1.83293,28.6839 9.98559,48.52017 21.22642,64.03302 C 328.08548,291.6484 273.20382,276.51065 200.23585,276.31376 127.26581,275.19157 68.953053,291.98384 12.735849,311.33734 Z" />
+        <g style="display:inline" id="lbl_l2">
+          <text class="section-label section-text" data-vfas="L2_L.jpg" y="260" x="150"><tspan y="260" x="150">Zone 2: L2</tspan></text>
+        </g>
+      </g>
+      <g id="loge_1" style="display:inline" class="section-group loge" data-section-group="loge-1" data-screen="7">
+		<path id="L1" data-vfas="L1.jpg" class="section loge loge-1" data-section-group="loge" data-screen="7"
+		   d="M 19.094595,346.59372 12.796341,311.47669 C 74.731542,287.8175 138.68053,274.5629 205.57031,276.50234 c 77.48849,0.86599 126.32825,16.85214 174.73629,33.06614 l 23.70283,10.25943 -25.14973,28.52994 C 327.05301,332.40054 278.96955,313.31046 205.89623,313.10621 136.81635,312.00592 75.804848,325.42869 19.094595,346.59372 Z" />
+        <g style="display:inline" id="lbl_l1">
+          <text class="section-label section-text" data-vfas="L1.jpg" y="302" x="150"><tspan y="302" x="150">Zone 1: L1</tspan></text>
+        </g>
+      </g>
+      <g id="balcony_1" style="display:inline" class="section-group balcony" data-section-group="balcony-1" data-screen="9">
+		<path id="B1" data-vfas="B1.jpg" class="section balcony balcony-1" data-section-group="balcony" data-screen="9"
+		   d="m 15.919811,217.58734 c 0,-1.76886 -2.476415,-137.971695 -2.476415,-137.971695 C 73.791576,63.445758 139.29996,56.048224 209.08019,55.912815 284.03275,55.552459 339.40135,66.382931 388.08962,81.03074 l -3.18396,137.26415 -31.83962,-9.90566 0.35377,-44.2217 -37.14623,-8.13679 0.70755,45.28302 c -37.65442,-6.62062 -75.67219,-11.06118 -114.26887,-12.0283 -41.43717,-1.13459 -79.74821,4.76464 -117.452826,12.0283 l 0.353774,-45.99057 -36.792453,8.49057 0,45.28302 z" />
+        <g style="display:inline" id="lbl_b1">
+          <text class="section-label section-text" data-vfas="B1.jpg" y="130" x="150"><tspan y="130" x="150">Zone 4: B1</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g style="display:inline" id="stage" transform="translate(-24.687,10.471)">
+      <text style="fill:#000066;" class="section-label" xml:space="preserve" y="830" x="195"><tspan y="830" x="195">STAGE</tspan></text>
+    </g>
+  </g>
+</svg>

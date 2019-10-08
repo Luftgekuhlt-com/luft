@@ -1,0 +1,13 @@
+<%= content_area("Crew Header").try(:content).html_safe %>
+<div class="page-ctr crew-<%= @crew.results.size % 3 %>">
+  <div class="row equalize-grid-items">
+      <% @crew.each_with_index do |member, ind| %>
+      <div class="col-md-3 col-sm-6">
+        <a href="<%= crew_url(path: member.slug) %>" class="thumbnail">
+          <img src="<%= member.main_image.url(:cropped) %>" alt ="<%= member.title %>" />
+          <div class="caption"><%= member.title %></div>
+        </a>
+      </div>
+      <% end %>
+    </div>
+</div>

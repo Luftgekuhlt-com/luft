@@ -1,0 +1,39 @@
+<h4 style="margin:0 0 15px;">Yes! I will donate with a contribution of: <%= number_to_currency(@amount) %></h4>
+<%= form_tag(contributions_checkout_path, method: :get, class: "contribution-info-form") do %>
+  <%= hidden_field_tag :amount, @amount %>
+  <%= hidden_field_tag :fund, params[:fund] %>
+  <div class="row">
+    <div class="col m4 input-field">
+      <%= text_field_tag :in_honor_of, params[:in_honor_of], class: 'form-control' %>
+      <label for="in_honor_of">I/we would like to make this gift in honor of:</label>
+    </div>
+    <% if @amount >= 100 %>
+    <div class="col m4 input-field">
+      <%= text_field_tag :donor_listing, params[:donor_listing].presence || (@session.is_logged_in? ? @session.constituent.try(:display_name) : ""), class: 'form-control' %>
+      <label for="donor_listing">Please list me/us in various donor listings as:</label>
+    </div>
+    <div class="col m4">
+      <div class="card" style="font-size: 11px;">
+        <div class="card-content">
+        <ul>
+            <li>Donor wall listing begins at $100+</li>
+            <li>Performance magazine program listing begins at $300+</li>
+            <li><em>If you do not wish to be listed, please enter "Anonymous."</em></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    </div>
+  </div>
+  <hr/>
+  <div style="text-align:right;">
+      <%= link_to("Back", contributions_start_path(params.permit(:amount, :fund)), class: "btn btn-default pull-left") %>
+      <%= submit_tag 'Donate Now', class: "btn btn-primary" %>
+  </div>
+<% end %>
+<% content_for :scripts do %>
+<script type="text/javascript">
+   
+</script>
+<% end %>

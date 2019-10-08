@@ -1,0 +1,111 @@
+<%
+  form_url = @video.persisted? ? 
+    admin_video_path(@video) :
+    admin_videos_path
+    
+  image_size = "600,400"
+%>
+
+<%= simple_form_for @video, { url: form_url } do |f| %>
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"><%= @video.persisted? ? "Edit" : "New" %> Film</h4>
+        </div>
+        <div class="modal-body">
+            <%= f.error_notification %>
+
+          <div class="row">
+            <%= f.input :title, wrapper_html: { class: "col-md-4" }  %>
+            <%= f.input :sub_title, wrapper_html: { class: "col-md-4" }  %>
+            <% if @video.persisted? %>
+            <%= f.input :slug, wrapper_html: { class: "col-md-4" }  %>
+            <% end %>
+            <%= f.input :video_url, wrapper_html: { class: "col-md-12" }  %>
+            <%= f.input :published_at, wrapper_html: { class: "col-md-12" }  %>
+          </div>
+          <div class="row">
+              <% if @video.thumb_image.blank? %>
+                  <div class="col-md-6">
+                      <label class="control-label">Thumbnail Image</label>
+                      <div class="slim" data-label="Click to choose an image" data-post="input, output, actions" <%= @video.slim_dimension_string.present? ? %Q(data-force-size=#{@video.slim_dimension_string}) : ""  %> data-filter-sharpen="10" data-instant-edit="true">
+                         <input type="file" accept="image/*"/>
+                      </div>
+                  </div>
+                  <% else %>
+                  <div class="col-md-6 current-image">
+                    <label class="control-label">Thumbnail Image</label>
+                    <div class="slim" data-post="actions" <%= @video.slim_dimension_string.present? ? %Q(data-force-size=#{@video.slim_dimension_string}) : ""  %> <%= @video.slim_crop_actions_string.present? ? %Q(data-crop=#{@video.slim_crop_actions_string}) : ""  %> data-filter-sharpen="10">
+                        <img src="<%= @video.thumb_image.url %>" crossorigin="anonymous" style="max-width:100%;" />
+                    </div>
+                    <a href="javascript:;" class="btn btn-success btn-change-image">Change Image</a>
+                  </div>
+                   <div class="col-md-6 new-image" style="display:none;text-align:center;">
+                      <label class="control-label">&nbsp;</label>
+                      <div class="slim" data-label="Click to choose a new image" data-post="input, actions" <%= @video.slim_dimension_string.present? ? %Q(data-force-size=#{@video.slim_dimension_string}) : ""  %> data-filter-sharpen="10" data-instant-edit="true">
+                         <input type="file" accept="image/*"/>
+                      </div>
+                      <br/>
+                      <a href="javascript:;" class="btn btn-default btn-keep-image">Keep Current Image</a>
+                  </div>
+                  <% end %>
+            </div>
+            <div class="video-tags">
+              <%= f.association :tags, as: :check_boxes, 
+                     label_method: :name, 
+                     value_method: :id,
+                     collection: Tag.all.order("is_category desc, name"),
+                     item_wrapper_class: "video-tag-item",
+                     label: 'Tags' %>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input id="new_video_tag" type="text" class="form-control" placeholder="New Film Tag">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default btn-new-video-tag" type="button">Add</button>
+                  </span>
+                </div><!-- /input-group -->
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <%= f.button :button, "Cancel", class: "btn btn-default", data: { dismiss: "modal" } %>
+            <%= f.button :submit, "Save", class: "btn btn-primary btn-submit", data: { disable_with: "Save" } %>
+        </div>
+    </div> <!-- /.modal-content -->
+<% end %>
+<script type="text/javascript">
+  $('.btn-change-image').off('click');
+  $('.btn-change-image').on('click', function(e){
+    $('.current-image').hide();
+    $('.new-image').show();
+  });
+  $('.btn-keep-image').off('click');
+  $('.btn-keep-image').on('click', function(e){
+    $('.new-image').hide();
+    $('.current-image').show();
+  });
+  
+  $('.btn-new-video-tag').on('click', function(e){
+    e.preventDefault();
+    var tag = $('#new_video_tag').val();
+    if(tag.length > 0){
+      $.post('<%= add_video_tag_admin_videos_path %>', {tag: tag}, function(resp){
+        console.log('add_video_tag', resp);
+        if(resp.success){
+          var tag = resp.tag;
+          $('.video_tags').append('<span class="checkbox video-tag-item"><label for="video_tag_ids_'+tag.id+'"><input class="check_boxes optional" type="checkbox" value="'+tag.id+'" name="video[video_tag_ids][]" id="video_video_tag_ids_'+tag.id+'">'+tag.name+'</label></span>')
+        }else{
+          
+        }
+      });
+    }
+    
+    return false;
+  })
+</script>
+
+<script type="text/javascript">
+  $('.video-modal').slim('parse');
+</script>

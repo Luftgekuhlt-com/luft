@@ -1,0 +1,48 @@
+<% content_for :admin_header do %>
+<%= link_to(new_admin_home_portal_path(category: params[:category]), class: "btn-floating teal right") do %><i class="material-icons">add</i><% end %>
+<h1><%= params[:category]&.titleize %> Home Portals</h1>
+<% end %>
+
+<div class="row home-portals-list">
+<% @portals.each do |portal| %>
+  <div class="col s6">
+    <div class="card small sticky-action home-portal-item <%= portal.hidden? ? "hidden-item" : "" %>">
+      <div class="card-image">
+        <img src="<%= portal.main_image_url %>"/>
+        <span class="card-title"><%= portal.title %></span>
+        <div class="display-dates"><%= l(portal.start_date, format: :long) %> &mdash; <%= l(portal.end_date, format: :long) %></div>
+      </div>
+      <div class="card-content">
+        <%= portal.content.html_safe %>
+      </div>
+      <div class="card-action">
+        <% if portal.link_url_1.present? && portal.link_text_1.present? %>
+          <%= link_to(portal.link_text_1, "###{portal.link_url_1}") %>
+        <% end %>
+        <% if portal.link_url_2.present? && portal.link_text_2.present? %>
+          <%= link_to(portal.link_text_2, "###{portal.link_url_2}") %>
+        <% end %>
+      </div>
+      <div class="fixed-action-btn direction-right">
+        <a class="btn-floating btn-large teal">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul>
+          <li>
+            <%= link_to(admin_home_portal_path(portal), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete this portal?" }, class: 'btn-floating red') do %><i class="material-icons">delete</i><% end %>
+          </li>
+          <li>
+            <%= link_to(edit_admin_home_portal_path(portal), class: 'btn-floating teal darken-1') do %><i class="material-icons">edit</i><% end %>
+          </li>
+          <li>
+            <%= link_to(move_admin_home_portal_path(portal, direction: 'up'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_up</i><% end %>
+          </li>
+          <li>
+            <%= link_to(move_admin_home_portal_path(portal, direction: 'down'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_down</i><% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

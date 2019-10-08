@@ -1,0 +1,6 @@
+<% if @success == true%>
+  console.log(<%= @document_part.to_json.html_safe %>);
+  window.location = '<%= admin_document_path(@document) %>';
+<% else %>
+  console.log(<%= @document_part.errors.to_json.html_safe %>);
+<% end %>

@@ -1,0 +1,347 @@
+<% 
+    @body_classes ||= []
+    @body_classes << "subscriptions"
+    @body_classes << "flex"
+%>
+
+<div class="content-wrap">
+    <div id="package_builder" style="display: none;" class="container main-content">
+    	<div class="row">
+    		<div class="col-lg-3 col-md-4 hidden-sm hidden-xs sidebar-nav">
+    		</div>
+    		<div class="col-lg-9 col-md-8">
+    
+    			<div class="panel panel-default" data-bind="with: $root.package">
+    				<div class="panel-body">
+    					<div class="form-step step-1">
+    						<label><strong>Performances</strong> - Please select at least <%= @flex_package[:min_number_performances] %> performances</label>
+    						<div class="perf-groups">
+    							<!-- ko foreach: AvailablePerformanceGroups -->
+    								<div class="panel panel-default perf-group" data-bind="css: CssClass">
+    									<div class="panel-heading">
+    										<div class="checkbox">
+    											<label>
+    												<input type="checkbox" name="PerformanceGroup" data-bind="checkedValue: PerformanceGroupNumber, checked: perfGroupSelected">
+    												<span data-bind="text: Title"></span>
+    											</label>
+    										</div>
+    									</div>
+    									<div class="panel-body group-performances">
+    										<!-- ko foreach: AvailablePerformances -->
+    										<div class="radio">
+    											<label>
+    												<input type="radio" data-bind="attr: {name: 'SelectedPerformance_'+$parent.PerformanceGroupNumber()}, checkedValue: PerformanceNumber, checked: $parent.selectedPerformance, visible: $parent.perfGroupSelected">
+    												<span data-bind="text: PerformanceDateDisplay"></span>
+    											</label>
+    										</div>
+    										<!-- /ko -->
+    									</div>
+    								</div>
+    							<!-- /ko -->
+    						</div>
+    					</div>
+    					<!-- ko if: $root.validPerformanceSelection() -->
+    					<div class="form-step step-2">
+    						<label><strong>Number of Seats</strong> - Please select number of seats.</label>
+    						<div class="row price-type-seat-selector">
+    							<div class="col-md-3">
+    								<select class="form-control" data-bind="options: $root.seatCountOptions, value: $root.regularSeatCount"></select>
+    							</div>
+    							<div class="col-md-1">
+    								<span></span>
+    							</div>
+    						</div>
+    					</div>
+    					<div class="form-step step-3">
+    						<label><strong>Seating</strong> - Please select seating preference for each performance.</label>
+    						<!-- ko foreach: $root.selectedPerformanceItems -->
+    						<div class="row perf-section-selector">
+    							<div class="col-md-6">
+    								<b data-bind="text: Title"></b> &mdash; <span data-bind="text: PerformanceDateDisplay"></span>
+    							</div>
+    							<div class="col-md-5">
+    								<!-- Single button -->
+    								<div class="btn-group" style="display:block;">
+    									<button type="button" class="btn btn-default dropdown-toggle" style="display:block;width:100%;text-align:left;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    										<span data-bind="text: selectedSectionDescription"></span> <span class="caret"></span>
+    									</button>
+    									<ul class="dropdown-menu section-options">
+    										<!-- ko foreach: availableZones -->
+    										<li><a href="javascript:;" data-bind="click: $parent.selectedSection"><span class="desc" data-bind="text: SectionDescription"></span><span class="price" data-bind="text: PriceTypes[0].PriceDisplay"></span></a></li>
+    										<!-- /ko -->
+    									</ul>
+    								</div>
+    							</div>
+    						</div>
+    						<!-- /ko -->
+    					</div>
+    					<!-- /ko -->
+    					<!-- ko if: $root.readyForCart -->
+    					<hr />
+    					<h2>Summary</h2>
+    					<div class="row package-summary">
+    						<div class="col-md-6">
+    							<h4>Performance</h4>
+    						</div>
+    						<div class="col-md-4">
+    							<h4>Seating</h4>
+    						</div>
+    						<div class="col-md-2" style="text-align:right;">
+    							<h4>Price</h4>
+    						</div>
+    					</div>
+    					<!-- ko foreach: $root.selectedPerformanceItems -->
+    					<div class="row package-summary">
+    						<div class="col-md-6">
+    							<strong class="title" data-bind="text: Title"></strong> &mdash; <span data-bind="text: PerformanceDateDisplay" style="white-space:nowrap;"></span>
+    						</div>
+    						<div class="col-md-4">
+    							<div data-bind="html: SeatingDisplay"></div>
+    						</div>
+    						<div class="col-md-2" style="text-align:right;">
+    							<strong data-bind="text: PriceDisplay"></strong>
+    						</div>
+    					</div>
+    					<!-- /ko -->
+    					<hr />
+    					<div class="subtotal">Sub Total: <strong data-bind="text: $root.subTotalDisplay"></strong></div>
+    					<!-- /ko -->
+    				</div>
+    			</div>
+    			<%= form_tag subscriptions_purchase_flex_path, id: "package_purchase_form" do %>
+    				<input type="hidden" name="package_id" id="package_id" value="<%= @flex_package["PackageNumber"] %>" />
+    				<input type="hidden" name="seats" id="seats" value="1" />
+    				<input type="hidden" name="performances" id="performances" value="" />
+    				<div style="text-align: right">
+    					<button type="submit" class="btn btn-primary" data-bind="visible: $root.readyForCart">Add To Cart</button>
+    				</div>
+                <% end %>
+    		</div>
+    	</div>
+    </div>
+</div>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+		var packageData = <%= @flex_package.to_json.html_safe %>;
+                $.ajaxSetup({ cache: false });
+
+               function PerformanceGroup(data) {
+                    var self = this;
+                    for (p in data) {
+                        self[p] = ko.observable(data[p]);
+                    }
+                    self.PerformanceItems = ko.observableArray($.map(data.Performances, function(pg) {
+                        return new PerformanceItem(pg);
+                    }));
+                    self.perfGroupSelected = ko.observable(false);
+                    self.selectedPerformance = ko.observable();
+                    self.AvailablePerformances = ko.computed(function() {
+                        return ko.utils.arrayFilter(self.PerformanceItems(), function (perf) {
+                            return perf.OnSale();
+                        });
+                    });
+                    self.perfGroupSelected.subscribe(function() {
+                        if(self.perfGroupSelected()) {
+                            if(self.AvailablePerformances().length == 1) {
+                                self.selectedPerformance(self.AvailablePerformances()[0].PerformanceNumber());
+                            }
+                        }else {
+
+                        }
+                    });
+
+                    /*self.selectedPerformance.subscribe(function() {
+                        var perfId = self.selectedPerformance();
+                        $.ajax({
+                            url: '/flex-subscription-zones/' + perfId,
+                            success: function(resp) {
+                                $.each(self.AvailablePerformances(), function(ind, perf) {
+                                    if (perf.PerformanceNumber() == perfId) {
+                                        perf.Zones(resp);
+                                    }
+                                });
+                            }
+                        });
+                    });*/
+
+                    self.CssClass = ko.computed(function() {
+                        return self.perfGroupSelected() ? "enabled" : "disabled";
+                    });
+                }
+
+                function Package(data) {
+                    var self = this;
+                    for (p in data) {
+                        self[p] = ko.observable(data[p]);
+                    }
+                    self.PerformanceGroups = ko.observableArray($.map(data.PerfGroups, function(pg) {
+                        return new PerformanceGroup(pg);
+                    }));
+
+                    self.AvailablePerformanceGroups = ko.computed(function() {
+                        return ko.utils.arrayFilter(self.PerformanceGroups(), function (group) {
+                            return group.AvailablePerformances().length > 0;
+                        });
+                    });
+                }
+
+                function FlexPackagesViewModel() {
+                    var self = this;
+
+                    self.package = ko.observable(new Package(packageData));
+                    self.selectedPackageId = ko.observable(self.package().PackageNumber());
+                    self.regularSeatCount = ko.observable(1);
+                    window.regularSeatCount = self.regularSeatCount;
+                    self.seatCountOptions = ko.observableArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+                    self.selectedPerformances = ko.computed(function() {
+                        var sel_perfs = [];
+                        $.each(self.package().AvailablePerformanceGroups(), function(ind, group) {
+                            if(group.perfGroupSelected() && group.selectedPerformance()) {
+                                sel_perfs.push(group.selectedPerformance());
+                            }
+                        });
+                        return sel_perfs;
+                    });
+                    self.validPerformanceSelection = ko.computed(function() {
+                        var valid = true;
+                        if(self.package().MinNumberPerformances() > 0 && self.selectedPerformances().length < self.package().MinNumberPerformances()) {
+                            valid = false;
+                        }
+                        if(self.package().MaxNumberPerformances() > 0 && self.selectedPerformances().length > self.package().MaxNumberPerformances()) {
+                            valid = false;
+                        }
+                        return valid;
+                    });
+
+                    self.selectedPerformanceItems = ko.computed(function() {
+                        var perfs = [];
+                        $.each(self.package().PerformanceGroups(), function(i1, group) {
+                            $.each(group.PerformanceItems(), function(i2, perf) {
+                                $.each(self.selectedPerformances(), function(i, p) {
+                                    if (perf.PerformanceNumber() == p) {
+                                        perf.PriceDisplay = ko.computed(function() {
+                                            var txt = "";
+                                            if(perf.selectedSection() != null) {
+                                                $.each(perf.selectedSection().PriceTypes, function(i4, pt) {
+                                                    if(pt.Description == "Subscription") {
+                                                        txt = numeral(self.regularSeatCount() * pt.Price).format('$0,0[.]00');
+                                                    }
+                                                });
+                                            }
+                                            return txt;
+                                        });
+
+                                        perf.SeatingDisplay = ko.computed(function() {
+                                            var display = $('<div class="perf-seating-display"/>');
+                                            if(perf.selectedSection() != null) {
+                                                display.append('<strong>' + perf.selectedSection().SectionPrintDesc + '</strong>');
+                                                $.each(perf.selectedSection().PriceTypes, function(i5, pt) {
+                                                    if(pt.Description == "Subscription") {
+                                                        display.append(' &nbsp;<span class="per-seat">(' + numeral(pt.Price).format('$0,0[.]00') + ' per seat)</span><br/><strong>'+self.regularSeatCount()+' seat(s)</strong>');
+                                                    }
+                                                });
+                                            }
+                                            return display.html();
+                                        });
+                                        perfs.push(perf);
+                                    }
+                                });
+                            });
+                        });
+                        //console.log('selectedPerformanceItems', perfs);
+                        return perfs;
+                    });
+
+                    self.seatsSelected = ko.computed(function() {
+                        return (self.regularSeatCount() > 0);
+                    });
+
+                    self.sectionsSelected = ko.computed(function() {
+                        var sel = true;
+                        $.each(self.selectedPerformanceItems(), function(i1, perf) {
+                            //console.log('sectionsSelected', perf.selectedSection() == null, perf.selectedSection());
+                            if(perf.selectedSection() == null) sel = false;
+                        });
+                        return sel;
+                    });
+
+                    self.subtotal = ko.computed(function() {
+                        var ttl = 0;
+                        if(self.seatsSelected() && self.sectionsSelected()) {
+                            $.each(self.selectedPerformanceItems(), function(i, perf) {
+                                console.log('subtotal', perf.selectedSection().PriceTypes, ttl, perf);
+                                $.each(perf.selectedSection().PriceTypes, function(i2, pt) {
+                                    if(pt.Description == "Subscription") {
+                                        ttl += self.regularSeatCount() * pt.Price;
+                                    }
+                                });
+                            });
+                        }
+                        return ttl;
+                    });
+
+                    self.subTotalDisplay = ko.computed(function() {
+                        var txt = numeral(self.subtotal()).format('$0,0[.]00');
+                        return txt;
+                    });
+
+                    self.readyForCart = ko.computed(function() {
+                        return self.subtotal() > 0;
+                    });
+
+                    self.regularSeatCount.subscribe(function(seatCount) {
+                        $('#seats').val(seatCount);
+                    });
+
+                    self.subtotal.subscribe(function() {
+                        var perfString = "";
+                        $.each(self.package().PerformanceGroups(), function(i1, group) {
+                            $.each(group.PerformanceItems(), function(i2, perf) {
+                                $.each(self.selectedPerformances(), function(i, p) {
+                                    if (perf.PerformanceNumber() == p) {
+                                       if(perf.selectedSection() != null) {
+                                           perfString += (perfString == "" ? "" : '|') + group.PerformanceGroupNumber() + '^' + perf.PerformanceNumber() + '^' + perf.selectedSection().Id;
+                                       }
+                                    }
+                                });
+                            });
+                        });
+                        $('#performances').val(perfString);
+                    });
+
+                };
+                function PerformanceItem(data) {
+                    var self = this;
+                    for (p in data) {
+                        self[p] = ko.observable(data[p]);
+                    }
+                    self.selectedSection = ko.observable();
+                    self.selectedSectionDescription = ko.computed(function() {
+                        var txt = "Choose Seating...";
+                        if(self.selectedSection() != null) {
+                            txt = self.selectedSection().SectionDescription;
+                        }
+                        return txt;
+                    });
+                    self.availableZones = ko.computed(function() {
+                        var sections = [];
+                        $.each(self.Zones(), function(zi, zone) {
+                            if(!zone.SoldOut) {
+                                sections.push(zone);
+                            }
+                        });
+                        return sections;
+                    });
+                };
+
+                $('#package_builder').show();
+                ko.applyBindings(new FlexPackagesViewModel(), document.getElementById('package_builder'));
+           
+        window.pageLoaded = function($) {
+            $(document).ready(function() {
+
+            });
+        };
+    </script>
+<% end %>

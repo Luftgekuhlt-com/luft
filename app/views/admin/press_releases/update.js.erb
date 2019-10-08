@@ -1,0 +1,6 @@
+<% if @press_release.errors.empty? %>
+  console.log(<%= @press_release.to_json.html_safe %>);
+  window.location.reload(true);
+<% else %>
+  $("#<%= dom_id @press_release, :edit %>").replaceWith("<%= j render(partial: 'form', locals: { press_release: @press_release }) %>")
+<% end %>

@@ -1,0 +1,142 @@
+<% content_for :head do %>
+  <style type="text/css">
+    html, body{margin:0;padding:0;width:2000px;height:980px;overflow:hidden;background:#333;}
+      .home-slide-preview-wrap{
+        width: 2000px;
+        height: 980px;
+        background-size: cover !important;
+      }
+      
+      .home-slide-preview-wrap .slide-content{
+        position:absolute;
+        width: 35%;
+      }
+      
+      .home-slide-preview-wrap .slide-content.left{
+        left: 10%;
+        top: 50%;
+        margin-top: -100px;
+      }
+      
+      .home-slide-preview-wrap .slide-content.top-left{
+        left: 10%;
+        top: 10%;
+      }
+      
+      .home-slide-preview-wrap .slide-content.top-center{
+        left: 50%;
+        top: 10%;
+        width: 360px;
+        margin-left: -180px;
+        text-align:center;
+      }
+      
+      .home-slide-preview-wrap .slide-content.top-right{
+        right: 10%;
+        top: 10%;
+        text-align:right;
+      }
+      
+      .home-slide-preview-wrap .slide-content.right{
+        right: 10%;
+        top: 50%;
+        margin-top: -100px;
+        text-align:right;
+      }
+      
+       .home-slide-preview-wrap .slide-content.bottom-left{
+        left: 10%;
+        bottom: 10%;
+      }
+      
+      .home-slide-preview-wrap .slide-content.bottom-center{
+        left: 50%;
+        bottom: 10%;
+        width: 360px;
+        margin-left: -180px;
+        text-align:center;
+      }
+      
+      .home-slide-preview-wrap .slide-content.bottom-right{
+        right: 10%;
+        bottom: 10%;
+        text-align:right;
+      }
+      
+      .home-slide-preview-wrap .slide-content.center{
+        left: 50%;
+        top: 50%;
+        width: 360px;
+        margin-left: -180px;
+        margin-top: -100px;
+        text-align:center;
+      }
+      
+      .home-slide-preview-wrap h1{
+        font-size: 15vw;
+        color: #FFF;
+        margin: 0 0 10px;
+        line-height: 1.1em;
+        text-shadow: 0 0 3px #000;
+      }
+      .home-slide-preview-wrap h3{
+        font-size: 8vw;
+        color: #FFF;
+        margin: 0 0 10px;
+        line-height: 1.1em;
+        text-shadow: 0 0 3px #000;
+      }
+      
+      .home-slide-preview-wrap .btn.btn-primary.btn-cta{
+        font-size: 8vw;
+        color: #FFF;
+        text-shadow: 0 0 3px #000;
+        background: rgba(255,255,255,0.2);
+        border: solid 1px #FFF;
+        box-shadow: 0 0 3px rgba(0,0,0,0.4);
+      }
+      
+      .home-slide-preview-wrap .html5-video-wrap{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .home-slide-preview-wrap .html5-video-wrap video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+<% end %>
+    <div class="home-slide-preview-wrap" style="<%= @slide.main_image_url.present? ? "background: url(#{@slide.main_image_url}) no-repeat scroll center center;" : "" %>">
+      <% if @slide.has_video? %>
+      <%= @slide.player_html.html_safe %>
+      <% end %>
+      <div class="slide-content <%= @slide.content_anchor %>">
+        <% unless @slide.title.blank? %>
+        <h1><%= @slide.title %></h1>
+        <% end %>
+        <% unless @slide.sub_title.blank? %>
+        <h3><%= @slide.sub_title %></h3>
+        <% end %>
+        <% unless @slide.button_link.blank? %>
+        <%= link_to(@slide.button_text.presence || "More Info", @slide.button_link, class: "btn btn-primary btn-cta" ) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="home-slide-preview-form" style="display:none;">
+    <%= simple_form_for @slide, { url: admin_home_slide_preview_path } do |f| %>
+    <div class="fields"></div>
+    <% end %>
+    </div>
+<% content_for :scripts do %>  
+<script type="text/javascript">
+</script>
+
+<% end %>

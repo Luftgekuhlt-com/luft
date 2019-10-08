@@ -1,0 +1,16 @@
+<% if part.images.any? %>
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <% part.images.order(:display_order).each do |tab| %>
+      <li class="tab col s3"><a href="#<%= tab&.title&.parameterize || "tab_#{tab.id}" %>"><%= tab&.title || "Tab #{tab.display_order}" %></a></li>
+      <% end %>
+    </ul>
+  </div>
+  <% part.images.order(:display_order).each do |tab| %>
+  <div id="<%= tab&.title&.parameterize || "tab_#{tab.id}" %>" class="col s12"><%= sanitize(tab&.content || '') %></div>
+  <% end %>
+</div>
+<% else %>
+<em><strong>No tabs</strong></em>
+<% end %>

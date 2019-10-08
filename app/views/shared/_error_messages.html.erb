@@ -1,0 +1,31 @@
+<%
+  options ||= {
+    single: false,    # if true, displays only the first error
+    mode: "standard"
+  }
+%>
+<% if options[:mode] == "simple" %>
+  <% if model.present? && model.errors.any? %>
+    <div class="alert alert-danger error-messages">
+        <ul>
+          <% model.errors.map{|k, v| v}.each do |msg| -%>
+            <li><%= sanitize msg %></li>
+          <% end -%>
+        </ul>
+    </div>
+  <% end %>
+<% else %>
+  <% if model.present? && model.errors.any? %>
+    <div class="alert alert-danger error-messages errorExplanation">
+      <% if options[:single] %>
+        <%= model.errors.full_messages.first.html_safe %>
+      <% else %>
+        <ul>
+          <% model.errors.full_messages.each do |msg| -%>
+          <li><%= sanitize msg %></li>
+          <% end -%>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

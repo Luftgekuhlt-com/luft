@@ -1,0 +1,34 @@
+<% content_for :header do %>
+<%= link_to("javascript:;",
+        class: "btn btn-add btn-sm btn-default pull-right modal-remote",
+        data: { key: "new_video_modal", url: new_admin_video_path}) do %>
+        &nbsp;New Film
+      <% end %>
+<h1>Films</h1>
+<% end %>
+
+<div class="row equalize-grid-items">
+<% @videos.each do |video| %>
+  <div class="col-md-3 col-sm-6">
+    <div class="thumbnail" data-slug="<%= video.slug %>" data-videoid="<%= video.youtube? ? video.youtube_id : video.vimeo_id %>">
+      <% if video.thumb_image.present? %><img src="<%= video.thumb_image_url %>" style="max-width:100%;"/><% else %>&nbsp;<% end %>
+      <div class="caption" style="text-align:center;">
+        <h5 style="margin: 0 0 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><%= video.full_title.html_safe %></h5>
+        Tags: <%= video.tags.map(&:name).join(", ") %>
+        <hr/>
+         <%= link_to("javascript:;",
+                class: "modal-remote btn btn-default btn-sm",
+                data: { key: "edit_video_modal", url: edit_admin_video_path(video) }) do %>
+                Edit
+              <% end %>
+          <%= link_to(admin_video_path(video), method: :delete, remote: true,
+                data: { confirm: "Are you sure you want to delete this video?" },
+                class: 'btn btn-danger btn-sm',
+                title: 'Delete') do %>
+                Delete
+              <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

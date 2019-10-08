@@ -1,0 +1,10 @@
+<div class="row">
+    <div id="doc_part_<%= part.id %>" class="col s12 doc-part html-content-part">
+        <% if part.title.present? %>
+        <h3><%= part.title.html_safe %></h3>
+        <% end %>
+        <% if part.content.present? %>
+        <%= part.content.html_safe %>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" preserveAspectRatio="xMinYMin meet" viewBox="0 0 460 500" id="svg2">
+  <defs id="defs4" />
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style type="text/css">
+    path.section {
+    cursor: pointer;
+    fill:rgba(185, 142, 45, 0.4);
+    stroke:rgb(219, 173, 74);
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+
+    path.section:hover {
+    fill:rgba(229, 179, 71, 0.7);
+    }
+
+    .section-group{
+    cursor: pointer;
+    }
+    .section-group path {
+    fill:rgba(185, 142, 45, 0.4);
+    stroke:rgb(219, 173, 74);
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+
+    .section-group:hover path {
+    fill:rgba(229, 179, 71, 0.7);
+    }
+
+    text.section-label{
+    font-family:Arial, sans-serif;
+    font-size:18px;
+    font-style:normal;
+    font-weight:bold;
+    line-height:50px;
+    text-align: center;
+    letter-spacing:0px;
+    word-spacing:0px;
+    fill:rgb(185, 142, 45);
+    fill-opacity:1;
+    stroke:none;
+    }
+  </style>
+  <g transform="translate(-24.6875,-23.52902)" id="loge" style="display:inline" class="section-group loge" data-section-group="loge" data-screen="7">
+    <path class="section loge loge-2" data-section-group="loge" data-screen="7" d="M 24.637,61.984 C 23.941,45.249 23.337,30.227 23.296,28.601 L 23.22,25.645 31.406,23.553 C 59.132,16.467 99.972,8.9836 125.6,6.2939 L 129.75,5.8589 130.1,18.435 C 130.74,40.925 130.55,71.678 129.78,71.906 129.4,72.017 123.94,72.765 117.64,73.569 90.127,77.078 64.012,82.226 36.045,89.651 31.392,90.886 27.207,92.012 26.744,92.154 26.003,92.38 25.751,88.773 24.637,61.984 L 24.637,61.984 z" transform="translate(24.687,23.529)" id="loge_2_right" />
+    <path class="section loge loge-2" data-section-group="loge" data-screen="7" d="M 420.81,89.097 C 372.75,77.645 345.17,72.236 334.7,72.208 332.98,72.203 331.26,71.999 330.87,71.755 330.33,71.407 330.05,64.229 329.63,38.944 329.33,21.143 329.16,6.4992 329.26,6.4031 329.36,6.3069 331.14,6.4706 333.23,6.7667 335.32,7.0628 345.26,8.4121 355.32,9.765 376.5,12.615 383.78,13.852 392.33,16.051 395.73,16.925 398.58,17.64 398.68,17.64 398.78,17.64 399.91,20.28 401.19,23.507 408.77,42.557 418.18,56.492 428.99,64.712 434.3,68.746 443.47,73.019 450.69,74.824 L 456.83,76.36 455.27,78.822 C 454.41,80.176 452.63,82.079 451.31,83.052 447.57,85.809 435.28,91.87 433.54,91.813 432.69,91.786 426.96,90.564 420.81,89.097 z" transform="translate(24.687,23.529)" id="loge_2_left" />
+    <path class="section loge loge-1" data-section-group="loge" data-screen="7" d="M 159.28,53.797 C 159.19,41.281 159.42,3.848 159.59,3.6427 159.69,3.5258 184.11,2.5496 196.5,2.1674 223.85,1.3237 287.4,2.3088 297.83,3.7381 L 300.11,4.0504 300.41,7.434 C 300.92,13.306 301.55,67.24 301.12,67.649 301.06,67.702 295.24,67.357 288.19,66.882 268.81,65.578 197.76,65.588 178.18,66.898 170.36,67.422 162.93,67.85 161.67,67.85 L 159.39,67.85 159.28,53.797 z" transform="translate(24.687,23.529)" id="loge_1_center" />
+
+    <text x="240" y="65" id="text3157" xml:space="preserve" class="section-label"><tspan x="240" y="65" id="tspan3159">LG1</tspan></text>
+    <text x="82" y="80" id="text3157-14" xml:space="preserve" class="section-label"><tspan x="82" y="80" id="tspan3159-2">LG2</tspan></text>
+    <text x="380" y="80" id="text3157-14-3" xml:space="preserve" class="section-label"><tspan x="380" y="80" id="tspan3159-2-2">LG2</tspan></text>
+  </g>
+
+  <g transform="translate(-24.6875,-23.52902)" id="or_1" style="display:inline" class="section-group orch" data-section-group="orchestra" data-screen="6">
+    <path class="section orch orch-1" data-section-group="orchestra" data-screen="6" d="M 76.018,428.46 C 74.44,425.38 64.049,404.88 52.927,382.89 L 32.706,342.91 69.089,343.05 105.47,343.19 121.75,379.48 C 130.7,399.44 137.85,415.93 137.65,416.12 137.45,416.31 134.46,417.12 131.01,417.91 113.05,422.03 92.739,428.22 84.186,432.17 81.938,433.21 79.826,434.06 79.493,434.05 79.16,434.05 77.596,431.53 76.018,428.46 L 76.018,428.46 z" transform="translate(24.6875,23.52902)" id="orch_1_right" />
+    <path class="section orch orch-1" data-section-group="orchestra" data-screen="6" d="M 163.25,410.45 C 162.99,409.78 156.21,394.37 148.19,376.21 140.17,358.05 133.5,342.9 133.36,342.55 133.17,342.08 156.54,341.92 229.14,341.93 L 325.17,341.94 321.66,349.93 C 319.73,354.33 312.96,369.71 306.63,384.12 300.29,398.53 294.92,410.53 294.69,410.8 294.45,411.07 290.51,410.66 285.63,409.87 264.41,406.4 242.28,405.43 213.69,406.69 192.24,407.64 181.83,408.63 169.56,410.89 164,411.91 163.81,411.9 163.25,410.45 z" transform="translate(24.6875,23.52902)" id="orch_1_center" />
+    <path class="section orch orch-1" data-section-group="orchestra" data-screen="6" d="M 377.07,432.94 C 368.8,428.65 347.64,422.05 327.21,417.37 323.61,416.55 320.59,415.82 320.49,415.75 320.3,415.6 352.57,343.38 353.1,342.77 353.3,342.55 369.72,342.42 389.57,342.5 L 425.68,342.64 402.79,387.9 C 390.2,412.79 379.71,433.34 379.48,433.56 379.25,433.79 378.16,433.51 377.07,432.94 L 377.07,432.94 z" transform="translate(24.6875,23.52902)" id="orch_1_left" />
+
+    <text x="95" y="415" id="text3157-1" xml:space="preserve" class="section-label"><tspan x="95" y="415" id="tspan3159-7">OR1</tspan></text>
+    <text x="235" y="400" id="text3157-11" xml:space="preserve" class="section-label"><tspan x="235" y="400" id="tspan3159-5">OR1</tspan></text>
+    <text x="375" y="415" id="text3157-2" xml:space="preserve" class="section-label"><tspan x="375" y="415" id="tspan3159-76">OR1</tspan></text>
+  </g>
+  <g transform="translate(-24.6875,-23.52902)" id="or_2" style="display:inline" class="section-group orch" data-section-group="orchestra" data-screen="6">
+    <path class="section orch orch-2" data-section-group="orchestra" data-screen="6" d="M 17.011,312.02 C 8.8694,295.93 2.2078,282.56 2.2078,282.3 2.2078,280.87 25.49,275.15 49.962,270.56 61.734,268.36 88.146,263.86 88.325,264.04 88.414,264.12 88.186,272.78 87.82,283.28 L 87.155,302.36 95.71,321.42 C 100.42,331.9 104.27,340.65 104.27,340.87 104.27,341.1 87.964,341.28 68.04,341.28 L 31.815,341.28 17.011,312.02 z" transform="translate(24.6875,23.52902)" id="orch_2_right" />
+    <path class="section orch orch-2" data-section-group="orchestra" data-screen="6" d="M 158.26,340.32 132.29,340.18 123.69,320.67 115.08,301.16 116.15,280.82 C 116.73,269.63 117.34,260.34 117.5,260.18 117.96,259.72 126.65,258.41 137.01,257.24 163.79,254.22 192.75,253.18 239.89,253.57 275.8,253.87 288.95,254.32 307.56,255.89 322.32,257.14 340.26,259.45 341,260.2 341.15,260.35 341.75,269.5 342.34,280.55 L 343.41,300.62 334.74,320.27 326.08,339.91 300.17,340.24 C 274.57,340.57 208.62,340.61 158.26,340.32 L 158.26,340.32 z" transform="translate(24.6875,23.52902)" id="orch_2_center" />
+    <path class="section orch orch-2" data-section-group="orchestra" data-screen="6" d="M 354.49,339.68 C 354.67,339.09 358.52,330.43 363.03,320.44 L 371.24,302.26 370.91,290.25 C 370.73,283.64 370.43,274.89 370.24,270.8 L 369.9,263.37 385.39,265.99 C 404.7,269.27 421.23,272.43 433.78,275.25 443.67,277.47 454.37,280.4 455.77,281.26 456.39,281.65 453.6,287.56 441.7,311.1 L 426.86,340.46 390.5,340.6 C 354.7,340.74 354.15,340.72 354.49,339.68 L 354.49,339.68 z" transform="translate(24.6875,23.52902)" id="orch_2_left" />
+
+    <text x="65" y="335" id="text3157-14-6" xml:space="preserve" class="section-label"><tspan x="65" y="335" id="tspan3159-2-8">OR2</tspan></text>
+    <text x="235" y="320" id="text3157-14-2" xml:space="preserve" class="section-label"><tspan x="235" y="320" id="tspan3159-2-1">OR2</tspan></text>
+    <text x="410" y="335" id="text3157-14-5" xml:space="preserve" class="section-label"><tspan x="410" y="335" id="tspan3159-2-7">OR2</tspan></text>
+  </g>
+  <g transform="translate(-24.6875,-23.52902)" id="or_3" style="display:inline" class="section-group orch" data-section-group="orchestra" data-screen="6">
+    <path class="section orch orch-3" data-section-group="orchestra" data-screen="6" d="M 1.662,249.92 1.1162,219.21 45.417,218.85 C 69.783,218.65 89.818,218.59 89.939,218.71 90.363,219.13 88.543,261.71 88.083,262.12 87.828,262.34 83.445,263.2 78.342,264.02 47.106,269.05 10.409,276.76 3.0264,279.84 L 1.662,249.92 z" transform="translate(24.6875,23.52902)" id="orch_3_right" />
+    <path class="section orch orch-3" data-section-group="orchestra" data-screen="6" d="M 117.38,257.14 C 117.42,252.7 119.54,218.3 119.79,218.06 120.23,217.62 338.24,217.59 338.68,218.03 339.08,218.43 341.32,257.77 340.96,258.13 340.83,258.25 338.43,257.98 335.61,257.54 328.77,256.45 318.42,255.25 309.75,254.53 305.84,254.21 301.3,253.82 299.65,253.67 289.79,252.76 253.38,251.79 229.25,251.79 191.77,251.78 158.11,253.19 137.28,255.62 130.93,256.36 120.78,257.73 118.86,258.11 117.57,258.37 117.37,258.23 117.38,257.14 z" transform="translate(24.6875,23.52902)" id="orch_3_center" />
+    <path class="section orch orch-3" data-section-group="orchestra" data-screen="6" d="M 456.78,279.92 C 456.65,279.79 453.73,278.84 450.28,277.79 438.59,274.26 413.45,269.1 383.15,264.02 376.4,262.89 370.66,261.78 370.41,261.56 369.98,261.19 368.11,218.55 368.51,218.25 368.61,218.18 388.64,218.23 413.03,218.37 L 457.37,218.61 457.37,249.38 C 457.37,266.31 457.29,280.15 457.19,280.15 457.09,280.15 456.91,280.05 456.78,279.92 z" transform="translate(24.6875,23.52902)" id="orch_3_left" />
+
+    <text x="50" y="275" id="text3257" xml:space="preserve" class="section-label"><tspan x="50" y="275" id="tspan3259">OR3</tspan></text>
+    <text x="235" y="265" id="text3257-6" xml:space="preserve" class="section-label"><tspan x="235" y="265" id="tspan3259-1">OR3</tspan></text>
+    <text x="422" y="275" id="text3257-8" xml:space="preserve" class="section-label"><tspan x="422" y="275" id="tspan3259-9">OR3</tspan></text>
+  </g>
+  <g transform="translate(-24.6875,-23.52902)" id="or_4" style="display:inline" class="section-group orch" data-section-group="orchestra" data-screen="6">
+    <path class="section orch orch-4" data-section-group="orchestra" data-screen="6" d="M 1.662,192.03 1.662,167 46.824,167 91.986,167 91.098,191.49 90.61,205.16 L 90.037,217 69.689,217 45.551,217 1.662,217 1.662,192.03 z" transform="translate(24.6875,23.52902)" id="orch_4_right" />
+    <path class="section orch orch-4" data-section-group="orchestra" data-screen="6" d="M 119.56,215.86 C 119.68,210.33 122.3,166.43 122.52,166.21 122.92,165.81 335.58,165.82 335.98,166.22 336.2,166.44 338.85,210.82 338.93,215.58 338.94,216.08 313.52,216.23 229.25,216.24 168.91,216.25 119.55,216.08 119.56,215.87 z" transform="translate(24.6875,23.52902)" id="orch_4_center" />
+    <path class="section orch orch-4" data-section-group="orchestra" data-screen="6" d="M 368.38,216.16 C 368.36,215.79 367.93,204.37 367.42,190.78 L 366.5,166.09 411.67,166.09 456.83,166.09 456.83,191.47 456.83,216.84 412.62,216.84 C 377.64,216.84 368.41,216.7 368.38,216.16 z" transform="translate(24.6875,23.52902)" id="orch_4_left" />
+
+    <text x="50" y="222" id="text3261" xml:space="preserve" class="section-label"><tspan x="50" y="222" id="tspan3263">OR4</tspan></text>
+    <text x="235" y="222" id="text3261-2" xml:space="preserve" class="section-label"><tspan x="235" y="222" id="tspan3263-7">OR4</tspan></text>
+    <text x="422" y="222" id="text3261-9" xml:space="preserve" class="section-label"><tspan x="422" y="222" id="tspan3263-5">OR4</tspan></text>
+  </g>
+  <g transform="translate(-24.6875,-23.52902)" id="or_5" style="display:inline" class="section-group orch" data-section-group="orchestra" data-screen="6">
+    <path class="section orch orch-5" data-section-group="orchestra" data-screen="6" d="M 1.662,140.51 1.662,115.48 4.9752,113.99 C 15.795,109.14 32.718,105.64 57.876,103.07 63.782,102.47 86.001,101.14 90.214,101.14 L 94.507,101.14 94.176,107.55 92.26,161.86 92.259,165 1.662,165 z" transform="translate(24.687,23.529)" id="orch_5_right" />
+    <path class="section orch orch-5" data-section-group="orchestra" data-screen="6" d="M 122.28,164.16 C 122.28,162.76 123.98,133.64 124.07,133.56 124.51,133.16 167.38,128.06 192.47,125.44 233.26,121.16 245.86,121.34 290.1,126.82 301.13,128.19 334.1,132.79 334.4,133.01 334.45,133.04 334.76,137.98 335.08,143.99 335.4,149.99 335.81,157.04 336,159.66 L 336.33,164.42 229.3,164.42 C 170.44,164.42 122.28,164.31 122.28,164.16 z" transform="translate(24.6875,23.52902)" id="orch_5_center" />
+    <path class="section orch orch-5" data-section-group="orchestra" data-screen="6" d="M 366.22,161.04 C 366.22,158.86 365.74,144.44 365.16,128.99 364.58,113.54 364.22,100.79 364.37,100.64 364.68,100.33 388.4,101.51 396.98,102.27 422.62,104.53 440.05,107.96 452.87,113.25 L 456.83,114.89 456.83,165 411.53,165 366.23,165 z" transform="translate(24.687,23.529)" id="orch_5_left" />
+
+    <text x="50" y="170" id="text3265" xml:space="preserve" class="section-label"><tspan x="50" y="170" id="tspan3267">OR5</tspan></text>
+    <text x="235" y="177" id="text3265-4" xml:space="preserve" class="section-label"><tspan x="235" y="177" id="tspan3267-3">OR5</tspan></text>
+    <text x="422" y="170" id="text3265-1" xml:space="preserve" class="section-label"><tspan x="422" y="170" id="tspan3267-2">OR5</tspan></text>
+  </g>
+  <g transform="translate(-24.6875,-23.52902)" id="stage" style="display:inline">
+    <text x="224" y="470" id="text3157-1-2" xml:space="preserve" class="section-label"><tspan x="224" y="470" id="tspan3159-7">STAGE</tspan></text>
+  </g>
+</svg>

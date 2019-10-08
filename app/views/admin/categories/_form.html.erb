@@ -1,0 +1,20 @@
+<%= simple_form_for @category, { url: [:admin, @category], remote: true } do |f| %>
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"><%= @category.persisted? ? "Edit" : "New" %> Category</h4>
+        </div>
+        <div class="modal-body">
+            <%= f.error_notification %>
+
+          <div class="row">
+            <%= f.input :name, wrapper_html: { class: "col-md-12" }  %>
+            <%= f.input :slug, wrapper_html: { class: "col-md-12" }  %>
+          </div>
+        </div>
+        <div class="modal-footer">
+            <%= f.button :button, "Cancel", class: "btn btn-default", data: { dismiss: "modal" } %>
+            <%= f.button :submit, "Save", class: "btn btn-primary btn-submit", data: { disable_with: "Save" } %>
+        </div>
+    </div> <!-- /.modal-content -->
+<% end %>

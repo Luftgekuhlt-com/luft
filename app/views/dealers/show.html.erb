@@ -1,0 +1,16 @@
+<div class="video-detail-wrap">
+  <div class="video-player">
+    <%= @video.player_html.html_safe %>
+    <h1><%= @video.full_title.html_safe %></h1>
+  </div>
+  <div class="video-list">
+    <% @video.similar_videos.each do |video| %>
+      <div class="video-item">
+        <a href="<%= video_path(id: video.slug) %>">
+          <img src="<%= video.thumb_image_url %>"/>
+          <h3><%= video.full_title.html_safe %></h3>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>

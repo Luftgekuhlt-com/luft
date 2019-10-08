@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Shopify Products</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th colspan="4"><%= @product_count %> Products (<%= @products.size %>)</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th>Product</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% product_count = 0 %>
+    <% @products.each do |collection, products| %>
+    <tr>
+      <td colspan="4"><h2><%= collection %> (<%= products.size %>)</h2></td>
+    </tr>
+    <% products.each do |product| %>
+    <% product_count += 1 %>
+      <tr>
+        <td style="width:120px;"><%= product.id %></td>
+        <td><strong><%= product.title %></strong> (<%= product.handle %>)<br/>
+        Type: <%= product.product_type %> &mdash; Vendor: <%= product.vendor %>
+        </td>
+        <td>
+          <div>Tags: <%= product.tags %></div>
+        </td>
+        <td><%= link_to 'Show', admin_shopify_product_path(id: product) %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>

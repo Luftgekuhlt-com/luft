@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%" preserveAspectRatio="xMinYMin meet" viewBox="0 0 750 600"
+   id="svg3634"
+   version="1.1">
+
+  <metadata
+     id="metadata3639">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style type="text/css">
+    path.section {
+    cursor: pointer;
+    fill:rgba(185, 142, 45, 0.4);
+    stroke:rgb(219, 173, 74);
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+
+    path.section:hover {
+    fill:rgba(229, 179, 71, 0.7);
+    }
+
+    .section-group{
+    cursor: pointer;
+    }
+    .section-group path {
+    fill:rgba(185, 142, 45, 0.4);
+    stroke:rgb(219, 173, 74);
+    stroke-width:2px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+
+    .section-group:hover path {
+    fill:rgba(229, 179, 71, 0.7);
+    }
+
+    text.section-label{
+    font-family:Arial, sans-serif;
+    font-size:30px;
+    font-style:normal;
+    font-weight:bold;
+    line-height:30px;
+    text-align: center;
+    letter-spacing:0px;
+    word-spacing:0px;
+    fill:rgb(0,0,0);
+    fill-opacity:1;
+    stroke:none;
+    }
+  </style>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <!--    -->
+    <g id="Floor1" transform="matrix(0.6364,-0.24749,0.6364,0.24749,-315.39,300.9)">
+      <g id="dress_circle" class="section-group dress-circle" data-section-group="dress-circle" data-screen="2">
+        <path id="DC" d="M70.186,572.87,362.85,575.46,418.45,575.27,707.08,572.88,722.28,652.63,573.27,659.99c-120.44,4.6-243.32,4.3-368.42-0.43l-149.38-6.47z"/>
+
+        <text x="355" y="630" xml:space="preserve" class="section-label"><tspan x="355" y="630">DRESS CIRCLE</tspan></text>
+      </g>
+      <g id="orchestra" class="section-group orchestra" data-section-group="orchestra" data-screen="1">
+        <path id="premier_orchestra" d="M75,952.19,190.62,952.53,201.76,880.36,567.53,880.36,588.57,952.36,701.83,952.36c-14.7,19.16-32.7,36.68-55.09,52.04-173.93,10.8-346.32,5.8-518.63,0-19.89-16.23-39.17-32.76-53.11-52.21z"/>
+        <path id="preferred_orchestra" d="M75.057,952.12c-43.304-51.52-86.418-103.6-75.057-223.76h744.09c9.68,150.42-18.78,178.45-42.39,224.1l-113.17-0.17-20.95-71.92h-365.85l-10.89,72.21z"/>
+
+        <text x="280" y="970" xml:space="preserve" class="section-label"><tspan x="280" y="970">PREMIER ORCHESTRA</tspan></text>
+        <text x="270" y="820" xml:space="preserve" class="section-label"><tspan x="270" y="820">PREFERRED ORCHESTRA</tspan></text>
+      </g>
+    </g>
+    <!--   -->
+    <g id="Floor2" transform="matrix(0.6364,-0.24749,0.6364,0.24749,-206.26,238.94)">
+      <g id="mezzanine" class="section-group mezzanine" data-section-group="mezzanine" data-screen="5">
+        <path id="mezz" d="M72.256,343.67,367.98,346.23,412.85,346.18,706.1,343.84,725.75,422.23,660.74,429.58,572.89,436.31,389.61,441.97,205.87,436.3,117.65,428.89,52.212,422.99z"/>
+
+        <text x="350" y="400" xml:space="preserve" class="section-label"><tspan x="350" y="400">MEZZANINE</tspan></text>
+      </g>
+      <g id="lower_loge" class="section-group lower-loge" data-section-group="lower-loge" data-screen="8">
+        <path id="LLL" d="M 727.37,429.3 640.52,438.85 643.08,451.42 C 670.09,470.53 691.02,459.85 729.93,537.34 L 735.28,560.15 759.27,554.8 z" />
+        <path id="LLR" d="M 50.525,429.54 137.14,439.55 135.74,451.89 C 108.18,470.91 85.412,461.43 48.196,537.8 L 37.719,584.37 13.271,577.15 z" />
+
+        <text x="55" y="470" xml:space="preserve" class="section-label"><tspan x="50" y="470">LLR</tspan></text>
+        <text x="695" y="470" xml:space="preserve" class="section-label"><tspan x="690" y="470">LLL</tspan></text>
+      </g>
+    </g>
+    <!--   -->
+    <g id="Floor3" transform="matrix(0.6364,-0.24749,0.6364,0.24749,-45.968,176.98)">
+      <g id="balcony" class="section-group balcony" data-section-group="balcony" data-screen="4">
+        <path id="B2" d="M84.294-7.3845,692.65-7.3845,741.82,173.16,664.79,189.78,649.89,115.96c-109.02,9.59-217.55,22.83-328.92,14.73l-193.89-14.16-14.44,73.07-77.612-16.12z"/>
+        <path id="B1" d="M141.46,153.93c67.32,12.18,120.78,13.58,177.65,17.63l2.32-26.9c49.41,3.08,94.36,3.37,136.36-0.92l2.32,27.82c59.7-0.71,117.62-6.74,174.86-14.84l8.81,36.18c-57.65,8.07-116.31,15.64-181.29,20.04l-145.24,0.03c-61.58-3.03-122.39-9.93-182.74-19.14z"/>
+
+        <text x="280" y="200" xml:space="preserve" class="section-label"><tspan x="280" y="200">PREMIER BALCONY</tspan></text>
+        <text x="350" y="60" xml:space="preserve" class="section-label"><tspan x="350" y="60">BALCONY</tspan></text>
+      </g>
+      <g id="upper_loge" class="section-group upper-loge" data-section-group="upper-loge" data-screen="7">
+        <path id="ULR" d="M 33.347,179.93 122,199.26 119.91,212.07 C 78.101,221.21 48.802,248.42 29.337,289.84 L 17.928,336.64 -7.2178,327.55 z" />
+        <path id="ULL" d="M 743.8,180.02 655.05,199.46 657.57,212.27 C 699.27,220.28 727.99,249.06 748.37,291.18 L 759.81,336.93 784.05,327.78 z" />
+
+        <text x="40" y="220" xml:space="preserve" class="section-label"><tspan x="40" y="220">ULR</tspan></text>
+        <text x="700" y="220" xml:space="preserve" class="section-label"><tspan x="700" y="220">ULL</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

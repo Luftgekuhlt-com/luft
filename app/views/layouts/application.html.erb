@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= [@browser_title, "San Diego Opera"].select{|x| !x.blank?}.join(" - ") %></title>
+    <meta name="description" content="<%= @meta_description || "" %>" />
+    <meta name="keywords" content="<%= @meta_keywords || "" %>" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <%= yield :head %>
+  </head>
+
+  <body class="<%= body_classes %>">
+     <div class="navbar-fixed">
+    <nav role="navigation">
+        <a id="logo-container" href="<%= root_url %>"><img src="https://sdo-media.s3-us-west-1.amazonaws.com/2019/site/sdo_logo.png"/></a>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Navbar Link</a></li>
+        </ul>
+    </nav>
+    </div>
+    <main>
+       <% if content_for(:banner_header) %>
+           <div class="banner-header">
+               <%= yield :banner_header %>
+           </div>
+       <% end %>
+    <!-- page-wrap -->
+    <div class="page-wrap">
+
+
+        <div class="content">
+            <%= content_for?(:content) ? yield(:content) : yield %>
+        </div>
+    </div>
+    </main>
+        <!-- footer -->
+        <footer class="page-footer">
+            <div class="row">
+                <div class="col m4 left-align">
+                    <h5>CONNECT WITH US</h5>
+                    <div class="social-media-nav">
+                            <a class="social-icon social-icon-facebook" href="https://www.facebook.com/SanDiegoOpera" target="_blank" title="Facebook">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                            <a class="social-icon social-icon-youtube" href="http://www.youtube.com/SanDiegoOpera" target="_blank" title="YouTube">
+                                <i class="fab fa-youtube-square"></i>
+                            </a>
+                            <a class="social-icon social-icon-twitter" href="https://twitter.com/SDOpera" target="_blank" title="Twitter">
+                                <i class="fab fa-twitter-square"></i>
+                            </a>
+                            <a class="social-icon social-icon-instagram" href="http://instagram.com/sandiegoopera" target="_blank" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="social-icon social-icon-blogspot" href="http://ariaserious.blogspot.com/" target="_blank" title="Blog">
+                                <i class="fab fa-blogger"></i>
+                            </a>
+                    </div>
+                    <br>
+                    <a href="http://www.operaamerica.org/index.aspx" target="_blank">
+                        <img src="https://s3.amazonaws.com/sdo.media/logos/social/OperaAmerica2015.png" alt="Opera America">
+                    </a>
+                </div>
+                <div class="col m4 center-align">
+                    <h5>THANK YOU TO OUR MAJOR SPONSORS</h5>
+
+                </div>
+                <div class="col m4 right-align">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/get-tickets/single-tickets">Tickets</a></li>
+                        <li><a href="/about/contact-us">Contact Us</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/experience/getting-to-the-opera">Directions</a></li>
+                        <li><a href="/experience/fabulous-nights">Plan Your Visit</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/about/photo-credits">Photo Credits</a></li>
+                        <li><a href="/about/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <span>&copy;2019 San Diego Opera</span>
+            </div>
+        </footer>
+        <!-- ./footer -->
+    <%= yield :scripts %>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $('.modal').modal();
+            $(".dropdown-trigger").dropdown();
+            $('.carousel').carousel({fullWidth: true});
+            $('.collapsible').collapsible();
+            $('.tabs').tabs();
+            $('select[multiple="multiple"] option[value=""]').attr('disabled', true);
+            $('select').formSelect();
+            $('input[type=checkbox]').addClass('filled-in');
+            $('.fixed-action-btn').floatingActionButton({hoverEnabled: false});
+            $('.materialboxed').materialbox();
+            $('input.datepicker, input.date').datepicker({
+              autoClose: true,
+              format: 'yyyy-mm-dd',
+              formatSubmit: 'yyyy-mm-dd'
+            });
+        });
+
+        $.get('/top-nav', function(resp){
+            $('nav .hide-on-med-and-down').append(resp);
+            $('body').prepend($('#top_nav'));
+            $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+        });
+    </script>
+  </body>
+</html>

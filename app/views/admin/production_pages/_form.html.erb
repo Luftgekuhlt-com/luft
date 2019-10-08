@@ -1,0 +1,19 @@
+<%= simple_form_for @document, url: admin_document_path(@document), as: :document do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <div class="row">
+      <%= f.input :title, wrapper_html: { class: "col m6" }  %>
+      <%= f.input :slug, wrapper_html: { class: "col m6" }  %>
+    </div>
+    <div class="row">
+      <%= f.input :published_at, as: :date, label: 'Publish Date', input_html: {value: @document&.published_at&.to_date}, wrapper_html: { class: "col m6" }  %>
+    </div>
+    <div class="row">
+      <%= f.input :production_number, as: :select, label: "Production Number", collection: Production.productions.collect{|s| [s.description, s.id]}, prompt: "-- Select Production --", include_blank: false, wrapper_html: { class: "col m6" }  %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, disable_with: "Saving...", class: "btn btn-primary" %>
+  </div>
+<% end %>

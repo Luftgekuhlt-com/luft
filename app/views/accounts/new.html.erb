@@ -1,0 +1,55 @@
+<div class="content-wrap">
+    <h2>Register</h2>
+    <div class="row">
+        <div class="col m9">
+            <p>Please enter your information to create your San Diego Opera online account.</p>
+            <%= simple_form_for(@account, as: "account", :html => { method: "post", role: "form", id:"register_user"  }, :url => account_create_path ) do |f| %>
+                <%= render partial: "/shared/error_messages", locals: {model: @account} %>
+                <div class="row">
+                    <%= f.input :electronic_address, label: "Email", required: true, wrapper_html: { class: 'l12' } %>
+                    <%= f.input :password, required: true, wrapper_html: { class: 'm6' }  %>
+                    <%= f.input :password_confirmation, label: "Confirm Password", required: true, wrapper_html: { class: 'm6' }  %>
+                    <%= f.input :prefix_id, label: "Prefix", collection: RegisterConstituent.prefixes, include_blank: "--", wrapper_html: { class: 'm2' } %>
+                    <%= f.input :first_name, required: true, wrapper_html: { class: 'm4' } %>
+                    <%= f.input :middle_name, label: "Middle", wrapper_html: { class: 'm2' } %>
+                    <%= f.input :last_name, required: true, wrapper_html: { class: 'm4' } %>
+                    <%= f.input :street1, label: "Street Address", required: true, wrapper_html: { class: 'm8' } %>
+                    <%= f.input :street2, label: "Suite/Unit", wrapper_html: { class: 'm4' } %>
+                    <%= f.input :city, required: true, wrapper_html: { class: 'm6' } %>
+                    <%= f.input :state_id, label: "State", collection: RegisterConstituent.states, include_blank: "--", required: true, wrapper_html: { class: 'm3' } %>
+                    <%= f.input :postal_code, wrapper_html: { class: 'm3' } %>
+                    <%= f.input :phone, required: true, wrapper_html: { class: 'm4' } %>
+                </div>
+                <div class="row">
+                    <%= f.input :accept_emarketing, as: :boolean, label: "Yes! I'd like to receive special e-offers, behind-the-scene-news, and invitations to exclusive events from San Diego Opera!", wrapper_html: { class: 's12' } %>
+                </div>
+                <div class="form-actions">
+                    <%= f.button :submit, "Register", class: "btn btn-primary" %>
+                </div>
+            <% end %>
+        </div>
+        <div class="col m3">
+            <div class="card">
+                <div class="card-content">
+                <h4>Already registered?</h4>
+                <%= link_to("Login Now", sdo_session_path, class: "btn btn-primary btn-block") %>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <p>Need more information on an opera? Can’t remember your log in information? Like details about views and sounds from different seats? For answers to these questions and more, Patron Services is here to help!</p>
+                    <hr/>
+                    <p><strong>Visit our PATRON SERVICES OFFICE</strong><br>
+                        233 A Street, 5th Floor<br>
+                        Centre City Building<br>
+                        San Diego, CA 92101<br>
+                        Hours: Mon-Fri, 8:30am to 4:30pm<br>
+                        <br><strong>Contact our PATRON SERVICES Team</strong><br>
+                        Phone: (619) 533-7000<br>
+                        Email:&nbsp;<a href="mailto:tickets@sdopera.com" data-mce-href="mailto:tickets@sdopera.com"></a><a>tickets@sdopera.com</a><br>
+                        Hours: Mon-Fri, 8:30am to 4:30pm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

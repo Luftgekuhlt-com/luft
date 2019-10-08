@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SDO Admin</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'admin', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+
+    <%= yield :head %>
+  </head>
+
+  <body style="padding-top: 75px;">
+    <ul id="slide-out" class="sidenav sidenav-fixed grey darken-3 white-text">
+  		<li>
+  			<div class="sidebar-header">
+  				<h3>SDO Admin</h3>
+  			</div>
+  		</li>
+      <li class="no-padding">
+        <ul class="collapsible grey darken-2 white-text">
+          <li class="<%= admin_section == 'home' ? 'active' : '' %>">
+            <a class="collapsible-header grey darken-4 white-text">Home Page<i class="material-icons white-text">home</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="home-slides"><%= link_to("Home Slides", admin_home_slides_path) %></li>
+                <li class="home-portals-1"><%= link_to("Primary Portals", admin_home_portals_path(category: 'primary')) %></li>
+                <li class="home-spotlight-1"><%= link_to("Primary Spotlight", admin_document_path(id: primary_home_spotlight.id)) %></li>
+                <li class="home-portals-2"><%= link_to("Secondary Portals", admin_home_portals_path(category: 'secondary')) %></li>
+                <li class="home-spotlight-2"><%= link_to("Secondary Spotlight", admin_document_path(id: secondary_home_spotlight.id)) %></li>
+              </ul>
+            </div>
+          </li>
+          <li class="<%= admin_section == 'content' ? 'active' : '' %>">
+            <a class="collapsible-header grey darken-4 white-text">Content<i class="material-icons white-text">insert_drive_file</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="content-pages"><%= link_to("Pages", admin_documents_path) %></li>
+                <li class="content-productions"><%= link_to("Productions", admin_production_pages_path) %></li>
+                <li class="content-news-items"><%= link_to("News Items", admin_news_links_path) %></li>
+                <li class="content-press-releases"><%= link_to("Press Releases", admin_press_releases_path) %></li>
+                <li class="content-performance-history"><%= link_to("Performance History", admin_performance_histories_path) %></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <% if content_for?(:admin_header) %>
+            <%= yield(:admin_header) %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    </div>
+    <main style="padding-top: 0;">
+    <!-- page-wrap -->
+    <div class="page-wrap">
+
+
+        <div class="content">
+            <%= content_for?(:content) ? yield(:content) : yield %>
+        </div>
+    </div>
+    </main>
+    <%= yield :scripts %>
+    <script type="text/javascript">
+      window.appCss = <%= asset_url('application.css').to_json.html_safe %>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.collapsible').collapsible();
+        $('.tabs').tabs();
+        $('.modal').modal();
+        $('.dropdown-trigger').dropdown();
+        $('select[multiple="multiple"] option[value=""]').attr('disabled', true);
+        $('select').formSelect();
+        $('input[type=checkbox]').addClass('filled-in');
+        $('.fixed-action-btn').floatingActionButton({hoverEnabled: false});
+        $('.materialboxed').materialbox();
+        $('input.datepicker, input.date').datepicker({
+          autoClose: true,
+          format: 'yyyy-mm-dd',
+          formatSubmit: 'yyyy-mm-dd'
+        });
+      });
+      tinymce.init({
+        selector: '.html-editor textarea',
+        body_class: 'tiny_editor',
+        plugins: 'advlist code lists link paste preview table visualblocks',
+        min_height: 400,
+        toolbar: "undo redo | cut copy paste | alignleft aligncenter alignright | bold italic underline | bullist numlist table | link unlink | formatselect fontselect forecolor | code",
+        menubar: "edit insert view format table",
+        content_css: [window.appCss, "https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap"],
+        visualblocks_default_state: true
+      });
+  </script>
+  <div id="processing_image" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-content">
+      <h4 class="modal-title">Please wait...</h4>
+      <p>Processing image</p>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+  </body>
+</html>

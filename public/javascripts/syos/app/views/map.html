@@ -1,0 +1,86 @@
+﻿<div style="overflow: hidden; line-height: 24px;margin-bottom: 10px;">
+    <div style="float: right;">
+        Zoom:&nbsp;<a class="btn" style="line-height: 24px;width:24px;padding:0;text-align:center;cursor: pointer;" data-bind="click: zoomOut">-</a>&nbsp;<a class="btn" style="line-height: 24px;width:24px;padding:0;text-align:center;cursor: pointer;" data-bind="click: zoomIn">+</a>
+    </div>
+    <a href="javascript:;" data-bind="click: $root.showSummary">Change Section</a>
+</div>
+<div>
+    <div class="seat-map-wrap" style="width: 100%; height: 380px; overflow: scroll;border: 1px solid #b0b0b0;"
+        data-bind="if: hasSeats">
+        <div class="seat-map" data-bind="style: mapStyle">
+            <!-- ko foreach: seats -->
+                <!-- ko if: Status == 0 -->
+                <a class="seat" data-bind="event: {mouseover: $parent.seatOver, mouseout: $parent.seatOut}, css: {available: Status == 0, selected: selected, same_zone: ZoneId == $parent.currentZone()}, style: seatStyle, click: toggleSelected, tooltip: tooltipContent, tooltipOptions: {tipClass: 'seat-tooltip', viewport: '.seat-map-wrap', container: 'body'}">
+                </a>
+                <!-- /ko -->
+                <!-- ko if: Status != 0 -->
+                <a class="seat" data-bind="css: {available: Status == 0}, style: seatStyle"></a>
+                <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko foreach: rows -->
+            <div class="row-marker" data-bind="text: name, style: leftStyle"></div>
+            <div class="row-marker" data-bind="text: name, style: rightStyle"></div>
+            <!-- /ko -->
+            <div class="stage">(STAGE)</div>
+        </div>
+    </div>
+    <div style="overflow: hidden;margin-bottom: 30px;">
+        <h3>
+            Selected Seats</h3>
+        <div style="float:right;width:150px;">
+            <div style="margin-bottom: 5px;line-height: 18px;"><a class="seat available" style="width:18px;height: 18px;position: relative;display: inline-block;">&nbsp;</a>&nbsp;Available</div>
+            <div style="margin-bottom: 5px;line-height: 18px;"><a class="seat" style="width:18px;height: 18px;position: relative;display: inline-block;">&nbsp;</a>&nbsp;Sold</div>
+            <div style="margin-bottom: 5px;line-height: 18px;"><a class="seat selected" style="width:18px;height: 18px;position: relative;display: inline-block;">&nbsp;</a>&nbsp;Selected</div>
+            <div style="margin-bottom: 5px;line-height: 18px;"><a class="seat accessible" style="width:18px;height: 18px;position: relative;display: inline-block;">&nbsp;</a>&nbsp;Accessible</div>
+        </div>
+        <table class="selected-seats-grid">
+            <thead>
+                <tr>
+                    <th>
+                        Section
+                    </th>
+                    <th>
+                        Row
+                    </th>
+                    <th>
+                        Seat
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        &nbsp;
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: selectedSeats">
+                <tr>
+                    <td data-bind="text: sectionName">
+                    </td>
+                    <td data-bind="text: Row">
+                    </td>
+                    <td data-bind="text: Num">
+                    </td>
+                    <td style="text-align: right;" data-bind="text: priceFormatted">
+                    </td>
+                    <td>
+                        <button data-bind="click: toggleSelected">
+                            Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        Total
+                    </td>
+                    <td style="text-align: right;" data-bind="text: selectedSeatsTotal">
+                    </td>
+                    <td>
+                        <a class="btn" href="javascript:;" data-bind="click: reserveSeats">Reserve Seats</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

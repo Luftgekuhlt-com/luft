@@ -1,0 +1,18 @@
+    <% if @session.is_logged_in? %>
+    <li>
+		<a id="login-user" class="dropdown-trigger" data-target="top_nav" href="#">Welcome <%= @session.constituent.try(:first_name) %><i class="material-icons right">arrow_drop_down</i></a>
+		<ul id="top_nav" class="dropdown-content">
+			<li><a href="javascript:;">My SDO</a></li>
+			<li><a href="<%= sdo_logout_path %>">Logout</a></li>
+		</ul>
+	</li>
+    <% else %>
+    <li>
+		<a id="login-user" class="dropdown-trigger" data-target="top_nav" href="#">Login / Register<i class="material-icons right">arrow_drop_down</i></a>
+		<ul id="top_nav" class="dropdown-content">
+			<li><a href="<%= sdo_login_path %>">Login</a></li>
+			<li><a href="<%= new_account_path %>">Register</a></li>
+		</ul>
+	</li>
+	<% end %>
+<!-- <%= @session.to_json.html_safe %> -->

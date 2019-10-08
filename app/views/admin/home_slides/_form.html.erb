@@ -1,0 +1,91 @@
+<%
+  form_url = @slide.persisted? ? 
+    admin_home_slide_path(@slide) :
+    admin_home_slides_path
+    
+%>
+
+<%= simple_form_for @slide, { url: form_url } do |f| %>
+  <div class="form-inputs basic">
+    <div class="row">
+      <%= f.input :slide_type, as: :select, label: "Slide Type", collection: HomeSlide::SLIDE_TYPES.map{|o| [o.underscore.humanize, o]}, wrapper_html: { class: "col m2" }  %>
+      <%= f.input :start_date, as: :date, label: 'Start Date', input_html: {value: @slide.start_date.to_date}, wrapper_html: { class: "col m3" }  %>
+      <%= f.input :end_date, as: :date, label: 'End Date', input_html: {value: @slide.end_date.to_date}, wrapper_html: { class: "col m3" }  %>
+      <%= f.input :custom_slide_duration, as: :integer, label: 'Slide Duration (secs)', input_html: {value: @slide.slide_duration}, wrapper_html: { class: "col m2" }  %>
+      <div class="col m2">
+        <br/>
+        <label>
+          <%= f.input_field :hidden, as: :boolean, label: false, boolean_style: :inline %>
+          <span>Hidden?</span>
+        </label>
+      </div>
+    </div>
+    <div id="general">
+      <div class="row">
+        <div class="col m8">
+            <label class="control-label">Main Image</label>
+            <div class="slim slim-main" data-label="Click to choose an image" data-post="input, output, actions" data-meta-type="main" <%= @slide.slim_dimension_string.present? ? %Q(data-force-size=#{@slide.slim_dimension_string}) : ""  %> data-filter-sharpen="10" data-instant-edit="true" data-did-transform="imageLoaded">
+              <% unless @slide.main_image.blank? %>
+              <img src="<%= @slide.main_image.url %>" crossorigin="anonymous" style="max-width:100%;" />
+              <% end %>
+               <input type="file" accept="image/*"/>
+            </div>
+        </div>
+        <div class="col m4">
+            <label class="control-label">Mobile Image</label>
+            <div class="slim slim-mobile" data-label="Click to choose an image" data-post="input, output, actions" data-meta-type="mobile" <%= @slide.slim_mobile_dimension_string.present? ? %Q(data-force-size=#{@slide.slim_mobile_dimension_string}) : ""  %> data-filter-sharpen="10" data-instant-edit="true" data-did-transform="mobileImageLoaded">
+              <% unless @slide.mobile_image.blank? %>
+              <img src="<%= @slide.mobile_image.url %>" crossorigin="anonymous" style="max-width:100%;" />
+              <% end %>
+               <input type="file" accept="image/*"/>
+            </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <%= f.input :title, wrapper_html: { class: "col m12" }  %>
+      </div>
+    </div>
+    <div id="basic">
+      <div class="row">
+        <%= f.input :sub_title, wrapper_html: { class: "col m12" }  %>
+      </div>
+      <div class="row">
+        <%= f.input :button_link, label: "URL Link", wrapper_html: { class: "col m6" }  %>
+        <%= f.input :button_text, wrapper_html: { class: "col m6" }  %>
+      </div>
+      <div class="row">
+        <div class="col m12">
+          <div class="alert blue lighten-4">If URL Link is set and Button Text is blank, entire slide will be linked to url. Otherwise button will be displayed and only that will be linked.</div>
+        </div>
+      </div>
+      <div class="row">
+        <%= f.input :content_anchor, as: :select, label: "Content Position", collection: HomeSlide::ANCHOR_OPTIONS.map{|o| [o.underscore.humanize, o]}, wrapper_html: { class: "col m6" }  %>
+      </div>
+    </div>
+    <div id="video">
+      <div class="row">
+        <%= f.input :video_url, wrapper_html: { class: "col m12" }  %>
+      </div>
+    </div>
+    <div id="custom">
+      <div class="row">
+        <%= f.input :content, label: "HTML Content", wrapper_html: { class: "col m12 html-editor" }  %>
+      </div>
+      <p class="hint">If HTML content is present it will be displayed instead of other content.</p>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= link_to(admin_home_slides_path, class: "btn grey") do %>Cancel<% end %>
+    <%= f.button :submit, "Save", class: "btn btn-primary btn-submit", data: { disable_with: "Save" } %>
+  </div>
+      
+<% end %>
+<script type="text/javascript">
+  $('#home_slide_slide_type').on('change', function(){
+    $('.form-inputs').attr('class', 'form-inputs '+ $('#home_slide_slide_type').val())
+  });
+  $('#home_slide_slide_type').trigger('change');
+  $('.form-inputs').slim('parse');
+  
+</script>

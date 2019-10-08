@@ -1,0 +1,7 @@
+<% content_for(:admin_header) do %>
+  <%= link_to(admin_home_portals_path, class: "btn-floating teal right") do %><i class="material-icons">arrow_back</i><% end %>
+  <h1><%= @portal.category.titleize %> Home Portals: Edit</h1>
+<% end %>
+<div class="home-portal-form">
+  <%= render partial: "form", locals: { portal: @portal } %>
+</div>

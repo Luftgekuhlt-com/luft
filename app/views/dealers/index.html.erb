@@ -1,0 +1,68 @@
+<% content_for :head do %>
+<style type="text/css">
+  .dealer-list{margin: 0 50px;}
+  .dealer-region{margin:20px 0;}
+  .dealer-region h2{color: #000000;font-family: "alternate-gothic-no-2-d", sans-serif;font-size:40px;margin: 0 0 10px;line-height:1em;}
+  .dealer{height:240px;display:inline-block;width: 300px;vertical-align:top;}
+  .dealer h3{color: #cc0000;font-family: "alternate-gothic-no-2-d", sans-serif;font-size:28px;margin: 0 0 5px;line-height:1em;}
+  .dealer h4{color: #000000;font-family: "alternate-gothic-no-2-d", sans-serif;font-size:24px;margin: 0 0 5px;line-height:1em;}
+  .dealer .dealer-details{padding-right: 30px;}
+  .dealer-australia {color: #000000;font-family: "alternate-gothic-no-2-d", sans-serif;font-size:24px;margin-bottom:1px;}
+  .dealer-france {color: #000000;font-family: "alternate-gothic-no-2-d", sans-serif;font-size:24px;margin-bottom:1px;}
+  .state-nav{margin:0;padding:0;}
+  .state-nav li{margin:0;padding:0;list-style-type:none;display:inline-block;}
+  .state-nav li a{display:inline-block;padding:0 10px;line-height: 36px;font-weight:bold;}
+</style>
+<% end %>
+
+<div class="dealer-list">
+  <img src="https://fasthouse.s3.amazonaws.com/media/uploads/flag-us.png" style="border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px; padding-bottom: 0px;">
+  <ul class="state-nav">
+    <li>Jump to:</li>
+    <% @dealers.each do |state, dealers| %>
+    <li><a href="javascript:jumpTo('<%= state.parameterize %>');"><%= Dealer.get_state_abbr(state) %></a></li>
+    <% end %>
+  </ul>
+  <% @dealers.each do |state, dealers| %>
+    <div class="dealer-region" id="<%= state.parameterize %>">
+      <h2><%= state.titleize %></h2>
+      <% dealers.each do |dealer| %>
+        <div class="dealer" data-id="<%= dealer.id %>">
+          <h3><%= dealer.city %></h3>
+          <h4><%= dealer.name %></h4>
+          <div class="dealer-details">
+            <div><%= dealer.address %><br><%= [dealer.city, dealer.state, dealer.postal_code].select{|x| !x.blank?}.join(", ") %></div>
+            <div><%= dealer.phone %></div>
+            <% if dealer.website.present? %>
+            <div><a href="<%= dealer.website %>" target="_blank"><%= dealer.website %></a></div>
+            <% end %>
+            <form action="https://maps.google.com/maps" target="_blank" style="padding-top: 8px;">
+              <input type="hidden" name="saddr" id="saddr" value="">
+              <input type="hidden" name="daddr" id="daddr" value="<%= [dealer.address, dealer.city, dealer.state, dealer.postal_code].select{|x| !x.blank?}.join(", ") %>">
+              <input type="submit" value="Get Directions" class="btn btn-default">
+            </form>
+          </div>
+        </div>
+      <% end %>
+      <hr/>
+    </div>
+  <% end %>
+</div>
+
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+  $(document).on('ready', function(){
+    
+  });
+  
+  function jumpTo(state){
+    console.log('jumpTo', state, $('#'+state).offset())
+    if (state) {
+        $('html, body').animate({
+          scrollTop: Math.max($('#'+state).offset().top - 100, 0)
+        }, 1000);
+      }
+  }
+</script>
+<% end %>

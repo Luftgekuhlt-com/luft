@@ -1,0 +1,21 @@
+<div class="card">
+  <%= link_to(edit_admin_document_path(document), class: "btn-floating teal darken-1 right") do %><i class="material-icons">edit</i><% end %>
+  <h4 class="card-title"><%= document.title %></h4>
+  <div class="card-content white">
+    <table>
+      <tbody>
+        <tr><td style="width:120px;">Title</td><td><%= document.title %></td></tr>
+        <tr><td style="width:120px;">Slug</td><td><%= document.slug %></td></tr>
+        <tr><td style="width:120px;">Url</td><td><%= link_to(document.site_url, document.site_url, target: '_blank') %></td></tr>
+        <tr><td style="width:120px;">Publish Date</td><td><%= document.created_at.strftime("%A, %B %e, %Y") %></td></tr>
+      </tbody>
+    </table>
+    <div style="text-align: right;">
+      <% if document.archived? %>
+      <%= link_to(admin_document_path(document), method: :delete, data: { confirm: "Are you sure you want to unarchive this page?" }, class: 'btn teal darken-1') do %>Unarchive<% end %>
+      <% else %>
+      <%= link_to(admin_document_path(document), method: :delete, data: { confirm: "Are you sure you want to archive this page?" }, class: 'btn red') do %>Archive<% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

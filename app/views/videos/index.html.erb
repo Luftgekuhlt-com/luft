@@ -1,0 +1,145 @@
+<style type="text/css">
+
+</style>
+<%= content_area("Films Header").try(:content).html_safe %>
+<% unless @latest %>
+<a class="btn btn-default btn-more" href="/latest-videos" style="position: absolute;right: 40px;top: 30px;">All Films</a>
+<% end %>
+<div class="page-ctr">
+<% if @videos.present? %>
+  <% unless @latest %>
+  <h2><%= @category.name  %></h2>
+  <% end %>
+  <div class="row equalize-grid-items">
+    <% @videos.each do |video| %>
+    <div class="col-md-3 col-sm-6">
+      <a class="thumbnail" href="<%= video_path(id: video.slug) %>">
+        <img src="<%= video.thumb_image_url %>"/>
+        <h5><%= video.full_title.html_safe %></h5>
+      </a>
+    </div>
+    <% end %>
+  </div>
+<% else %>
+<% displayed_videos = [] %>
+<div class="page-ctrx" style="padding: 0 60px;">
+  <h3>Featured</h3>
+  <div id="featured_videos" class="content-strip-wrap" data-target-display="350">
+    <div class="content-strip">
+      <div class="content-items">
+        <% @featured_videos.each do |video| %>
+        <% displayed_videos << video.id %>
+        <div class="content-item">
+          <a href="<%= video_path(id: video.slug) %>">
+            <img src="<%= video.thumb_image_url %>"/>
+            <h5><%= video.full_title.html_safe %></h5>
+          </a>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <a class="content-strip-left"><img src="https://fasthouse.s3.amazonaws.com/arrow-left.png"/></a>
+    <a class="content-strip-right"><img src="https://fasthouse.s3.amazonaws.com/arrow-right.png"/></a>
+  </div>
+  <h3>Latest</h3>
+  <div id="latest_videos" class="content-strip-wrap" data-target-display="350">
+    <div class="content-strip">
+      <div class="content-items">
+        <% @latest_videos.each do |video| %>
+        <% displayed_videos << video.id %>
+        <div class="content-item">
+          <a href="<%= video_path(id: video.slug) %>">
+            <img src="<%= video.thumb_image_url %>"/>
+            <h5><%= video.full_title.html_safe %></h5>
+          </a>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <a class="content-strip-left"><img src="https://fasthouse.s3.amazonaws.com/arrow-left.png"/></a>
+    <a class="content-strip-right"><img src="https://fasthouse.s3.amazonaws.com/arrow-right.png"/></a>
+  </div>
+  <% rank = 1 %>
+  <% @categories.each do |category, count| %>
+    <% tag = Tag.find_by(slug: category) %>
+    <% if rank <= 3 %>
+    <% tag_videos = Video.items_by_category(category, @page_size, displayed_videos) %>
+    <% if tag_videos.any? %>
+      <%= link_to("See All", tagged_videos_url(tag: category), class: "btn btn-default btn-more pull-right")%>
+      <h3><%= tag.name %></h3>
+      <div id="category_videos_#{category}" class="content-strip-wrap" data-target-display="350">
+        <div class="content-strip">
+          <div class="content-items">
+            <% tag_videos.each do |video| %>
+            <% displayed_videos << video.id %>
+            <div class="content-item">
+              <a href="<%= video_path(id: video.slug) %>">
+                <img src="<%= video.thumb_image_url %>"/>
+                <h5><%= video.full_title.html_safe %></h5>
+              </a>
+            </div>
+            <% end %>
+          </div>
+        </div>
+          <a class="content-strip-left"><img src="https://fasthouse.s3.amazonaws.com/arrow-left.png"/></a>
+          <a class="content-strip-right"><img src="https://fasthouse.s3.amazonaws.com/arrow-right.png"/></a>
+      </div>
+      <% rank += 1 %>
+    <% end %>
+    <% else %>
+    <% if rank == 4 %>
+      <div class="videos-categories">
+    <% end %>
+    <% tag_videos = Video.items_by_category(category, 1, displayed_videos) %>
+    <% if tag_videos.any? %>
+      <% tag = Tag.find_by(slug: category) %>
+      <div class="video-category">
+        <%= link_to("See All", tagged_videos_url(tag: category), class: "btn btn-default btn-more pull-right") %>
+        <h3><%= tag.name %></h3>
+        <% 
+        video = tag_videos.first
+        displayed_videos << video.id
+        %>
+            <div class="video-item">
+              <a href="<%= video_path(id: video.slug) %>">
+                <img src="<%= video.thumb_image_url %>"/>
+                <h5><%= video.full_title.html_safe %></h5>
+              </a>
+            </div>
+      </div>
+      <% rank += 1 %>
+    <% end %>
+    <% end %>
+  <% end %>
+  <% @tags.each do |tag, count| %>
+    <% if rank < 4 %>
+      <div class="videos-categories">
+        <% rank = 4 %>
+    <% end %>
+    <% tag_videos = Video.items_by_tag(tag, 1, displayed_videos) %>
+    <% if tag_videos.any? %>
+      <% tag = Tag.find_by(slug: tag) %>
+      <div class="video-tag">
+        <%= link_to("See All", tagged_videos_url(tag: tag), class: "btn btn-default btn-more pull-right") %>
+        <h3><%= tag.name %></h3>
+        <% 
+        video = tag_videos.first
+        displayed_videos << video.id
+        %>
+            <div class="video-item">
+              <a href="<%= video_path(id: video.slug) %>">
+                <img src="<%= video.thumb_image_url %>"/>
+                <h5><%= video.full_title.html_safe %></h5>
+              </a>
+            </div>
+      </div>
+      <% rank += 1 %>
+    <% end %>
+  
+  <% end %>
+  </div>
+</div>
+<% end %>
+</div>
+<script type="text/javascript">
+</script>

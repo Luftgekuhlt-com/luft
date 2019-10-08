@@ -1,0 +1,7 @@
+<div id="new_dealer_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= render partial: "form", locals: { dealer: @dealer } %>
+  </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+<%= content_for :scripts %>

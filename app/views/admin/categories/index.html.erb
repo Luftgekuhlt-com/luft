@@ -1,0 +1,32 @@
+<% content_for :header do %>
+<%= link_to("javascript:;",
+        class: "btn btn-add btn-sm btn-default pull-right modal-remote",
+        data: { key: "new_category_modal", url: new_admin_category_path}) do %>
+        &nbsp;New Category
+      <% end %>
+<h1>Categories</h1>
+<% end %>
+
+<table class="table table-striped table-bordered table-hover">
+    <tbody>
+        <% @categories.each do |category| %>
+        <tr>
+            <td><%= category.name %></td>
+            <td><%= category.slug %></td>
+            <td style="width:140px;text-align:right;">
+             <%= link_to("javascript:;",
+                    class: "modal-remote btn btn-default btn-sm",
+                    data: { key: "edit_category_modal", url: edit_admin_category_path(category) }) do %>
+                    Edit
+                  <% end %>
+              <%= link_to(admin_category_path(category), method: :delete, remote: true,
+                    data: { confirm: "Are you sure you want to delete this category?" },
+                    class: 'btn btn-danger btn-sm',
+                    title: 'Delete') do %>
+                    Delete
+                  <% end %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
