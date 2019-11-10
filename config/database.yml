@@ -28,5 +28,5 @@ test:
 
 production:
   <<: *default
-  database: "luft-prod"
+  database: "luft_prod"
   host: "luft-prod.cwzsh85ir1mk.us-west-2.rds.amazonaws.com"
