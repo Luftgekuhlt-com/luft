@@ -27,7 +27,7 @@ gem 'simple_form'
 gem 'materialize-sass'
 gem 'materialize-form'
 gem 'aws-sdk', '~> 2.3.0'
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 5.2.0"
 
 gem 'rack-oauth2'
 # ActiveRecord adapter for MySQL
