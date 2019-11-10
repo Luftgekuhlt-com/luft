@@ -111,7 +111,7 @@ body{
     }
     .page-ctr{
       width: 1175px;
-      max-width: 92vw;
+      max-width: 92%;
       margin: 0 auto 40px;
       padding: 0 40px;
     }
@@ -127,19 +127,13 @@ body{
 
           .content-wrap{
             width: 1175px;
-            max-width: 92vw;
+            max-width: 92%;
             margin: 0 auto 40px;
             padding: 0 40px;
             &.full{
                 width: 100%;
             }
-            
-            h4{
-              font-size: 15px;
-              font-weight: bold;
-              margin: 0 0 5px;
-              line-height: 1.2em;
-            }
+          
           }
           .entry-header{display:none;}
           .entry-content{

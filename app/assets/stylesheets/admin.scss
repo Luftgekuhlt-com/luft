@@ -180,6 +180,12 @@ body {
         flex: 1;
       }
     }
+    
+    &.standard{
+      .pane{
+        flex: 1;
+      }
+    }
 
     &.thirds{
       .pane{
