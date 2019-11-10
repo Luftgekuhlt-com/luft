@@ -1,0 +1,10 @@
+<h5>Production: <%= part&.production_number %></h5>
+<ul>
+    <% if part&.production&.performances&.any? %>
+    <% part.production.performances.sort_by{|p| p.date}.each do |perf| %>
+    <li style="font-size: 11px;"><%= perf.short_date %> (Id: <%= perf.id %>)</li>
+    <% end %>
+    <% end %>
+</ul>
+<hr/>
+<%= part.production&.location_display(true)&.html_safe %>

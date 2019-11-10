@@ -1,0 +1,6 @@
+<% if @category.persisted? %>
+  console.log(<%= @category.to_json.html_safe %>);
+  window.location.reload(true);
+<% else %>
+  $("#<%= dom_id @category, :new %>").replaceWith("<%= j render(partial: 'form', locals: { category: @category }) %>")
+<% end %>

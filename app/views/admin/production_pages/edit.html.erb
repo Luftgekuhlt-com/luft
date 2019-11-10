@@ -1,0 +1,7 @@
+<% content_for(:admin_header) do %>
+  <%= link_to(admin_document_path(@document), class: "btn-floating teal right") do %><i class="material-icons">arrow_back</i><% end %>
+  <h1>Edit '<%= @document.title %>' <%= @document.friendly_type %> Info</h1>
+<% end %>
+<div class="document-form">
+    <%= render partial: "#{params[:section].present? ? "#{params[:section]}_" : ""}form", locals: { document: @document } %>
+</div>

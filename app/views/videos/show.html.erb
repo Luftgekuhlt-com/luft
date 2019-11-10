@@ -1,0 +1,31 @@
+<div class="breadcrumb page-ctr">
+    <%= link_to('Videos', videos_path) %>
+    <span class="separator">/</span>
+    <span class="current-page"><%= @video.full_title.html_safe %></span>
+</div>
+<div class="page-ctr video-player-ctr">
+  <div class="video-player">
+    <%= @video.player_html.html_safe %>
+  </div>
+</div>
+<% if @video.similar_videos.size > 0 %>
+<div class="page-ctr" style="padding-top: 40px;">
+  <h3>Related Videos</h3>
+  <div id="related_videos" class="content-strip-wrap" data-target-display="350">
+    <div class="content-strip">
+      <div class="content-items">
+        <% @video.similar_videos.each do |video| %>
+        <div class="content-item">
+          <a href="<%= video_path(id: video.slug) %>">
+            <img src="<%= video.thumb_image_url %>"/>
+            <h5><%= video.full_title.html_safe %></h5>
+          </a>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <a class="content-strip-left"><img src="https://fasthouse.s3.amazonaws.com/arrow_left_white.png"/></a>
+    <a class="content-strip-right"><img src="https://fasthouse.s3.amazonaws.com/arrow_right_white.png"/></a>
+  </div>
+</div>
+<% end %>

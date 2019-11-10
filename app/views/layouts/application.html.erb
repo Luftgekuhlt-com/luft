@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= [@browser_title, "Luft"].select{|x| !x.blank?}.join(" - ") %></title>
+    <meta name="description" content="<%= @meta_description || "" %>" />
+    <meta name="keywords" content="<%= @meta_keywords || "" %>" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <%= yield :head %>
+  </head>
+
+  <body class="<%= body_classes %>">
+     <div class="navbar-fixed">
+    <nav role="navigation">
+      <div class="page-ctr">
+        <a id="logo-container" href="<%= root_url %>"><img src="https://luft-qa.s3-us-west-1.amazonaws.com/luftgekuhlt_logo.png"/></a>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/news">News</a></li>
+            <li><a href="/past-events">Past Events</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/builds">Builds</a></li>
+            <li><a href="/galleries">Galleries</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="https://shop.luftgekuhlt.com/">Store</a></li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+    <main>
+       <% if content_for(:banner_header) %>
+           <div class="banner-header">
+               <%= yield :banner_header %>
+           </div>
+       <% end %>
+    <!-- page-wrap -->
+    <div class="page-wrap">
+    <%= render partial: "shared/flash" %>
+
+        <div class="content">
+            <%= content_for?(:content) ? yield(:content) : yield %>
+        </div>
+    </div>
+    </main>
+        <!-- footer -->
+        <footer class="page-footer">
+            <div class="row">
+                <div class="col m4 left-align">
+                </div>
+                <div class="col m4 center-align">
+                </div>
+                <div class="col m4 right-align">
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <span>&copy;2019 Luftgekuhlt</span>
+            </div>
+        </footer>
+        <!-- ./footer -->
+    <%= yield :scripts %>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            M.AutoInit();
+            /*$('.modal').modal();
+            $(".dropdown-trigger").dropdown();
+            $('.carousel').carousel({fullWidth: true});
+            $('.collapsible').collapsible();
+            $('.tabs').tabs();
+            $('select[multiple="multiple"] option[value=""]').attr('disabled', true);
+            $('select').formSelect();
+            $('input[type=checkbox]').addClass('filled-in');
+            $('.fixed-action-btn').floatingActionButton({hoverEnabled: false});
+            $('.materialboxed').materialbox();
+            $('input.datepicker, input.date').datepicker({
+              autoClose: true,
+              format: 'yyyy-mm-dd',
+              formatSubmit: 'yyyy-mm-dd'
+            });
+            */
+        });
+        $(window).on('load', function(){
+            $('.image-strip-part').each(function(ind, el){
+                if(!$(el).hasClass('home-page-part')){
+                    $("a", $(el)).colorbox({ rel: 'image-strip-part', slideshow: true, slideshowSpeed: 5000, maxWidth: "90%", maxHeight: "90%", speed: 1000, transition: "fade"});
+             
+                    $('a', $(el)).each(function(ind2, el2){
+                      var imageUrl = $(el2).attr('href');
+                      if(imageUrl.indexOf('amazonaws') !== -1){
+                        var img = new Image();
+                        img.src = imageUrl;
+                        console.log('loaded', imageUrl);
+                      }
+                    });
+                }
+            });
+        });
+    </script>
+  </body>
+</html>

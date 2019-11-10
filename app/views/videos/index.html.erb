@@ -1,0 +1,19 @@
+<style type="text/css">
+
+</style>
+<div class="page-ctr">
+<% if @videos.present? %>
+  <div class="row equalize-grid-items">
+    <% @videos.each do |video| %>
+    <div class="col m4 col s6">
+      <a class="video-item" href="<%= video_path(id: video.slug) %>">
+        <img src="<%= video.thumb_image_url %>"/>
+        <h4><%= video.full_title.html_safe %></h4>
+      </a>
+    </div>
+    <% end %>
+  </div>
+<% end %>
+</div>
+<script type="text/javascript">
+</script>

@@ -1,0 +1,32 @@
+<div id="doc_part_<%= part.id %>" class="doc-part performances-summary">
+    <div class="production-dates">
+        <% if part&.production&.performances&.any? %>
+    		<div class=" production-info" data-production="<%= part.production.id %>">
+    			<div class="performance-list">
+    				<% part.production.performances.sort_by{|p| p.date}.each do |perf| %>
+    					<div data-performance="<%= perf.id %>">
+    						<div class="perf-date">
+    						    <%= perf.short_date %>
+    							<% if perf.seat_availability_message.present? %>
+    								<div class="avail-msg"><%= perf.seat_availability_message %></div>
+    							<% end %>
+    						</div>
+    						<% unless perf.on_sale? %>
+    							<div class="not-on-sale">
+    								<div class="alert alert-warning" style="padding:8px;margin:0;">Subscriptions On Sale Now &mdash; Individual Tickets On Sale Summer 2018</div>
+    							</div>
+    						<% else %>
+    							<div class="perf-buy">
+    								<a href="<%= syos_performance_path(id: perf.id) %>" class="btn btn-primary">Buy Tickets&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+    							</div>
+    						<% end %>
+    					</div>
+    				<% end %>
+    			</div>
+    			<div class="production-location">
+    				<%= part.production.location_display(true).html_safe %>
+    			</div>
+    		</div>
+    	<% end %>
+    </div>
+</div>

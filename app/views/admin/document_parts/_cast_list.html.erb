@@ -1,0 +1,9 @@
+<div class="row cast-list">
+  <% part.images.each do |image| %>
+      <div class="cast-list-item">
+        <img class="cast-member-headshot" src="<%= sanitize(image.image_url) %>"/>
+        <h3><%= sanitize(image.title) %></h3>
+        <h5><%= sanitize(image.caption) %></h5>
+      </div>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<%= content_area("Stories Header").try(:content).html_safe %>
+<div class="stories  stories-<%= @stories.results.size % 3 %>">
+  <% @stories.each_with_index do |story, ind| %>
+        <div class="story story-<%= ind %> <%= story.id == @stories.results.last.id ? "last" : "" %>" data-ctr="<%= ind - 1 %>" data-mod="<%= @stories.size - @stories.results.size % 3 %>" style="background-image:url(<%= story.main_image.url %>);">
+            <a href="<%= photos_url(path: story.slug) %>">
+                <div class="story-info">
+                    <h2><%= story.title %></h2>                    
+                    <h4><%= story.subtitle %></h4>
+                    <div class="article-date"><%= (story.published_at.presence || story.created_at).strftime("%A, %B %e, %Y") %></div>
+                </div>
+            </a>
+        </div>
+  <% end %>
+</div>

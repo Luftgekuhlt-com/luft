@@ -1,0 +1,15 @@
+
+<%= simple_form_for @document_part, url: admin_document_document_section_document_part_path(@document, @document_part.document_section, @document_part), as: :document_part do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <div class="row">
+      <%= f.input :title, wrapper_html: { class: "col m12" }  %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save", disable_with: "Saving...", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,17 @@
+<div class="content-wrap">
+    <h1>Builds</h1>
+    <% @pages.each do |page| %>
+        <div id="doc_part_<%= page.id %>" class="doc-part hero-spot-part">
+          <div class="hero-spot-image">
+            <img src="<%= page.main_image_url %>" style="width:100%;max-width: 100%;"/>
+          </div>
+          <div class="hero-spot-content">
+            <h1><%= page.title %></h1>
+            <% if page.meta_description.present? %>
+              <div><%= page.meta_description.html_safe %></div>
+            <% end %>
+            <%= link_to('Story and Photos', page.site_url, class: 'btn btn-primary') %>
+          </div>
+        </div>
+    <% end %>
+</div>

@@ -1,0 +1,48 @@
+<div class="card">
+  <%= link_to(edit_admin_document_path(document, section: "settings"), class: "btn-floating teal darken-1 right") do %><i class="material-icons">edit</i><% end %>
+  <h4 class="card-title">Settings</h4>
+  <div class="card-content white">
+    <table>
+      <tbody>
+        <tr>
+          <td style="width:120px;">Banner Image</td><td><% if document.main_image.present? %>
+            <img src="<%= document.main_image_url %>" style="max-width:100%"/>
+          <% else %>
+            <div class="alert alert-warning">No Banner Image Set</div>
+          <% end %></td>
+        </tr>
+        <tr><td style="width:120px;">Banner Title</td><td><%= document.banner_title %></td></tr>
+        <tr><td style="width:120px;">Page Type</td><td><%= document.friendly_type %></td></tr>
+        <tr><td style="width:120px;">Visibility</td><td><%= document.hidden? ? "Hidden" : "Visible" %></td></tr>
+        <tr><td style="width:120px;">Parent Page</td><td><%= document.parent.present? ? document.parent.title : "None" %></td></tr>
+      </tbody>
+    </table>
+    <br/>
+    <h6>SEO</h6>
+    <table>
+      <tbody>
+      <tr><td style="width:120px;">Browser Title</td><td><%= document.browser_title.presence || "<em>Default</em>".html_safe %></td></tr>
+      <tr><td style="width:120px;">Meta Desc</td><td><%= document.meta_description.presence || "<em>Default</em>".html_safe %></td></tr>
+      <tr><td style="width:120px;">Meta Keywords</td><td><%= document.meta_keywords.presence || "<em>Default</em>".html_safe %></td></tr>
+      </tbody>
+    </table>
+    <br/>
+    <h6>Facebook Sharing</h6>
+    <table>
+      <tbody>
+      <tr><td style="width:120px;">Title</td><td><%= document.facebook_title.presence || "<em>Default</em>".html_safe %></td></tr>
+      <tr><td style="width:120px;">Description</td><td><%= document.facebook_description.presence || "<em>Default</em>".html_safe %></td></tr>
+      <tr><td style="width:120px;">Image</td><td><%= document.facebook_image.present? ? image_tag(document.facebook_image, style: "width: 100%;max-width: 100%") : "<em>Default</em>".html_safe %></td></tr>
+      </tbody>
+    </table>
+    <br/>
+    <h6>Twitter Sharing</h6>
+    <table>
+      <tbody>
+      <tr><td style="width:120px;">Title</td><td><%= document.twitter_title.presence || "<em>Default</em>".html_safe %></td></tr>
+      <tr><td style="width:120px;">Description</td><td><%= document.twitter_description.presence || "<em>Default</em>".html_safe %></td></tr>
+      <tr><td style="width:120px;">Image</td><td><%= document.twitter_image.present? ? image_tag(document.facebook_image, style: "width: 100%;max-width: 100%") : "<em>Default</em>".html_safe %></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>

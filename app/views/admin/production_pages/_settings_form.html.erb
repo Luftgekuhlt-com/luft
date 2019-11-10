@@ -1,0 +1,94 @@
+
+<%= simple_form_for @document, url: admin_document_path(@document), as: :document do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <div class="row">
+      <% if @document.main_image.blank? %>
+      <div class="col m6">
+          <label class="control-label">Banner Image</label>
+          <div class="slim" data-label="Click to choose an image" data-post="input, output, actions" <%= @document.slim_dimension_string.present? ? %Q(data-force-size=#{@document.slim_dimension_string}) : ""  %> data-filter-sharpen="10" data-instant-edit="true">
+             <input type="file" accept="image/*"/>
+          </div>
+      </div>
+      <% else %>
+      <div class="col m6 current-image">
+        <label class="control-label">Banner Image</label>
+        <div class="slim" data-post="actions" <%= @document.slim_dimension_string.present? ? %Q(data-force-size=#{@document.slim_dimension_string}) : ""  %> <%= @document.slim_crop_actions_string.present? ? %Q(data-crop=#{@document.slim_crop_actions_string}) : ""  %> data-filter-sharpen="10">
+            <img src="<%= @document.main_image.url %>" crossorigin="anonymous" style="max-width:100%;" />
+        </div>
+        <a href="javascript:;" class="btn btn-success btn-change-image">Change Image</a>
+      </div>
+       <div class="col m6 new-image" style="display:none;text-align:center;">
+          <label class="control-label">&nbsp;</label>
+          <div class="slim" data-label="Click to choose a new image" data-post="input, actions" <%= @document.slim_dimension_string.present? ? %Q(data-force-size=#{@document.slim_dimension_string}) : ""  %> data-filter-sharpen="10" data-instant-edit="true">
+             <input type="file" accept="image/*"/>
+          </div>
+          <br/>
+          <a href="javascript:;" class="btn btn-default btn-keep-image">Keep Current Image</a>
+      </div>
+      <% end %>
+      <%= f.input :parent_id, as: :select, collection: Document.active.pages.where("id != ?", @document.id).select{|d| !d.parent_pages.include?(@document.id)}.map{|d| [d.hierarchical_display.html_safe, d.id]}, prompt: "-- Select Parent Page --", include_blank: '-- None --', wrapper_html: { class: "col m3" }  %>
+      <div class="col m3">
+        <%= f.input :hidden, wrapper_html: { class: "radio-input-wrap" }  %>
+      </div>
+    </div>
+    <div class="row">
+      <%= f.input :banner_title, wrapper_html: { class: "col m12" }  %>
+    </div>
+    
+    <div class="form-actions">
+      <%= f.button :submit, disable_with: "Saving...", class: "btn btn-primary" %>
+    </div>
+  
+    <div class="card">
+      <h4 class="card-title">SEO</h4>
+      <div class="card-content white">
+        <div class="row">
+          <%= f.input :browser_title, wrapper_html: { class: "col m12" }  %>
+          <%= f.input :meta_description, as: :text, wrapper_html: { class: "col m12" }  %>
+          <%= f.input :meta_keywords, as: :text, wrapper_html: { class: "col m12" }  %>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Facebook Sharing Settings</h4>
+      <div class="card-content white">
+        <div class="row">
+          <%= f.input :facebook_title, wrapper_html: { class: "col m12" }  %>
+          <%= f.input :facebook_description, as: :text, wrapper_html: { class: "col m12" }  %>
+          <%= f.input :facebook_image, wrapper_html: { class: "col m12 s3-image-upload" }  %>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h4 class="card-title">Twitter Sharing Settings</h4>
+      <div class="card-content white">
+        <div class="row">
+          <%= f.input :twitter_title, wrapper_html: { class: "col m12" }  %>
+          <%= f.input :twitter_description, as: :text, wrapper_html: { class: "col m12" }  %>
+          <%= f.input :twitter_image, wrapper_html: { class: "col m12 s3-image-upload" }  %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, disable_with: "Saving...", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<script type="text/javascript">
+  $('.btn-change-image').off('click');
+  $('.btn-change-image').on('click', function(e){
+    $('.current-image').hide();
+    $('.new-image').show();
+  });
+  $('.btn-keep-image').off('click');
+  $('.btn-keep-image').on('click', function(e){
+    $('.new-image').hide();
+    $('.current-image').show();
+  });
+</script>
+
+<script type="text/javascript">
+  $('body').slim('parse');
+</script>

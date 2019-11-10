@@ -1,0 +1,16 @@
+<div id="edit_content_part_image_modal" class="modal modal-fixed-footer" tabindex="-1" role="dialog" aria-hidden="true">
+    <%= render partial: "form", locals: { document: @document, document_part: @document_part, document_part_image: @document_part_image } %>
+</div> <!-- /.modal -->
+<script type="text/javascript">
+  $('.btn-change-image').off('click');
+  $('.btn-change-image').on('click', function(e){
+    $('.current-image').hide();
+    $('.new-image').show();
+  });
+  $('.btn-keep-image').off('click');
+  $('.btn-keep-image').on('click', function(e){
+    $('.new-image').hide();
+    $('.current-image').show();
+  });
+</script>
+<%= content_for :scripts %>

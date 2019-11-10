@@ -1,0 +1,33 @@
+<% content_for :head do %>
+<style type="text/css">
+  .page-title h1{color: #FFF !important;}
+    body {
+      background: #000;
+  }
+  .thumbnail{
+    background: rgba(255,255,255,0.1);
+    border: 0 !important;
+    color: #FFF !important;
+  }
+  
+  .thumbnail .caption{
+    color: #FFF !important;
+    font-size: 18px !important;
+    font-weight: bold;
+    text-shadow: 0 0 1px #000;
+  }
+</style>
+<% end %>
+<%= (content_area("History Header").try(:content) || "").html_safe %>
+<div class="page-ctr history-<%= @histories.results.size % 3 %>">
+  <div class="row equalize-grid-items">
+      <% @histories.each_with_index do |history, ind| %>
+      <div class="col-md-3 col-sm-6">
+        <a href="<%= histories_url(path: history.slug) %>" class="thumbnail">
+          <img src="<%= history.main_image.url(:cropped) %>" alt ="<%= history.title %>" />
+          <div class="caption"><%= history.title %></div>
+        </a>
+      </div>
+      <% end %>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div>
+<%= simple_form_for @document_part, url: admin_document_document_section_document_part_path(@document, @document_part.document_section, @document_part, format: :json), as: :document_part do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <% unless @document.slug == "content-areas" %>
+    <div class="row">
+      <%= f.input :title, wrapper_html: { class: "col m12" }  %>
+    </div>
+    <% end %>
+    <% @document_part.images.order(:display_order).each do |tab| %>
+    <div class="row">
+      <div class="col m12">
+        <div class="card small sticky-action tab-content-part-item <%= tab.hidden? ? "hidden-item" : "" %>">
+          <div class="card-content">
+            <span class="card-title"><%= tab.title %></span>
+            <div style="max-height: 200px;overflow: auto;">
+              <%= sanitize(tab.content) %>
+            </div>
+          </div>
+          <div class="fixed-action-btn direction-left">
+            <a class="btn-floating teal">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul>
+              <li>
+                <%= link_to(admin_document_document_section_document_part_document_part_image_path(@document, @document_part.document_section, @document_part, tab), method: :delete, remote: true,
+                    data: { confirm: "Are you sure you want to delete this tab?" },
+                    class: 'btn-floating red',
+                    title: 'Delete') do %>
+                    <i class="material-icons">delete</i>
+                  <% end %>
+              </li>
+              <li>
+                <%= link_to("javascript:;",
+                    class: "btn-floating teal darken-1 modal-remote",
+                    data: { key: "edit_part_image_modal", url: edit_admin_document_document_section_document_part_document_part_image_path(@document, @document_part.document_section, @document_part, tab, image_type: :tab_content)}) do %>
+                    <i class="material-icons">edit</i>
+                  <% end %>
+              </li>
+              <li>
+                <%= link_to(move_admin_document_document_section_document_part_document_part_image_path(@document, @document_part.document_section, @document_part, tab, direction: "up"), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_up</i><% end %>
+              </li>
+              <li>
+                <%= link_to(move_admin_document_document_section_document_part_document_part_image_path(@document, @document_part.document_section, @document_part, tab, direction: "down"), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_down</i><% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+      <% end %>
+    <hr/>
+    <div style="text-align:right;">
+      <%= link_to("javascript:;",
+          class: "btn btn-add btn-sm btn-success modal-remote",
+          data: { key: "new_section_image_modal", url: new_admin_document_document_section_document_part_document_part_image_path(@document, @document_part.document_section, @document_part, image_type: :tab_content)}) do %>
+          &nbsp;New Tab
+        <% end %>
+      </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save", disable_with: "Saving...", class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>

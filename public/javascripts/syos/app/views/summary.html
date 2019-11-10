@@ -1,0 +1,24 @@
+﻿<div style="overflow: hidden; padding: 30px;">
+    <div style="width: 50%; float: left;">
+        <div class="seat-map-svg" style="width: 100%;">
+        </div>
+    </div>
+    <div style="width: 45%; float: right;">
+        <table class="section-summary-list" data-bind="foreach: sections">
+            <tr>
+                <td style="padding:0;">
+                    <!-- ko if: totalAvailable == 0 -->
+                    <div style="padding:8px;line-height: 24px;"><strong data-bind="text: name"></strong> <span class="sold-out">(SOLD OUT)</span></div>
+                    <!-- /ko -->
+                    <!-- ko if: totalAvailable > 0 -->
+                    <a data-bind="attr: {href: '#map/'+screenId, style: 'display:block;padding:8px;'}">
+                        <strong data-bind="text: name"></strong>
+                        <span data-bind="visible: totalAvailable > 0">(<span data-bind="text: totalAvailable"></span> available)</span>
+                    </a>
+                    <!-- /ko -->
+                </td>
+                <td style="text-align: right;"><span data-bind="text: priceDisplay"></span></td>
+            </tr>
+        </table>
+    </div>
+</div>

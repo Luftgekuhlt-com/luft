@@ -1,0 +1,6 @@
+<% if @news_link.errors.empty? %>
+  console.log(<%= @news_link.to_json.html_safe %>);
+  window.location.reload(true);
+<% else %>
+  $("#<%= dom_id @news_link, :edit %>").replaceWith("<%= j render(partial: 'form', locals: { news_link: @news_link }) %>")
+<% end %>

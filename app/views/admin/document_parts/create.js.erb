@@ -1,0 +1,6 @@
+<% if @document_part.persisted? %>
+  console.log(<%= @document_part.to_json.html_safe %>);
+  window.location = '<%= edit_admin_document_document_part_path(@document, @document_part) %>';
+<% else %>
+  $("#<%= dom_id @document_part, :new %>").replaceWith("<%= j render(partial: 'new_form', locals: { document: @document, document_part: @document_part }) %>")
+<% end %>

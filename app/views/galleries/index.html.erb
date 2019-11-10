@@ -1,0 +1,11 @@
+
+<div class="gallery-list">
+    <% @pages.each do |page| %>
+    <div class="gallery-list-item">
+        <%= link_to(gallery_show_path(slug: page.slug)) do %>
+        <img src="<%= page.main_image_url %>" style="width:100%;max-width: 100%;"/>
+        <h4><%= page.title %></h4>
+        <% end %>
+    </div>
+    <% end %>
+</div>

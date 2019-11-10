@@ -1,0 +1,30 @@
+<h5 style="margin:0 0 15px;">Yes! I will donate with a contribution of:</h5>
+<div class="donate-presets">
+    <% Plugins::Tessitura::Contribution::PRESET_AMOUNTS.each do |amount| %>
+    <a href="javascript:;" data-amount="<%= amount %>" class="btn btn-success"><%= number_to_currency(amount, precision: 0) %></a>
+    <% end %>
+</div>
+<%= form_tag(contributions_info_path, method: :get, class: "contribution-form") do %>
+    <%= hidden_field_tag :fund, params[:fund] || 0 %>
+  <div class="form-group">
+      <label>Amount:</label>
+      <div class="input-group">
+    <span class="input-group-addon">$</span>
+    <%= text_field_tag :amount, params[:amount], class: 'form-control', placeholder: "Enter amount" %>
+    </div>
+  </div>
+  <hr/>
+  <div style="text-align:right;">
+      <%= submit_tag 'Next', class: "btn btn-primary" %>
+  </div>
+<% end %>
+<% content_for :scripts do %>
+<script type="text/javascript">
+    $('.donate-presets .btn').on('click', function(e){
+       var amt = parseFloat($(this).data('amount'));
+       if(amt > 0){
+           $('#amount').val(amt);
+       }
+    });
+</script>
+<% end %>

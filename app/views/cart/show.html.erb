@@ -1,0 +1,19 @@
+<%
+    @body_classes ||= []
+    @body_classes << "cart"
+    @body_classes << "view-cart"
+%>
+<div class="content-wrap">
+  <h2>Cart</h2>
+	<div class="alert alert-info">Seating for new subscriptions will be assigned in July</div>
+  <%= render partial: 'subs', locals: { cart: @cart } %>
+  <%= render partial: 'single_tickets', locals: { cart: @cart } %>
+</div>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+$('body').on('confirm:click:ok', function(){
+     $('.content-wrap').fadeTo(0.3);
+});
+</script>
+<% end %>

@@ -1,0 +1,18 @@
+<div id="new_image_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <%= form_for @document_part, { url: bulk_upload_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: @document_section.id, id: @document_part.id, image_type: params[:image_type]), html: {multipart: true } } do |f| %>
+    <div class="modal-content">
+      <h4 class="modal-title">Bulk Upload Images</h4>
+         <div class="row">
+          <div class="col m6">
+              <%= file_field_tag "images[]", type: :file, multiple: true %>
+          </div>
+        </div>
+        <div class="alert alert-sm alert-info">All images in the same content block should have the same dimensions.</div>
+      </div>
+      <div class="modal-footer">
+          <%= f.submit "Save", class: "btn btn-primary btn-submit" %>
+      </div>
+    </div> <!-- /.modal-content -->
+  <% end %>
+</div> <!-- /.modal -->
+<%= content_for :scripts %>

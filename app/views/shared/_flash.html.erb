@@ -1,0 +1,42 @@
+<% if(self.flash.any?) %>
+<div id="flash">
+  <% self.flash.each do |key, value|
+       next unless value.kind_of?(String)
+       @translate = !key.to_s.include?("_t")
+       @level = case key.to_s.gsub('_t', '')
+       when 'notice'
+        'success'
+       when 'error', 'alert'
+        'danger'
+       when 'warning'
+        'warning'
+      else
+        'info'
+      end
+   %>
+    <div class="alert alert-<%= @level%> alert-dismissable" role="alert">
+    <div><span class="alert-close" style="float:right;cursor:pointer;"><i class="el-icon-remove-sign"></i></span>
+      <%= value.html_safe %>
+     </div>
+   </div>
+  <% end -%>
+</div>
+<script type="text/javascript">
+  $(window).on('load', function(){
+    $('.alert-close').on('click', function(e){
+      $(this).parents('.alert').slideUp();
+    });
+    $('#flash .alert-success').each(function(ind, el){
+      window.setTimeout(function(){
+        $(el).slideUp();
+      }, 5000);
+    });
+    $('#flash .alert-warning').each(function(ind, el){
+      window.setTimeout(function(){
+        $(el).slideUp();
+      }, 10000);
+    });
+  });
+</script>
+  <% flash.keys.map{|k| flash.delete(k)} if flash.present? %>
+<% end -%>

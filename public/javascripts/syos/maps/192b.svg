@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" preserveAspectRatio="xMinYMin meet" viewBox="0 0 600 350" id="svg2">
+  <defs id="defs4" />
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style type="text/css">
+    path.section {
+    cursor: pointer;
+    fill:rgba(185, 142, 45, 0.4);
+    stroke:rgb(219, 173, 74);
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+
+    path.section:hover {
+    fill:rgba(229, 179, 71, 0.7);
+    }
+
+    .section-group{
+    cursor: pointer;
+    }
+    .section-group path {
+    fill:rgba(185, 142, 45, 0.4);
+    stroke:rgb(219, 173, 74);
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+
+    .section-group:hover path {
+    fill:rgba(229, 179, 71, 0.7);
+    }
+
+    text.section-label{
+    font-family:Arial, sans-serif;
+    font-size:16px;
+    font-style:normal;
+    font-weight:bold;
+    line-height:16px;
+    text-align: center;
+    letter-spacing:0px;
+    word-spacing:0px;
+    fill:rgb(185, 142, 45);
+    fill-opacity:1;
+    stroke:none;
+    }
+  </style>
+  <g id="balcony" style="display:inline" class="section-group balcony" data-section-group="balcony" data-screen="6">
+    <path id="BR" d="M 146.7,17.097 C 117.58,22.284 87.328,29.176 56.092,38.214 52.486,45.938 46.229,59.414 39.288,74.354 72.604,64.078 105.15,56.289 136.69,50.53 L 146.7,17.097 z"/>
+    <path id="BCR" d="M 235.6,38.449 239.58,5.701 C 215.16,7.337 189.53,10.142 162.88,14.369 L 152.88,47.728 C 181.41,43.093 209.04,40.113 235.6,38.449 z"/>
+    <path id="BC" d="M 330.14,37.785 326.28,4.439 C 315.26,4.012 303.86,3.79 292.09,3.825 279.94,3.874 267.39,4.207 254.5,4.842 L 250.51,37.637 C 278.4,36.382 305.02,36.564 330.14,37.785 z"/>
+    <path id="BCL" d="M 424.19,47.616 412.07,12.419 C 391.02,9.271 367.28,6.641 341.17,5.148 L 345.05,38.643 C 373.66,40.536 400.16,43.737 424.19,47.616 z"/>
+    <path id="BL" d="M 537.25,74.497 519.96,38.214 C 519.96,38.214 486.53,25.108 428.54,15.077 L 440.72,50.452 C 482,57.976 514.91,67.229 537.25,74.497 z"/>
+
+    <text x="85" y="52" xml:space="preserve" class="section-label" transform="rotate(-15 85,52)"><tspan x="85" y="52">BR</tspan></text>
+    <text x="183" y="34" xml:space="preserve" class="section-label" transform="rotate(-7 183,34)"><tspan x="183" y="34">BCR</tspan></text>
+    <text x="280" y="27" xml:space="preserve" class="section-label"><tspan x="280" y="27">BC</tspan></text>
+    <text x="365" y="30" xml:space="preserve" class="section-label" transform="rotate(7 365,30)"><tspan x="365" y="30">BCL</tspan></text>
+    <text x="470" y="46" xml:space="preserve" class="section-label" transform="rotate(15 470,46)"><tspan x="470" y="46">BL</tspan></text>
+  </g>
+  <g id="mezzanine" style="display:inline" class="section-group mezzanine" data-section-group="mezzanine" data-screen="4">
+    <path id="MZR" d="M 39.288,74.354 C 33.004,87.881 26.161,102.61 20.205,115.38 56.316,103.1 91.614,93.783 125.79,86.896 L 136.69,50.529 C 105.15,56.289 72.604,64.078 39.288,74.354 z"/>
+    <path id="MZCR" d="M 235.6,38.449 C 209.04,40.113 181.41,43.093 152.88,47.729 L 142.07,83.8 C 172.92,78.214 202.79,74.576 231.46,72.498 L 235.6,38.449 z"/>
+    <path id="MZC" d="M 316.65,58.999 317.55,70.643 C 323.1,70.803 328.61,71 334.02,71.262 L 330.14,37.786 C 305.02,36.565 278.4,36.384 250.51,37.638 L 246.39,71.543 C 252.48,71.21 258.5,70.964 264.47,70.764 L 265.35,59.084 316.65,58.999 z"/>
+    <path id="MZCL" d="M 436.16,82.403 424.19,47.616 C 400.16,43.737 373.66,40.536 345.05,38.643 L 348.93,72.115 C 380.79,74.212 410.03,77.929 436.16,82.403 z"/>
+    <path id="MZL" d="M 452.76,85.417 C 499.87,94.479 535.3,105.59 555.49,112.76 L 537.26,74.497 C 514.91,67.229 482,57.976 440.72,50.452 L 452.76,85.417 z"/>
+
+    <text x="67" y="91" xml:space="preserve" class="section-label" transform="rotate(-15 67,91)"><tspan x="67" y="91">MZR</tspan></text>
+    <text x="170" y="69" xml:space="preserve" class="section-label" transform="rotate(-7 170,69)"><tspan x="170" y="69">MZCR</tspan></text>
+    <text x="274" y="55" xml:space="preserve" class="section-label"><tspan x="274" y="55">MZC</tspan></text>
+    <text x="367" y="65" xml:space="preserve" class="section-label" transform="rotate(7 367,65)"><tspan x="367" y="65">MZCL</tspan></text>
+    <text x="480" y="80" xml:space="preserve" class="section-label" transform="rotate(15 480,80)"><tspan x="480" y="80">MZL</tspan></text>
+  </g>
+  <g id="grand_tier" style="display:inline" class="section-group grand-tier" data-section-group="grand-tier" data-screen="4">
+    <path id="GT3R" d="M 20.205,123.43 C 13.084,138.69 7.242,151.14 5.145,155.4 42.447,142.07 78.923,131.94 114.25,124.42 L 122.9,95.549 C 89.622,102.37 55.3,111.5 20.205,123.43 z"/>
+    <path id="GT2R" d="M 139.21,92.37 130.6,121.11 C 163.92,114.7 196.15,110.59 226.98,108.29 L 230.35,80.634 C 201.13,82.79 170.68,86.559 139.21,92.37 z"/>
+    <path id="GT1" d="M 245.28,79.648 241.92,107.3 C 257.38,106.42 272.47,105.97 287.14,105.92 304.81,105.83 321.88,106.3 338.3,107.21 L 335.07,79.369 C 306.92,77.975 276.89,77.877 245.28,79.648 z"/>
+    <path id="GT2L" d="M 349.98,80.234 353.21,108.17 C 389.04,110.77 421.46,115.4 449.72,120.78 L 439.48,91.026 C 412.8,86.347 382.78,82.434 349.98,80.234 z"/>
+    <path id="GT3L" d="M 571.92,155.29 555.49,120.81 C 535.78,113.81 501.55,103.06 456.1,94.117 L 466.44,124.15 C 526.88,136.99 564.99,152.38 571.92,155.29 z"/>
+
+    <text x="48" y="133" xml:space="preserve" class="section-label" transform="rotate(-15 48,132)"><tspan x="48" y="133">GT3R</tspan></text>
+    <text x="160" y="104" xml:space="preserve" class="section-label" transform="rotate(-7 160,104)"><tspan x="160" y="107">GT2R</tspan></text>
+    <text x="274" y="99" xml:space="preserve" class="section-label"><tspan x="274" y="99">GT1</tspan></text>
+    <text x="377" y="104" xml:space="preserve" class="section-label" transform="rotate(7 377,104)"><tspan x="377" y="102">GT2L</tspan></text>
+    <text x="490" y="121" xml:space="preserve" class="section-label" transform="rotate(15 490,121)"><tspan x="490" y="121">GT3L</tspan></text>
+  </g>
+  <g id="main_4" style="display:inline" class="section-group main-4" data-section-group="main-4" data-screen="2">
+    <path id="MN4R" d="M 135.35,146.57 C 134.96,148.26 97.827,310.11 97.827,310.11 L 5,269.98 45.433,167.09 C 45.433,167.09 80.471,154.72 135.35,146.57 z" />
+    <path id="MN4L" d="M 573.16,270.28 482.63,310.11 C 482.63,310.11 434.89,150.87 433.46,146.57 509.65,158.57 527,164.98 527,164.98 L 573.16,270.28 z" />
+    <text x="48" y="225" xml:space="preserve" class="section-label"><tspan x="48" y="225">M4R</tspan></text>
+    <text x="481" y="225" xml:space="preserve" class="section-label"><tspan x="481" y="225">M4L</tspan></text>
+  </g>
+  <g id="main_3" style="display:inline" class="section-group main-3" data-section-group="main-3" data-screen="2">
+    <path id="MN3R" d="M 129.34,238.42 C 164.48,229.8 197.88,224.49 228.94,221.52 L 232.74,135.12 C 206.12,136.58 178.39,139.38 150.74,144.16 148.23,158.63 131.87,227.77 129.34,238.42 z"/>
+    <path id="MN3C" d="M 246.08,134.5 242.3,220.37 C 276.68,217.77 307.92,218 335.07,219.7 L 326.19,134.9 C 302.15,133.78 274.91,133.38 246.08,134.5 z"/>
+    <path id="MN3L" d="M 422,144.16 C 422,144.16 389.07,138.56 339.63,135.61 L 348.53,220.68 C 402.18,225.15 437.41,234.92 445.72,237.41 L 447.34,237.39 422,144.16 z"/>
+    <text x="163" y="190" xml:space="preserve" class="section-label"><tspan x="163" y="190">M3R</tspan></text>
+    <text x="275" y="190" xml:space="preserve" class="section-label"><tspan x="275" y="190">M3C</tspan></text>
+    <text x="367" y="190" xml:space="preserve" class="section-label"><tspan x="367" y="190">M3L</tspan></text>
+  </g>
+  <g id="main_2" style="display:inline" class="section-group main-2" data-section-group="main-2" data-screen="1">
+    <path id="MN2R" d="M 169.29,273.22 168.65,273.54 226.32,264.47 227.05,264.38 228.94,221.52 C 197.88,224.49 164.47,229.8 129.34,238.42 129.3,238.43 129.27,238.44 129.24,238.45 125.24,257.01 112.26,316.52 112.26,316.52 L 157.52,335.08 157.84,334.97 z"/>
+    <path id="MN2C" d="M 339.24,263.57 339.66,263.59 335.07,219.69 C 307.92,218 276.68,217.77 242.3,220.37 L 240.43,262.66 339.24,263.57 z"/>
+    <path id="MN2L" d="M 468.46,315.84 447.64,238 C 447.64,238 446.98,237.78 445.72,237.41 437.41,234.92 402.18,225.15 348.53,220.68 L 353.11,264.4 410.53,273.52 410.61,273.92 410.98,273.98 C 410.98,273.98 415.56,298.38 419.17,317.2 L 422.98,336.44 468.46,315.84 z"/>
+
+    <text x="160" y="256" xml:space="preserve" class="section-label"><tspan x="160" y="256">M2R</tspan></text>
+    <text x="275" y="250" xml:space="preserve" class="section-label"><tspan x="275" y="250">M2C</tspan></text>
+    <text x="375" y="256" xml:space="preserve" class="section-label"><tspan x="375" y="256">M2L</tspan></text>
+  </g>
+  <g id="main_1" style="display:inline" class="section-group main-1" data-section-group="main-1" data-screen="1">
+    <path id="MN1R" d="M 168.96,273.56 157.53,335.08 C 157.53,335.08 196.58,321 224.74,316.97 L 227.05,264.38 168.96,273.56 z"/>
+    <path id="MN1C" d="M 240.43,262.66 238.12,315.23 C 267.84,311.78 305.78,310.07 345.08,315.37 345.08,315.37 339.89,265.76 339.67,263.64 339.44,261.52 240.43,262.66 240.43,262.66 z"/>
+    <path id="MN1L" d="M 353.07,264.04 358.66,317.12 C 380.31,320.94 402.12,327.18 422.98,336.43 422.26,333.03 420.82,325.45 419.17,316.84 L 410.98,273.55 353.07,264.04 z"/>
+
+    <text x="180" y="304" xml:space="preserve" class="section-label" transform="rotate(-7 180,304)"><tspan x="180" y="304">M1R</tspan></text>
+    <text x="275" y="296" xml:space="preserve" class="section-label"><tspan x="275" y="296">M1C</tspan></text>
+    <text x="368" y="299" xml:space="preserve" class="section-label" transform="rotate(7 368,299)"><tspan x="368" y="299">M1L</tspan></text>
+  </g>
+  <g id="stage" style="display:inline">
+    <text x="265" y="338" xml:space="preserve" class="section-label"><tspan x="265" y="338">STAGE</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<% if @document_part_image.errors.empty? %>
+  console.log(<%= @document_part_image.to_json.html_safe %>);
+  window.location.reload(true);
+<% else %>
+  $("#<%= dom_id @document_part_image, :new %>").replaceWith("<%= j render(partial: 'new_form', locals: { document: @document, document_part: @document_part, document_part_image: @document_part_image }) %>")
+<% end %>

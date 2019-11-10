@@ -1,0 +1,308 @@
+﻿/*!
+ * Durandal 2.1.0 Copyright (c) 2012 Blue Spire Consulting, Inc. All Rights Reserved.
+ * Available via the MIT license.
+ * see: http://durandaljs.com or https://github.com/BlueSpire/Durandal for details
+ */
+
+.splash {
+    text-align: center;
+    margin: 10% 0 0 0;
+}
+
+.splash .message {
+    font-size: 2em;
+    font-family: sans-serif;
+    line-height: 1.5em;
+    -webkit-text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+    text-transform: uppercase;
+}
+
+.splash .fa-spinner {
+    text-align: center;
+    display: inline-block;
+    font-size: 5em;
+    margin-top: 50px;
+}
+
+section {
+    margin: 0 20px;
+}
+
+.navbar-nav li.loader {
+    margin: 12px 6px 0 6px;
+    visibility: hidden;
+}
+
+.navbar-nav li.loader.active {
+    visibility: visible;
+}
+
+.pictureDetail {
+    max-width: 425px;
+}
+
+.syos-app {
+    min-height: 400px;
+    position: relative;
+}
+
+.section-summary-list {
+    margin: 0;
+    padding: 0;
+    border: solid 1px #DDD;
+    border-bottom: 0;
+    width: 100%;
+}
+
+.section-summary-list td {
+    padding: 5px;
+    line-height: 18px;
+    border-bottom: solid 1px #DDD;
+}
+
+.section-summary-list tr:hover td,
+.section-summary-list tr:hover td a,
+.section-summary-list tr.active td,
+.section-summary-list tr.active td a {
+    background: #004;
+    color: #FFF !important;
+}
+
+.section-summary-list td a{
+    display: block;
+    line-height: 18px;
+}
+
+pre {
+    background: #DDD;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #CCC;
+    white-space: pre-wrap;
+}
+
+.seat-map {
+    position: relative;
+}
+
+.seat-map .stage {
+    position: absolute;
+    width: 100%;
+    bottom: -40px;
+    left: 0;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.full-seat-map {
+    position: relative;
+}
+
+.full-seat-map .stage {
+    position: absolute;
+    width: 100%;
+    bottom: -40px;
+    left: 0;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.full-seat-map .seat, .full-seat-map .seat:hover {
+    border: 0;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+
+.seat-map-thumb svg {
+    max-height: 150px !important;
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.row-marker {
+    position: absolute;
+    text-align: center;
+    color: #333;
+}
+.seat, .seat:hover {
+    position: absolute;
+    background: #CCC;
+    border: solid 1px #999;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    font-size: 9px;
+}
+
+.seat.same_zone {
+    border: solid 1px rgb(253, 184, 19);
+    background: rgba(253, 184, 19, 0.5);
+}
+
+.seat.available {
+    background: #FFF;
+    cursor: pointer;
+}
+
+.seat.available:hover {
+    background: #a47700;
+}
+
+	.seat.excluded {
+		opacity: 0.2;
+		cursor: none;
+	}
+
+.seat.selected,
+.seat.selected:hover {
+    background: #C00;
+}
+
+.selected-seats-grid 
+{
+    min-width: 500px;
+    border: solid 1px #999;
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.4);
+    box-shadow: 0 0 3px rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+}
+.selected-seats-grid thead {
+    border-bottom: solid 1px #999;
+}
+.selected-seats-grid tfoot {
+    border-top: solid 1px #999;
+}
+
+.selected-seats-grid th,
+.selected-seats-grid td {
+    padding: 5px 20px;
+    text-align: left;
+}
+
+.selected-seats-grid tr:nth-child(even) {
+    background: #EEE;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  visibility: visible;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.tooltip.in {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+.tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+.tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #a47700;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #a47700;
+}
+.tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  border-width: 5px 5px 0;
+  border-top-color: #a47700;
+}
+.tooltip.top-right .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  border-width: 5px 5px 0;
+  border-top-color: #a47700;
+}
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #a47700;
+}
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #a47700;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #a47700;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #a47700;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #a47700;
+}
+
+.tooltip-inner .section {
+    color: #FFF;
+    font-size: 1.2em;
+}
+.tooltip-inner .seat-text {
+    color: #FFF;
+}
+.tooltip-inner .price {
+    color: #FFF;
+}
+.tooltip-inner .click-text {
+    color: #FFF;
+    font-size: 0.9em;
+}
+.tooltip.seat-tooltip .tooltip-inner{
+    max-width: 300px;
+}

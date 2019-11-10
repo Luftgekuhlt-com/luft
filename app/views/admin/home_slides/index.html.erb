@@ -1,0 +1,31 @@
+<% content_for :admin_header do %>
+<%= link_to(new_admin_home_slide_path, class: "btn-floating teal right") do %><i class="material-icons">add</i><% end %>
+<h1>Home Slides</h1>
+<% end %>
+
+<div class="row slide-preview-list equalize-grid-items">
+<% @slides.each do |slide| %>
+  <div class="col s6">
+    <div class="card slide-preview-list-item <%= slide.hidden? ? "hidden-item" : "" %>">
+      <span class="card-title"><%= slide.title %>&nbsp;</span>
+      <div class="card-content">
+        <div class="slide-preview" data-slug="<%= slide.id %>">
+          <iframe id="slide_preview_<%= slide.id %>" src="<%= admin_home_slide_preview_path(slide_id: slide.id) %>"></iframe>
+        </div>
+      </div>
+      <div class="card-action">
+        <%= link_to("Delete", admin_home_slide_path(slide), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete this slide?" }, class: 'btn btn-small red white-text right')%>
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn btn-small' href='#' data-target='move_slide_<%= slide.id %>'>Move <i class="material-icons small">arrow_drop_down</i></a>
+      
+        <!-- Dropdown Structure -->
+        <ul id='move_slide_<%= slide.id %>' class='dropdown-content'>
+          <li><a href="<%= move_admin_home_slide_path(slide, direction: "up") %>">Move Up</a></li>
+          <li><a href="<%= move_admin_home_slide_path(slide, direction: "down") %>">Move Down</a></li>
+        </ul>
+        <%= link_to("Edit", edit_admin_home_slide_path(slide), class: "btn btn-small") %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

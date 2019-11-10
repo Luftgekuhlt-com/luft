@@ -1,0 +1,463 @@
+<% 
+    @body_classes ||= []
+    @body_classes << "subscriptions"
+    @body_classes << "fixed"
+%>
+<div class="content-wrap">
+    <div class="well" style="padding: 10px;">
+        <h4>2018-2019 MAIN STAGE SUBSCRIPTION:</h4>
+        <p>The Marriage of Figaro, Rigoletto and Carmen. Buy your Main Stage subscription below.</p>
+        <hr style="border-color: #333;">
+        <h4>2018-2019 dētour SERIES SUBSCRIPTION: </h4>
+        <p>Hansel and Gretel, Three Decembers and One Amazing Night 2019: Ailyn Perez &amp; Stephen Powell In Concert.
+        <a href="/subscriptions/detour">Click here</a> to buy your dētour subscription.</p>
+    </div>
+    <div class="sub-builder-wrap">
+		<!-- ko if: $root.packages().length == 0 -->
+		<div class="alert alert-success"><h4 style="text-align:center;">Loading Subscriptions</h4></div>
+		<!-- /ko -->
+		<!-- ko if: $root.packages().length > 0 -->
+        <div class="panel panel-default subs-builder" style="display:none;">
+            <div class="panel-body">
+                <div class="form-step step-1">
+                    <label><strong>Day</strong> - Please select a day of the week for your subscription</label>
+                    <!-- ko foreach: $root.availableDays -->
+                    <div class="radio">
+                        <label>
+                            <input type="radio" class="day-of-week" name="DayOfWeek" data-bind="checkedValue: $data, checked: $root.selectedDay">
+                            <span data-bind="text: $data"></span>
+                        </label>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                <!-- ko if: $root.availablePackages().length > 0 -->
+                <div class="form-step step-2">
+                    <label><strong>Package</strong> - Please choose a package</label>
+                    <!-- ko foreach: $root.availablePackages -->
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="PackageId" data-bind="checkedValue: PackageNumber, checked: $root.selectedPackageId">
+                            <span data-bind="text: Description"></span>
+                        </label>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                <!-- /ko -->
+                <!-- ko if: $root.selectedPackage -->
+                <div class="form-step step-3" data-bind="with: $root.selectedPackage">
+                    <label><strong>Operas</strong> - <span data-bind="text: operaInstruction"></span></label>
+                    <!-- ko foreach: Performances -->
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="Performances" data-bind="disable: $parent.allPerformances,checkedValue: PerformanceNumber, checked: $root.selectedPerformances">
+                            <strong data-bind="text: Title"></strong>&mdash; <span data-bind="text: DateDisplay"></span>
+                        </label>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                <!-- /ko -->
+                <!-- ko if: $root.requiredPerfsSelected -->
+                <div class="form-step step-4" data-bind="with: $root.selectedPackage">
+                    <label><strong>Seats</strong> - Please selected the number of seats you would like to purchase.</label>
+                    <div class="row price-type-seat-selector">
+                        <div class="col-md-1">
+                            <label>Regular</label>
+                            <select data-bind="options: $root.seatCountOptions, value: $root.regularSeatCount"></select>
+                        </div>
+                        <div class="col-md-1">
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- ko if: $root.seniorDiscountEnabled -->
+                    <div class="row price-type-seat-selector">
+                        <div class="col-md-1">
+                            <label>Senior</label>
+                            <select data-bind="options: $root.seatCountOptions, value: $root.seniorSeatCount"></select>
+                        </div>
+                        <div class="col-md-11">
+                            <br />
+                            <span><strong>Seniors 65+</strong> &mdash; Proof of age required to receive discount.</span>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                <!-- /ko -->
+                <!-- ko if: $root.seatsSelected -->
+                <div class="form-step step-5" data-bind="with: $root.selectedPackage">
+                    <label><strong>Section</strong> - Please select which section in which you would like to seated.</label>
+                    <table class="package-section-list table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Section</th>
+                                <th>Regular Subscription<div class="fine-print">(Per Seat)</div>
+                                </th>
+                                <!-- ko if: $root.seniorDiscountEnabled -->
+                                <th>Senior Subscription<div class="fine-print">(Per Seat)</div>
+                                </th>
+                                <!-- /ko -->
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: availableSections">
+                            <tr data-bind="css: rowClass">
+                                <td>
+                                    <label>
+                                        <input type="radio" name="SectionId" data-bind="checkedValue: id, checked: $root.selectedSectionId">
+                                        <span data-bind="text: name"></span>
+                                    </label>
+                                </td>
+                                <td class="price"><span data-bind="text: regularPriceDisplay"></span></td>
+                                <!-- ko if: $root.seniorDiscountEnabled -->
+                                <td class="price"><span data-bind="text: seniorPriceDisplay"></span></td>
+                                <!-- /ko -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: $root.readyForCart -->
+                <hr />
+                <h2>Summary</h2>
+                <div class="row package-summary">
+                    <div class="col-md-6">
+                        <h3>Series</h3>
+                        <h4 class="title" data-bind="text: $root.selectedPackage().Description"></h4>
+                        <!-- ko foreach: $root.selectedPerformanceItems -->
+                        <div class="performance-info">
+                            <strong data-bind="text: Title"></strong>&mdash; <span data-bind="text: DateDisplay"></span>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Seating</h3>
+                        <h4 data-bind="with: $root.selectedSection"><span data-bind="text: name"></span></h4>
+                        <!-- ko if: $root.regularSeatCount() > 0 -->
+                        <div><strong data-bind="html: $root.regularSeatDisplay"></strong></div>
+                        <div class="fine-print" data-bind="html: $root.regularSubDisplay"></div>
+                        <!-- /ko -->
+                        <!-- ko if: $root.seniorSeatCount() > 0 -->
+                        <div><strong data-bind="html: $root.seniorSeatDisplay"></strong></div>
+                        <div class="fine-print" data-bind="html: $root.seniorSubDisplay"></div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <hr />
+                <div class="subtotal">Sub Total: <strong data-bind="text: $root.subTotalDisplay"></strong></div>
+                <!-- /ko -->
+            </div>
+        </div>
+		<!-- /ko -->
+		<%= form_tag subscriptions_purchase_fixed_path, id: "package_purchase_form" do %>
+            <input type="hidden" name="package_id" id="package_id" value="" />
+            <input type="hidden" name="seat_count" id="seat_count" value="" />
+            <input type="hidden" name="senior_seat_count" id="senior_seat_count" value="" />
+            <input type="hidden" name="section_id" id="section_id" value="" />
+            <input type="hidden" name="performances" id="performances" value="" />
+            <div style="text-align: right">
+                <button type="submit" class="btn btn-primary" data-bind="visible: $root.readyForCart">Add To Cart</button>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+		
+                $.ajaxSetup({ cache: false });
+
+                function Package(data) {
+                    var self = this;
+                    for (p in data) {
+                        self[p] = ko.observable(data[p]);
+                    }
+                    $.each(self.Performances(), function(i, p) {
+                        p.DateDisplay = ko.computed(function() {
+                            return moment(p.Date).format('ddd, MMM Do, h:mma');
+                        });
+                    });
+
+                    self.operaInstruction = ko.computed(function() {
+                        return self.NumberPerformances() == self.Performances().length ? "Your subscription includes these "+self.NumberPerformances()+" performances." : "Please choose which operas you would like to experience.";
+                    });
+                    self.allPerformances = ko.computed(function() {
+                        return self.NumberPerformances() == self.Performances().length;
+                    });
+                    self.availablePriceTypes = ko.computed(function() {
+                        var priceTypes = [{
+                            name: "Regular",
+                            id: 1,
+                            description: ""
+                        }];
+                        if(_.contains(self.PriceTypes(), 38)) {
+                            priceTypes.push({
+                                name: "Senior",
+                                id: 38,
+                                description: "<b>Seniors 65+</b> - Proof of age required to receive discount."
+                            });
+                        }
+
+                        return priceTypes;
+                    });
+
+                    self.availableSections = ko.computed(function() {
+                        var sections = [];
+                        $.each(self.Sections(), function(ind, item) {
+                            if(item.SectionShortDesc != 'ADA' && item.SectionShortDesc != 'OBV' && item.SectionDescription.indexOf('ADA') != 0) {
+                                var section = {
+                                    id: item.Id,
+                                    name: item.SectionDescription,
+                                    code: item.SectionShortDesc,
+                                    soldOut: false
+                                };
+                                $.each(item.Prices, function(i, pt) {
+                                    if(pt.PriceType == 1) {
+                                        if(pt.SeatsAvailable == 0)section.soldOut = true;
+                                        section.regularPrice = pt.Price;
+                                        section.regularPriceDisplay = section.soldOut ? "Sold Out" : numeral(pt.Price).format('$0,0[.]00');
+                                    }
+									if (pt.PriceType == 38) {
+                                        section.seniorPrice = pt.Price;
+                                        section.seniorPriceDisplay = section.soldOut ? "Sold Out" : numeral(pt.Price).format('$0,0[.]00');
+                                    }
+                                });
+                                section.rowClass = ko.computed(function() {
+                                    return section.soldOut ? "sold-out" : "";
+                                });
+                                sections.push(section);
+                            }
+                        });
+                        return sections;
+                    });
+                }
+
+                function PackagesViewModel() {
+                    var self = this;
+
+                    self.packages = ko.observableArray();
+                    self.selectedDay = ko.observable(null);
+                    self.selectedPackageId = ko.observable(null);
+                    self.selectedPerformances = ko.observableArray([]);
+                    self.regularSeatCount = ko.observable(0);
+                    self.seniorSeatCount = ko.observable(0);
+                    self.seatCountOptions = ko.observableArray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+                    self.selectedSectionId = ko.observable(null);
+
+                    self.availableDays = ko.computed(function() {
+                        var dows = $.map(self.packages(), function(pkg) {
+                            return pkg.Performances()[0].DayOfWeek;
+                        });
+                        dows = _.uniq(dows);
+                        return dows;
+                    });
+                        
+                    self.availablePackages = ko.computed(function () {
+                        if (self.selectedDay() != null) {
+                            var pkgs = ko.utils.arrayFilter(self.packages(), function (pkg) {
+                                return pkg.Performances()[0].DayOfWeek == self.selectedDay();
+                            });
+                            if(pkgs.length == 1){
+                                //self.selectedPackageId(pkgs[0].PackageNumber());
+                            }
+                            //console.log("availablePackages",self.selectedPackage());
+                            
+                            return pkgs;   
+                              
+                        }
+                        return [];
+                    });
+
+                    self.selectedPackage = ko.computed(function() {
+                        var selPkg = ko.utils.arrayFilter(self.packages(), function (pkg) {
+                            return pkg.PackageNumber() == self.selectedPackageId();
+                        });
+                        return selPkg.length > 0 ? selPkg[0] : null;
+                    });
+
+                    self.selectedPerformanceItems = ko.computed(function() {
+                        var perfs = [];
+                        if(self.selectedPackage() != null) {
+                            $.each(self.selectedPackage().Performances(), function(ind, perf) {
+                                $.each(self.selectedPerformances(), function(i, p) {
+                                    if(perf.PerformanceNumber == p) {
+                                        perfs.push(perf);
+                                    }
+                                });
+                            });
+                        }
+                        return perfs;
+                    });
+
+                    self.seniorDiscountEnabled = ko.computed(function() {
+                        var seniorPriceTypeExists = false;
+                        if(self.selectedPackage() != null) {
+                            $.each(self.selectedPackage().PriceTypes(), function(ind, item) {
+                                if(item == 38) {
+                                    seniorPriceTypeExists = true;
+                                }
+                            });
+                        }
+                        return seniorPriceTypeExists;
+                    });
+                        
+                    self.requiredPerfsSelected = ko.computed(function() {
+                        if(self.selectedPackage() != null) {
+                            if(self.selectedPackage().allPerformances() || self.selectedPerformances().length == self.selectedPackage().NumberPerformances()) {
+                                return true;
+                            }
+                        }
+                        return false;
+                    });
+                        
+                    self.seatsSelected = ko.computed(function() {
+                        return (self.regularSeatCount() + self.seniorSeatCount() > 0);
+                    });
+                        
+                    self.selectedSection = ko.computed(function() {
+                        var selsec = null;
+                        if(self.selectedSectionId() != null) {
+                            $.each(self.selectedPackage().availableSections(), function(i, section) {
+                                if(self.selectedSectionId() == section.id){
+                                    selsec = section;
+                                }
+                            });
+                        }
+                        return selsec;
+                    });
+
+                    self.regularSeatDisplay = ko.computed(function() {
+                        var txt = "";
+                        if(self.regularSeatCount() > 0) {
+                            if(self.regularSeatCount() == 1) {
+                                txt = "<b>1</b> Regular Unassigned Seat";
+                            }else {
+                                txt = "<b>"+self.regularSeatCount()+"</b> Regular Unassigned Seats";
+                            }
+                        }
+                        return txt;
+                    });
+                    
+                    self.regularSubDisplay = ko.computed(function() {
+                        var txt = "";
+                        if(self.selectedSection() != null) {
+                            txt = "(" + numeral(self.selectedSection().regularPrice).format('$0,0[.]00') +" per subscription)";
+                        }
+                        return txt;
+                    });
+
+                    self.seniorSeatDisplay = ko.computed(function() {
+                        var txt = "";
+                        if(self.seniorSeatCount() > 0) {
+                            if(self.seniorSeatCount() == 1) {
+                                txt = "<b>1</b> Senior Unassigned Seat";
+                            }else {
+                                txt = "<b>"+self.seniorSeatCount()+"</b> Senior Unassigned Seats";
+                            }
+                        }
+                        return txt;
+                    });
+                    
+                    self.seniorSubDisplay = ko.computed(function() {
+                        var txt = "";
+                        if(self.selectedSection() != null) {
+                            txt = "(" + numeral(self.selectedSection().seniorPrice).format('$0,0[.]00') +" per subscription)";
+                        }
+                        return txt;
+                    });
+
+                    self.subtotal = ko.computed(function() {
+                        var ttl = 0;
+                        if(self.seatsSelected() && self.selectedSectionId() != null) {
+                            $.each(self.selectedPackage().availableSections(), function(i, section) {
+                                if(section.id == self.selectedSectionId()) {
+                                    ttl += self.regularSeatCount() * section.regularPrice;
+                                    if(section.seniorPrice) {
+                                        ttl += self.seniorSeatCount() * section.seniorPrice;
+                                    }
+                                }
+                            });
+                        }
+                        return ttl;
+                    });
+
+                    self.subTotalDisplay = ko.computed(function() {
+                        var txt = numeral(self.subtotal()).format('$0,0[.]00');
+                        return txt;
+                    });
+
+                    self.readyForCart = ko.computed(function() {
+                        return self.subtotal() > 0;
+                    });
+
+                    self.selectedDay.subscribe(function() {
+                        self.selectedPackageId(null);
+                    });
+                    self.selectedPackageId.subscribe(function() {
+                        self.selectedPerformances([]);
+                        self.selectedSectionId(null);
+                        self.regularSeatCount(0);
+                        self.seniorSeatCount(0);
+                        if(self.selectedPackage() != null) {
+                            if(self.selectedPackage().allPerformances()) {
+                                self.selectedPerformances($.map(self.selectedPackage().Performances(), function(perf) {
+                                    return perf.PerformanceNumber;
+                                }));
+                            }
+                        }
+                    });
+
+                    self.updateCartItem = function() {
+                        $('#package_id').val(self.selectedPackageId());
+                        $('#section_id').val(self.selectedSectionId());
+                        var seats = [];
+                        for (var i = 0; i < self.regularSeatCount(); i++) {
+                            seats.push("1");
+                        }
+                        for (var j = 0; j < self.seniorSeatCount(); j++) {
+                            seats.push("38");
+                        }
+                        $('#seat_count').val(self.regularSeatCount());
+                        $('#senior_seat_count').val(self.seniorSeatCount());
+                        $('#performances').val(self.selectedPerformances().join("|"));
+
+                    };
+
+                    self.selectedSectionId.subscribe(function() {
+                        self.updateCartItem();
+                    });
+
+                    self.regularSeatCount.subscribe(function() {
+                        self.updateCartItem();
+                    });
+
+                    self.seniorSeatCount.subscribe(function() {
+                        self.updateCartItem();
+					});
+
+					self.getPackageData = function () {
+						$.get("<%= subscriptions_package_data_path %>", function (data) {
+							self.packages($.map(data.Packages, function (item) {
+								return new Package(item);
+							}));
+						});
+					};
+					self.getPackageData();
+					$('.subs-builder').show();
+
+                    /*var app = Sammy(function() {
+                        this.get('#/', function() {
+                           
+                        });
+                    });
+
+                    app.run('#/');*/
+                }
+
+                $('#package_builder').show();
+                ko.applyBindings(new PackagesViewModel(), document.getElementById('package_builder'));
+           
+        window.pageLoaded = function($) {
+            $(document).ready(function() {
+
+            });
+        };
+    </script>
+<% end %>

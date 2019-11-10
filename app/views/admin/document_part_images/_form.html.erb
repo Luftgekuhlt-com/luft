@@ -1,0 +1,122 @@
+<%
+  form_url = @document_part_image.persisted? ? 
+    admin_document_document_section_document_part_document_part_image_path(@document, @document_part.document_section, @document_part, @document_part_image) :
+    admin_document_document_section_document_part_document_part_images_path(@document, @document_part.document_section, @document_part)
+    
+  image_size = case @document_part_image.document_part.part_type
+    when "image_gallery"
+      "1024,768"
+    when "slideshow"
+      "2100,600"
+    when "cast_list"
+      "800,800"
+    when "tab_content"
+      "800,800"
+    else
+      nil
+  end
+  
+  image_type = case @document_part_image.document_part.part_type
+    when "image_gallery"
+      "Image"
+    when "slideshow"
+      "Slide"
+    when "cast_list"
+      "Cast Member"
+    when "tab_content"
+      "Tab"
+    else
+      "Image"
+  end
+%>
+
+<%= simple_form_for @document_part_image, { url: form_url } do |f| %>
+  <div class="modal-content" style="max-height: 480px;">
+    <h4 class="modal-title"><%= @document_part_image.persisted? ? "Edit" : "New" %> <%= image_type %></h4>
+    <%= f.error_notification %>
+    <% if @document_part_image.document_part.part_type == "cast_list" %>
+      <div class="row">
+        <%= f.input :title, label: 'Name', wrapper_html: { class: "col m6" }  %>
+        <%= f.input :caption, label: 'Role', wrapper_html: { class: "col m6" }  %>
+      </div>
+      <div class="row">
+        <% if @document_part_image.image.blank? %>
+          <div class="col m4">
+              <label class="control-label">Image</label>
+              <div class="slim" data-label="Click to choose an image" data-post="input, output, actions" <%= @document_part_image.slim_dimension_string.present? ? %Q(data-force-size=#{@document_part_image.slim_dimension_string}) : ""  %> data-filter-sharpen="10" data-instant-edit="true">
+                 <input type="file" accept="image/*"/>
+              </div>
+          </div>
+          <% else %>
+          <div class="col m4 current-image">
+            <label class="control-label">Image</label>
+            <div class="slim" data-post="actions" <%= @document_part_image.slim_dimension_string.present? ? %Q(data-force-size=#{@document_part_image.slim_dimension_string}) : ""  %> <%= @document_part_image.slim_crop_actions_string.present? ? %Q(data-crop=#{@document_part_image.slim_crop_actions_string}) : ""  %> data-filter-sharpen="10">
+                <img src="<%= @document_part_image.image.url %>" crossorigin="anonymous" style="max-width:100%;" />
+            </div>
+            <a href="javascript:;" class="btn btn-success btn-change-image">Change Image</a>
+          </div>
+           <div class="col m4 new-image" style="display:none;text-align:center;">
+              <label class="control-label">&nbsp;</label>
+              <div class="slim" data-label="Click to choose a new image" data-post="input, actions" <%= @document_part_image.slim_dimension_string.present? ? %Q(data-force-size=#{@document_part_image.slim_dimension_string}) : ""  %> data-filter-sharpen="10" data-instant-edit="true">
+                 <input type="file" accept="image/*"/>
+              </div>
+              <br/>
+              <a href="javascript:;" class="btn btn-default btn-keep-image">Keep Current Image</a>
+          </div>
+          <% end %>
+      </div>
+      <div class="row">
+        <%= f.input :content, label: 'Bio', wrapper_html: { class: "col m12 html-editor" }  %>
+      </div>
+    <% elsif  params[:image_type].to_s == "tab_content" %>
+      <div class="row">
+        <%= f.input :title, label: 'Name', wrapper_html: { class: "col m6" }  %>
+      </div>
+      <div class="row">
+        <%= f.input :content, label: 'Content', wrapper_html: { class: "col m12 html-editor" }  %>
+      </div>
+    <% else %>
+    <div class="row">
+      <%= f.input :title, wrapper_html: { class: "col m12" }  %>
+    </div>
+    <div class="row">
+       <% if @document_part_image.image.exists? %>
+      <div class="col m6">
+        <label class="control-label">Current Image</label>
+        <img src="<%= @document_part_image.image.url(:thumb) %>" style="width:100%;max-width:100%;"/>
+      </div>
+      <% end %>
+      <div class="col m6">
+          <%= f.input :image, label: (@document_part_image.image.exists? ? "Replace Image" : "Image") %>
+      </div>
+    </div>
+    <div class="alert blue lighten-4">All images in the same content block should have the same dimensions.</div>
+    <div class="row">
+      <%= f.input :caption, wrapper_html: { class: "col m12" }  %>
+    </div>
+    <div class="row">
+      <%= f.input :link_url, wrapper_html: { class: "col m12" }  %>
+    </div>
+  <% end %>
+  </div> <!-- /.modal-content -->
+  <div class="modal-footer">
+      <a href="javascript:;" class="btn modal-close">Cancel</a>
+      <%= f.button :submit, "Save", class: "btn btn-primary btn-submit", data: { disable_with: "Save" } %>
+  </div>
+  <% end %>
+<script type="text/javascript">
+  $('.btn-change-image', '#edit_part_image_modal, #new_content_part_image_modal').off('click');
+  $('.btn-change-image', '#edit_part_image_modal, #new_content_part_image_modal').on('click', function(e){
+    $('.current-image', '#edit_part_image_modal, #new_content_part_image_modal').hide();
+    $('.new-image', '#edit_part_image_modal, #new_content_part_image_modal').show();
+  });
+  $('.btn-keep-image', '#edit_part_image_modal, #new_content_part_image_modal').off('click');
+  $('.btn-keep-image', '#edit_part_image_modal, #new_content_part_image_modal').on('click', function(e){
+    $('.new-image', '#edit_part_image_modal, #new_content_part_image_modal').hide();
+    $('.current-image', '#edit_part_image_modal, #new_content_part_image_modal').show();
+  });
+</script>
+
+<script type="text/javascript">
+  $('#edit_part_image_modal, #new_content_part_image_modal').slim('parse');
+</script>

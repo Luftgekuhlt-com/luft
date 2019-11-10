@@ -1,0 +1,7 @@
+<div id="new_image_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <%= render partial: "form", locals: { category: @category } %>
+  </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+<%= content_for :scripts %>

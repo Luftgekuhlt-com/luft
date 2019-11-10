@@ -1,0 +1,7 @@
+defaults: &defaults
+  default_s3_bucket: "luft-qa"
+development:
+  <<: *defaults
+production: &production
+  <<: *defaults
+  default_s3_bucket: "luft"

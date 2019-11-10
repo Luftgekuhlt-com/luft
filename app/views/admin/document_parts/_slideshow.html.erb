@@ -1,0 +1,17 @@
+<div class="row">
+  <% if part.images.size == 1 %>
+  <% slide = part.images.first %>
+  <div id="doc_part_<%= part.id %>" class="doc-part fullwidth-image-part">
+    <img src="<%= slide.image.url %>" style="width: 100%; max-width: 100%;">
+  </div>
+  <% else %>
+    <% part.images.each do |image| %>
+      <div class="col <%= part.grid_column_class %>">
+        <div class="slideshow-item">
+          <h4 title="<%= image.title %>"><%= image.title %></h4>
+          <img class="materialboxed" src="<%= image.image.url(:thumb) %>" style="width:100%;max-width:100%;" />
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

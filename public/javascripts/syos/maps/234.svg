@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="100%"
+   style="max-height:750px;"
+   preserveAspectRatio="xMinYMin meet"
+   viewBox="0 0 403.29999 870.65338"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="234.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="910"
+     inkscape:window-height="874"
+     id="namedview47"
+     showgrid="false"
+     inkscape:zoom="0.8"
+     inkscape:cx="201.64999"
+     inkscape:cy="489.18701"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <style
+     type="text/css"
+     id="style5">
+    path.section,
+    polygon.section{
+    cursor: pointer;
+    }
+    .section{fill-rule:evenodd;clip-rule:evenodd;
+    stroke: #006;
+    stroke-width:1px;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-opacity:1;
+    }
+    .orchestra-1{fill:#003C77;stroke:#003C77;}
+    .orchestra-2{fill:#296CB5;stroke:#296CB5;}
+    .orchestra-3{fill:#5A80C1;stroke:#5A80C1;}
+    .orchestra-4{fill:#A5B5DD;stroke:#A5B5DD;}
+    .orchestra-5{fill:#C6CFE9;stroke:#C6CFE9;}
+    .loge-2{fill:#A5B0CF;stroke:#A5B0CF;}
+    .loge-1{fill:#7487B2;stroke:#7487B2;}
+    .loge-x{fill:#003C77;stroke:#003C77;}
+    .balcony-2{fill:#CED3E5;stroke:#CED3E5;}
+    .balcony-1{fill:#B5C2E3;stroke:#B5C2E3;}
+
+    .section-group.active path,
+    .section-group.active polygon{fill: #090 !important;}
+    .section-group.active text{fill: #FFF !important;}
+
+    path.section:hover,
+    polygon.section:hover{
+    fill: #004;
+    }
+
+    .section-group{
+    cursor: pointer;
+    }
+    .section-group path {
+    }
+    svg.orchestra-1 #orchestra_1 path,
+    svg.orchestra-2 #orchestra_2 path,
+    svg.orchestra-3 #orchestra_3 path,
+    svg.orchestra-4 #orchestra_4 path,
+    svg.orchestra-5 #orchestra_5 path,
+    svg.loge-1 #loge_1 path,
+    svg.loge-2 #loge_2 path,
+    svg.balcony-1 #balcony_1 path,
+    svg.balcony-2 #balcony_2 path,
+    svg.balcony-2 #balcony_2 polygon,
+    .section-group:hover path,
+    .section-group:hover polygon {
+    fill: #004;
+    }
+
+    svg.orchestra-1 #orchestra_1 text,
+    svg.orchestra-2 #orchestra_2 text,
+    svg.orchestra-3 #orchestra_3 text,
+    svg.orchestra-4 #orchestra_4 text,
+    svg.orchestra-5 #orchestra_5 text,
+    svg.loge-1 #loge_1 text,
+    svg.loge-2 #loge_2 text,
+    svg.balcony-1 #balcony_1 text,
+    svg.balcony-2 #balcony_2 text,
+    .section-group:hover text {
+    fill: #FFF !important;
+    }
+
+    text.section-label{
+    font-family:Arial, sans-serif;
+    font-size:18px;
+    font-style:normal;
+    font-weight:bold;
+    line-height:50px;
+    text-align: center;
+    letter-spacing:0px;
+    word-spacing:0px;
+    fill:#006;
+    fill-opacity:1;
+    stroke:none;
+    }
+  </style>
+  <g
+     id="level_1"
+     transform="translate(5.861864,362.35339)">
+    <g
+       data-screen="6"
+       data-section-group="orchestra-1"
+       class="section-group orchestra"
+       style="display:inline"
+       id="orchestra_1">
+      <path
+         d="m 253.6,429.6 28.5,14.7 c 12.6,-6.7 22.5,-12 29.2,-20 6.7,-8 54.2,-80.8 54.2,-80.8 l 4.6,-20.6 -71.3,-34.2 c 0,0 -30.7,97.6 -34.7,106.2 -4.1,8.8 -10.5,34.7 -10.5,34.7 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-1"
+         id="OR1_R" />
+      <path
+         d="m 152.1,424.4 c 26.5,-5.1 62.5,-4.8 82,0.2 2.2,-6.8 46,-126.6 46.9,-150.9 C 281.8,249.4 275,77 275,77 216.7,65 152.7,66.1 112.9,78 c -0.7,1.5 -8.8,177.5 -5.4,195.9 3.3,18.3 44.6,150.5 44.6,150.5 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-1"
+         id="OR1_C" />
+      <path
+         d="m 135.4,429.6 -28.5,14.7 c -12.6,-6.7 -22.5,-12 -29.2,-20 -6.7,-8 -54.2,-80.8 -54.2,-80.8 l -4.6,-20.6 71.3,-34.2 c 0,0 30.7,97.6 34.7,106.2 4.1,8.8 10.5,34.7 10.5,34.7 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-1"
+         id="OR1_L" />
+      <g
+       transform="translate(-30.725586,-500.15863)"
+       id="stage-1"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:bold;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'Arial, sans-serif Bold';font-stretch:normal;font-variant:normal;"
+           x="162.47559"
+           y="823.56201"
+           id="text3396"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398"
+         x="162.47559"
+         y="823.56201">ORCHESTRA 1</tspan></text>
+      </g>
+    </g>
+    <g
+       data-screen="8"
+       data-section-group="orchestra-5"
+       class="section-group orchestra"
+       style="display:inline"
+       id="orchestra_5">
+      <path
+         d="m 304.1,268.5 57.5,24.7 c 9.1,-8.2 8.4,-32.3 9.8,-54.9 1.3,-22.6 1,-205.5 1,-205.5 L 290.7,9 c 0,0 11.6,173.5 13.1,194.3 0.9,20.7 0.3,65.2 0.3,65.2 z"
+         data-screen="8"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-5"
+         id="OR5_R" />
+      <path
+         d="m 110.9,107.3 165.2,0 -1.3,-34.9 C 225.2,60.9 167.1,60.2 112.7,73.4 l -1.8,33.9 z"
+         data-screen="8"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-5"
+         id="OR5_C" />
+      <path
+         d="M 83.9,268.5 26.4,293.2 C 17.3,285 18,260.9 16.6,238.3 15.3,215.7 15.6,32.8 15.6,32.8 L 97.3,9 c 0,0 -11.6,173.5 -13.1,194.3 -0.9,20.7 -0.3,65.2 -0.3,65.2 z"
+         data-screen="8"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-5"
+         id="OR5_L" />
+      <g
+       transform="translate(-30.10803,-735.64948)"
+       id="stage-1-5-2-8-5"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="162.47559"
+           y="823.56201"
+           id="text3396-7-4-7-5"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4-6-8-9"
+         x="162.47559"
+         y="823.56201">ORCHESTRA 5</tspan></text>
+      </g>
+    </g>
+    <g
+       data-screen="6"
+       data-section-group="orchestra-4"
+       class="section-group orchestra"
+       style="display:inline"
+       id="orchestra_4">
+      <path
+         d="m 15.9,186 71.4,-29 3.4,-48.9 c -27.2,6 -61.8,21 -75,29.5 0,0.1 0.2,48.4 0.2,48.4 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-4"
+         id="OR4_L" />
+      <path
+         d="m 109.1,150.7 168.6,-2.8 -1.7,-45.6 c -48.3,-11 -130.4,-6 -165,1.6 0.1,-0.1 -1.9,46.8 -1.9,46.8 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-4"
+         id="OR4_C" />
+      <path
+         d="m 372,182.8 -71.6,-28.9 -3.1,-46.5 c 28.8,4.2 61.4,22.2 75,29.5 0,-0.1 -0.3,45.9 -0.3,45.9 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-4"
+         id="OR4_R" />
+      <g
+       transform="translate(-30.358032,-695.14948)"
+       id="stage-1-5-2-8"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="162.47559"
+           y="823.56201"
+           id="text3396-7-4-7"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4-6-8"
+         x="162.47559"
+         y="823.56201">ORCHESTRA 4</tspan></text>
+      </g>
+    </g>
+    <g
+       data-screen="6"
+       data-section-group="orchestra-3"
+       class="section-group orchestra"
+       style="display:inline"
+       id="orchestra_3">
+      <path
+         d="m 84.6,198.3 -68.3,27.2 -0.5,-44.3 c 20.4,-12.1 51.1,-24 71.8,-28.8 -0.6,10 -3,45.9 -3,45.9 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-3"
+         id="OR3_L" />
+      <path
+         d="m 303.6,198.3 68.3,27.2 0.2,-44.5 c -19.7,-13.5 -51.1,-25.1 -71.8,-29.9 0.5,9.9 3.3,47.2 3.3,47.2 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-3"
+         id="OR3_R" />
+      <path
+         d="m 107.6,195.5 171.8,0 -1.7,-49.2 c -51.3,-9.3 -112.5,-9.4 -168.4,1.3 -0.1,0 -1.7,47.9 -1.7,47.9"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-3"
+         id="OR3_C" />
+      <g
+       transform="translate(-30.608032,-652.64948)"
+       id="stage-1-5-2"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#FFFFFF;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="162.47559"
+           y="823.56201"
+           id="text3396-7-4"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4-6"
+         x="162.47559"
+         y="823.56201">ORCHESTRA 3</tspan></text>
+      </g>
+    </g>
+    <g
+       data-screen="6"
+       data-section-group="orchestra-2"
+       class="section-group orchestra"
+       style="display:inline"
+       id="orchestra_2">
+      <path
+         d="m 110.1,283 c -3.5,-12.3 -3.5,-21.3 -3.5,-32.8 0,-11.5 1.2,-58.8 1.2,-58.8 50.1,-12.2 131.3,-9.9 171.5,-1.4 0.1,7.1 1.9,40.1 1.9,51.6 0,11.8 1.1,32.7 -1.8,41.6 -34.9,-8.6 -126.9,-14.5 -169.3,-0.2 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-2"
+         id="OR2_C" />
+      <path
+         d="m 83.9,268.5 -57.5,24.7 c -8.3,-6.6 -9.8,-35.8 -10.1,-68.2 14.5,-10 42.5,-21.1 68.3,-28.2 -0.2,5 -0.7,71.7 -0.7,71.7 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-2"
+         id="OR2_L" />
+      <path
+         d="m 304.2,268.5 57.5,24.7 c 8.3,-6.6 9.8,-35.8 10.1,-68.2 -21,-14.3 -49.5,-25.5 -68.5,-29.5 0.2,5 0.9,73 0.9,73 z"
+         data-screen="6"
+         data-section-group="orchestra"
+         class="section orchestra orchestra-2"
+         id="OR2_R" />
+      <g
+       transform="translate(-30.108032,-580.89948)"
+       id="stage-1-5"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#FFFFFF;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="162.47559"
+           y="823.56201"
+           id="text3396-7"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4"
+         x="162.47559"
+         y="823.56201">ORCHESTRA 2</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     id="level_2"
+     transform="translate(-14.5,-154.5)">
+    <g
+       data-screen="7"
+       data-section-group="loge-2"
+       class="section-group loge"
+       style="display:inline"
+       id="loge_2">
+      <path
+         d="m 14.5,411.4 c 36,-17.1 98.1,-27.1 104.3,-27.8 0.7,6.2 -3.8,83.9 5.2,108.3 -25,2.4 -63.4,9.9 -102.4,28.4 C 18,500.8 14.5,411.4 14.5,411.4 Z"
+         data-screen="7"
+         data-section-group="loge"
+         class="section loge loge-2"
+         id="L2_L" />
+      <path
+         d="m 294.9,384.3 c -4.4,30.5 -1,108.4 -1,108.4 26.6,2.1 79.6,16.3 94.1,24.7 4.5,-4.1 29.8,-36.1 29.8,-36.1 -26.8,-9.5 -52.7,-37.8 -45.3,-79.3 0.5,0.3 -66.1,-17.2 -77.6,-17.7 z"
+         data-screen="7"
+         data-section-group="loge"
+         class="section loge loge-2"
+         id="L2_R" />
+      <g
+       transform="translate(-128.01587,-375.14948)"
+       id="stage-1-5-2-8-5-3-8"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="162.47559"
+           y="823.56201"
+           id="text3396-7-4-7-5-1-9"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4-6-8-9-0-4"
+         x="162.47559"
+         y="823.56201">LOGE 2</tspan></text>
+      </g>
+      <g
+         transform="translate(138.73413,-375.89948)"
+         id="stage-1-5-2-8-5-3-8-5"
+         style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="162.47559"
+           y="823.56201"
+           id="text3396-7-4-7-5-1-9-7"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4-6-8-9-0-4-2"
+         x="162.47559"
+         y="823.56201">LOGE 2</tspan></text>
+      </g>
+    </g>
+    <g
+       data-screen="7"
+       data-section-group="loge-1"
+       class="section-group loge"
+       style="display:inline"
+       id="loge_1">
+      <path
+         d="m 21.5,520.3 c 26.7,-11.1 58.9,-25.5 102.4,-28.4 -1.2,-3.9 -3.4,-13.4 -4,-20.4 -36.5,4.5 -81.4,13.4 -100.7,28.4 0.7,7.2 2.3,20.4 2.3,20.4 z"
+         data-screen="7"
+         data-section-group="loge"
+         class="section loge loge-1"
+         id="L1_L" />
+      <path
+         d="m 138.3,380.7 c 47.2,-9.9 102.1,-6.2 137.1,0 0,0 -4.7,92.9 -3.5,108 -42.4,-8.4 -113.7,-4.1 -133,0.5 -0.3,-16.4 -1.8,-92.6 -0.3,-107.3"
+         data-screen="7"
+         data-section-group="loge"
+         class="section loge loge-1"
+         id="L1_C" />
+      <path
+         d="m 293.2,471.5 0.7,21.2 c 39.1,3.3 61.6,13.1 94.1,24.7 2.7,-2.8 16,-18.9 16,-18.9 -33,-17 -110.8,-27 -110.8,-27 z"
+         data-screen="7"
+         data-section-group="loge"
+         class="section loge loge-1"
+         id="L1_R" />
+      <g
+       transform="translate(12.015869, -380.14948)"
+       id="stage-1-5-2-8-5-3"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="162.47559"
+           y="823.56201"
+           id="text3396-7-4-7-5-1"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4-6-8-9-0"
+         x="162.47559"
+         y="823.56201">LOGE 1</tspan></text>
+      </g>
+    </g>
+    <g
+       data-screen="9"
+       data-section-group="balcony-2"
+       class="section-group balcony"
+       style="display:inline"
+       id="balcony_2">
+      <polygon
+         points="363.7,225.9 396,235.7 399.3,29.5 293.4,10.5 289.2,210.9 325.7,217.6 326.2,171.2 363.2,179.3 "
+         transform="translate(0,144)"
+         data-screen="9"
+         data-section-group="balcony"
+         class="section balcony balcony-2"
+         id="B2_R" />
+      <polygon
+         points="50.4,225.9 18.1,235.7 14.8,29.5 120.7,10.5 125,210.9 88.4,217.6 87.9,171.2 50.9,179.3 "
+         transform="translate(0,144)"
+         data-screen="9"
+         data-section-group="balcony"
+         class="section balcony balcony-2"
+         id="B2_L" />
+      <path
+         d="m 144.2,353.9 c 39.8,-5.4 105.7,-3 125.2,1.1 -0.2,-0.4 -0.1,-138 -0.1,-138 -13.9,-5.9 -115.5,-4.1 -126.7,-0.2 0.8,5.4 1.6,137.1 1.6,137.1 z"
+         data-screen="9"
+         data-section-group="balcony"
+         class="section balcony balcony-2"
+         id="B2_C" />
+      <g
+       transform="translate(-15.515869,-570.14948)"
+       id="stage-1-5-2-8-5-3-8-5-6-8"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="173.72559"
+           y="821.06201"
+           id="text3396-7-4-7-5-1-9-7-7-5"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4-6-8-9-0-4-2-7-7"
+         x="173.72559"
+         y="821.06201">BALCONY 2</tspan></text>
+      </g>
+    </g>
+    <g
+       data-screen="9"
+       data-section-group="balcony-1"
+       class="section-group balcony"
+       style="display:inline"
+       id="balcony_1">
+      <path
+         d="m 18.1,379.7 32.3,-9.8 0.5,-46.6 37,-8.2 0.5,46.4 36.6,-6.7 -1.6,-75.9 c -45,3.3 -94.6,19.5 -106.5,23.8 0,3.7 1.2,77 1.2,77 z"
+         data-screen="9"
+         data-section-group="balcony"
+         class="section balcony balcony-1"
+         id="B1_L" />
+      <path
+         d="m 396,379.7 -32.3,-9.8 -0.5,-46.6 -37,-8.2 -0.5,46.4 -36.6,-6.7 1.6,-75.9 c 45,3.3 94.6,19.5 106.5,23.8 0,3.7 -1.2,77 -1.2,77 z"
+         data-screen="9"
+         data-section-group="balcony"
+         class="section balcony balcony-1"
+         id="B1_R" />
+      <path
+         d="m 143.6,276.7 0.6,77.2 c 40.1,-6.2 103.7,-3.7 125.2,1.1 -0.1,-13.3 -0.1,-80.6 -0.1,-80.6 -40.3,-6.7 -101.8,-0.6 -125.7,2.3 z"
+         data-screen="9"
+         data-section-group="balcony"
+         class="section balcony balcony-1"
+         id="B1_C" />
+      <g
+       transform="translate(-5.515869,-500.39948)"
+       id="stage-1-5-2-8-5-3-8-5-6"
+       style="display:inline">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Arial, sans-serif;-inkscape-font-specification:'Arial, sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="162.47559"
+           y="823.56201"
+           id="text3396-7-4-7-5-1-9-7-7"
+           sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3398-4-6-8-9-0-4-2-7"
+         x="162.47559"
+         y="823.56201">BALCONY 1</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     transform="translate(-24.687,10.471)"
+     id="stage"
+     style="display:inline">
+    <text
+       x="195"
+       y="830"
+       id="text3157-1-2"
+       xml:space="preserve"
+       class="section-label"><tspan
+         x="195"
+         y="830"
+         id="tspan3159-7">STAGE</tspan></text>
+  </g>
+</svg>

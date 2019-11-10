@@ -1,0 +1,7 @@
+<% content_for(:admin_header) do %>
+  <%= link_to(admin_home_slides_path, class: "btn-floating teal right") do %><i class="material-icons">arrow_back</i><% end %>
+  <h1>Home Slides: Edit</h1>
+<% end %>
+<div class="slide-form">
+  <%= render partial: "form", locals: { slide: @slide } %>
+</div>

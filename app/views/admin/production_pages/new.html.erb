@@ -1,0 +1,7 @@
+<div id="new_document_modal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+   <%= render partial: "new_form", locals: { document: @document } %>
+  </div> <!-- /.modal-content -->
+</div> <!-- /.modal -->
+
+<%= content_for :scripts %>

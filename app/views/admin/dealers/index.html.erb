@@ -1,0 +1,32 @@
+<% content_for :header do %>
+<%= link_to("javascript:;",
+        class: "btn btn-add btn-sm btn-default pull-right modal-remote",
+        data: { key: "new_dealer_modal", url: new_admin_dealer_path}) do %>
+        &nbsp;New Dealer
+      <% end %>
+<h1>Dealers</h1>
+<% end %>
+
+<table class="table table-striped table-bordered table-hover">
+    <tbody>
+        <% @dealers.each do |dealer| %>
+        <tr>
+            <td><%= dealer.name %></td>
+            <td><%= dealer.location  %></td>
+            <td style="width:140px;text-align:right;">
+             <%= link_to("javascript:;",
+                    class: "modal-remote btn btn-default btn-sm",
+                    data: { key: "edit_dealer_modal", url: edit_admin_dealer_path(dealer) }) do %>
+                    Edit
+                  <% end %>
+              <%= link_to(admin_dealer_path(dealer), method: :delete, remote: true,
+                    data: { confirm: "Are you sure you want to delete this dealer?" },
+                    class: 'btn btn-danger btn-sm',
+                    title: 'Delete') do %>
+                    Delete
+                  <% end %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

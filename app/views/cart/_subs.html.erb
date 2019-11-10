@@ -1,0 +1,62 @@
+<% if @cart.new_packages.any? %>
+  <div class="panel panel-default subscriptions">
+      <div class="panel-heading">
+          <h3 class="panel-title">Subscriptions</h3>
+      </div>
+      <div class="panel-body">
+          <% @cart.new_packages.each do |package| %>
+          <div class="cart-item">
+              <div class="product-info">
+                  <h3><%= package.package_description %></h3>
+                  <div class="performances">
+                      <% package.performance_displays.each do |pd| %>
+                      <div><%= pd.html_safe %></div>
+                      <% end %>
+                  </div>
+              </div>
+              <div class="seating-info">
+                  <div class="seats">
+                      <% if package.fixed_package %>
+                          <% seat_price = 0
+                            package.performances.each{|p| seat_price += p["display_lines"].first["price"].to_f} %>
+                          <% display_lines = package.performances.first["display_lines"] rescue nil %>
+                          <% if display_lines.present? %>
+                              <h5><%= display_lines.first["zone_short_description"] %></h5>
+                              <% display_lines.each do |li| %>
+                              <div class="seat-info"><%= li["count"] %> <%=package.price_type_display(li["price_type_description"]) %> <%= "seat".pluralize(li["count"]) %> (<%= number_to_currency(seat_price) %> each)</div>
+                              <% end %>
+                          <% end %>
+                      <% else %>
+                          <h3>&nbsp;</h3>
+                          <% package.performances.each do |pp| %>
+                          <% display_lines = pp["display_lines"] rescue nil %>
+                          <% if display_lines.present? %>
+                              <% display_lines.each do |li| %>
+                              <div class="seat-info"><strong><%= display_lines.first["zone_short_description"] %></strong> &mdash; <%= li["count"] %> <%=package.price_type_display(li["price_type_description"]) %> <%= "seat".pluralize(li["count"]) %> (<%= number_to_currency(li["price"]) %> each)</div>
+                              <% end %>
+                          <% end %>
+                          <% end %>
+                      <% end %>
+                  </div>
+              </div>
+              <div class="amount">
+                  <div class="price"><%= number_to_currency(package.total_amount) %></div>
+              </div>
+              <div class="actions">
+                  <div class="remove">
+                      <% if package.fixed_package %>
+                      <%= link_to cart_remove_package_path(id: package.line_item_id), class: "text-danger", remote: true, method: :delete, data: { confirm: "Please click <b>Yes</b> to confirm you would like to remove this package from your cart. Or click <b>Cancel</b> to leave it." } do %>
+                          <i class="far fa-times-circle"></i> Remove
+                       <% end %>
+                       <% else %>
+                          <%= link_to cart_remove_flex_package_path(id: package.line_item_id), class: "text-danger", remote: true, method: :delete, data: { confirm: "Please click <b>Yes</b> to confirm you would like to remove this package from your cart. Or click <b>Cancel</b> to leave it." } do %>
+                              <i class="far fa-times-circle"></i> Remove
+                           <% end %>
+                       <% end %>
+                  </div>
+              </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  <% end %>

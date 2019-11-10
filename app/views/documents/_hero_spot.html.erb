@@ -1,0 +1,17 @@
+<div id="doc_part_<%= part.id %>" class="doc-part hero-spot-part content-wrap">
+  <div class="hero-spot-image">
+    <img src="<%= part&.hero_image&.image&.url(:cropped) %>" style="width:100%;max-width: 100%;"/>
+  </div>
+  <div class="hero-spot-content">
+    <h1><%= part.title %></h1>
+    <% if part.subtitle.present? %>
+      <h2><%= part.subtitle %></h2>
+    <% end %>
+    <% if part.content.present? %>
+      <div><%= part.content.html_safe %></div>
+    <% end %>
+    <% if part.button_url.present? %>
+      <a href="<%= part.button_url %>" class="btn btn-primary"><%= part.button_text.presence || 'Read More' %></a>
+    <% end %>
+  </div>
+</div>
