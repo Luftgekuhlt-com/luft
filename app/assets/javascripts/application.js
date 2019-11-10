@@ -20,8 +20,6 @@
 //= require cocoon
 //= require slim.jquery.min
 //= require modernizr
-//= require_tree ./tinymce
-//= require tinymce/tinymce.min
-//= require tinymce/jquery.tinymce.min
+//= require tinymce-jquery
 //= require jquery.colorbox
 //= require app_init

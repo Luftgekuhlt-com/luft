@@ -20,6 +20,7 @@ gem 'mini_racer'
 gem 'browser', '2.3.0'
 gem "nokogiri"
 gem "cocoon"
+gem 'tinymce-rails'
 
 gem 'devise'
 
