@@ -1,12 +1,12 @@
 # config valid only for current version of Capistrano
 lock "3.8.2"
 
-set :repo_url, "git@bitbucket.org:cvollmer/sdo_rails.git"
-set :application, "sdo"
+set :repo_url, "git@github.com:Luftgekuhlt-com/luft.git"
+set :application, "luft"
 set :user, "deploy"
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
-set :rbenv_ruby, '2.6.0'
+set :rbenv_ruby, '2.6.3'
 set :rvm_type, :system
 set :default_shell, "/usr/share/rvm/bin/rvm-shell"
 
