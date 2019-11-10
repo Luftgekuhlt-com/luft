@@ -4,4 +4,4 @@ development:
   <<: *defaults
 production: &production
   <<: *defaults
-  default_s3_bucket: "luft"
+  default_s3_bucket: "luftgekuhlt"
