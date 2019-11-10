@@ -1,5 +1,9 @@
+<div class="breadcrumb page-ctr">
+    <%= link_to('Videos', videos_path) %>
+    <span class="separator">/</span>
+    <span class="current-page"><%= @video.full_title.html_safe %></span>
+</div>
 <div class="page-ctr video-player-ctr">
-  <h1><%= link_to(videos_url) do %><img src="https://fasthouse.s3.amazonaws.com/arrow-back-films.png"/>&nbsp;Films<% end %> &nbsp;|&nbsp; <%= @video.full_title.html_safe %></h1>
   <div class="video-player">
     <%= @video.player_html.html_safe %>
   </div>

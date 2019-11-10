@@ -1,6 +1,0 @@
-<% if @performance_history.persisted? %>
-  console.log(<%= @performance_history.to_json.html_safe %>);
-  window.location.reload(true);
-<% else %>
-  $("#<%= dom_id @performance_history, :new %>").replaceWith("<%= j render(partial: 'form', locals: { performance_history: @performance_history }) %>")
-<% end %>

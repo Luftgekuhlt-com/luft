@@ -21,6 +21,8 @@
                 window.location = href;
             }
         });
+        
+        $('a.btn-primary').addClass('btn-large').addClass('waves-effect').addClass('waves-light').addClass('black')
 
         $('body').on('keyup', 'input.float', function(e){
           var val = $(this).val();

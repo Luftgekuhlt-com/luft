@@ -52,6 +52,6 @@ class DocumentPart < ApplicationRecord
   end
 
   def set_order
-    self.display_order = [document_section.parts.maximum(:display_order) || 0, document_section.parts.count].max + 1 unless display_order.present?
+    self.display_order = [document_section.parts.maximum(:display_order) || 0, document_section.parts.count].max + 1 unless display_order.present? || document_section.blank?
   end
 end

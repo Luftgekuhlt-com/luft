@@ -22,7 +22,14 @@ class Admin::DocumentsController < AdminController
 
   def show
     redirect_to admin_content_areas_path if @document.page_type == "content_areas"
-    redirect_to admin_production_page_path(@document) if @document.production_page?
+    redirect_to admin_build_page_path(@document) if @document.build_page?
+    redirect_to admin_past_event_path(@document) if @document.past_event?
+    redirect_to admin_gallery_path(@document) if @document.gallery?
+    redirect_to admin_storyline_path(@document) if @document.storyline?
+  end
+
+  def homepage
+    @document = home_page
   end
 
   def new
@@ -72,6 +79,8 @@ class Admin::DocumentsController < AdminController
       end
     else
       if @document.update_attribute(:archived, true)
+        @document.update(slug: "#{@document.slug}-archived")
+        @document.reindex
         flash[:notice] = "The document was successfully archived"
       end
     end
@@ -80,9 +89,13 @@ class Admin::DocumentsController < AdminController
 
   def admin_section
     if @document.present?
-      return 'home' if %w(home_spotlight).include?(@document.page_type)
+      return 'home' if %w[home_page].include?(@document.page_type)
     end
     'content'
+  end
+  
+  def admin_page
+    'content-pages'
   end
 
   private

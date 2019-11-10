@@ -1,0 +1,71 @@
+<%
+  @document_part.create_hero_image unless @document_part.hero_image.present?
+%>
+<div>
+<%= simple_form_for @document_part, url: admin_document_document_section_document_part_path(@document, @document_part.document_section, @document_part, format: :json), as: :document_part do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <% unless @document.slug == "content-areas" %>
+    <div class="row">
+      <%= f.input :title, wrapper_html: { class: "col m12" }  %>
+    </div>
+    <div class="row">
+      <%= f.input :subtitle, wrapper_html: { class: "col m12" }  %>
+    </div>
+    <div class="row">
+        <%= f.input :content, label: "Content", wrapper_html: { class: "col m12 html-editor" }  %>
+    </div>
+    <div class="row">
+      <%= f.input :button_url, wrapper_html: { class: "col m6" }  %>
+      <%= f.input :button_text, wrapper_html: { class: "col m6" }  %>
+    </div>
+    <% end %>
+    <%= f.fields_for :hero_image do |hi| %>
+      <% if @document_part.hero_image.blank? %>
+        <div class="col m6">
+            <label class="control-label">Image</label>
+            <div class="slim" data-label="Click to choose an image" data-post="input, output, actions" data-force-size="1100,800" data-filter-sharpen="10" data-instant-edit="true">
+               <input type="file" accept="image/*"/>
+            </div>
+        </div>
+        <% else %>
+        <div class="col m6 current-image">
+          <label class="control-label">Image</label>
+          <div class="slim" data-post="actions"  data-force-size="1100,800" <%= @document_part.hero_image.slim_crop_actions_string.present? ? %Q(data-crop=#{@document_part.hero_image.slim_crop_actions_string}) : ""  %> data-filter-sharpen="10">
+              <img src="<%= @document_part.hero_image.image.url %>" crossorigin="anonymous" style="max-width:100%;" />
+          </div>
+          <a href="javascript:;" class="btn btn-success btn-change-image">Change Image</a>
+        </div>
+         <div class="col m6 new-image" style="display:none;text-align:center;">
+            <label class="control-label">&nbsp;</label>
+            <div class="slim" data-label="Click to choose a new image" data-post="input, actions" data-force-size="1100,800" data-filter-sharpen="10" data-instant-edit="true">
+               <input type="file" accept="image/*"/>
+            </div>
+            <br/>
+            <a href="javascript:;" class="btn btn-default btn-keep-image">Keep Current Image</a>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save", disable_with: "Saving...", class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>
+<script type="text/javascript">
+  $('.btn-change-image').off('click');
+  $('.btn-change-image').on('click', function(e){
+    $('.current-image').hide();
+    $('.new-image').show();
+  });
+  $('.btn-keep-image').off('click');
+  $('.btn-keep-image').on('click', function(e){
+    $('.new-image').hide();
+    $('.current-image').show();
+  });
+</script>
+
+<script type="text/javascript">
+  $('body').slim('parse');
+</script>

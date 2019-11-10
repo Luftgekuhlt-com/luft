@@ -3,7 +3,7 @@ class DocumentsController < ApplicationController
   def index
     @current_tag = "all"
     if params[:path].present?
-      @document = Document::Legend.active.find_by(slug: params[:path])
+      @document = Document.active.find_by(slug: params[:path])
       if @document.present?
         return render :show
       end
@@ -22,15 +22,15 @@ class DocumentsController < ApplicationController
     criteria[:where] = { }
     criteria[:where][:hidden] = false
     criteria[:where][:archived] = false
-    criteria[:where][:page_type] = Document::Legend.page_type
+    criteria[:where][:page_type] = page_type_filter if page_type_filter.present?
     criteria[:where][:categories] = @current_tag unless @current_tag == "all"
     criteria[:order] = {featured: :desc, published_at: :desc}
     criteria[:limit] = per_page
     criteria[:offset] = params[:page].present? ? (params[:page].to_i - 1) * per_page : 0
     criteria[:aggs] = [:categories]
     @tags = {}
-    @legends = Document.search(term, criteria)
-    @legends.aggs["categories"]["buckets"].each do |pt|
+    @pages = Document.search(term, criteria)
+    @pages.aggs["categories"]["buckets"].each do |pt|
       @tags[pt["key"]] = pt["doc_count"]
     end
     
@@ -43,6 +43,10 @@ class DocumentsController < ApplicationController
       return render :show
     end
     raise ActionController::RoutingError.new('Not Found')
+  end
+  
+  def page_type_filter
+    nil
   end
 
   private

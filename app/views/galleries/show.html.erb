@@ -1,0 +1,78 @@
+<% @browser_title = @document.title
+  @fb_image = @document.main_image.url if @document.main_image.present?
+%>
+<div class="breadcrumb page-ctr">
+    <%= link_to('Galleries', galleries_path) %>
+    <span class="separator">/</span>
+    <span class="current-page"><%= @document.title %></span>
+</div>
+<% @document.sections.order(:display_order).reject(&:hidden).each do |section| %>
+   <%= render partial: 'section', locals: { document: @document, section: section } %>   
+<% end %>
+<% content_for :scripts do %>
+<script type="text/javascript">
+    $(document).ready(function () {
+      $('.carousel').carousel({
+        fullWidth: true,
+        indicators: true
+      });
+      setInterval(function() {
+        $('.carousel').carousel('next');
+      }, 5000);
+      $(".image-strip-part a").colorbox({ rel: 'image-strip-part', slideshow: true, slideshowSpeed: 5000, maxWidth: "90%", maxHeight: "90%", speed: 1000, transition: "fade"});
+    });
+    /*$(window).on('load', function(){
+      $('.image-strip-ctr a').each(function(ind, el){
+        var img = new Image();
+        img.src = $(el).attr('href');
+      });
+    });*/
+  $('.tile-grid').each(function(ind, grid){
+    $grid = $(grid);
+    var cols = 2;
+    var items = $('.tile', $grid);
+    var row = $('<div class="row"/>');
+    $grid.append(row);
+    var colClasses = "col xl3 l4 m6 s12";
+    if (cols == 2) {
+        colClasses = "col xl6 l6 m12 s12";
+    }
+    if (cols == 3) {
+        colClasses = "col xl4 l4 m6 s12";
+    }
+    for (var i = 1; i <= cols; i++) {
+        row.append('<div id="column_' + i + '" class="'+colClasses+'"/>');
+    }
+    $grid.distributeItems = function(){
+      var cols = Math.floor($grid.width() / $('#column_1').width());
+      $grid.append(items);
+      $(items).each(function(ind, el){
+        if (ind < cols) {
+            $('#column_' + (ind + 1)).append(el);
+        } else {
+            var shortestColumn = 1;
+            var shortestColumnHeight = $('#column_1').height();
+            for (var i = 2; i <= cols; i++) {
+                var h = $('#column_' + i).height();
+                if (h < shortestColumnHeight) {
+                    shortestColumn = i;
+                    shortestColumnHeight = h;
+                }
+            }
+            $('#column_' + shortestColumn).append(el);
+        }
+        $(el).show();
+      });
+    }
+    $grid.distributeItems();
+    $(window).on('load', function () {
+        $grid.distributeItems();
+         $(window).on('resize', function () {
+          $grid.distributeItems();
+      });
+    });
+  });
+  
+
+</script>
+<% end %>

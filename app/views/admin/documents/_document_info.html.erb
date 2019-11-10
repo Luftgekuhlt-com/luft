@@ -7,7 +7,7 @@
         <tr><td style="width:120px;">Title</td><td><%= document.title %></td></tr>
         <tr><td style="width:120px;">Slug</td><td><%= document.slug %></td></tr>
         <tr><td style="width:120px;">Url</td><td><%= link_to(document.site_url, document.site_url, target: '_blank') %></td></tr>
-        <tr><td style="width:120px;">Publish Date</td><td><%= document.created_at.strftime("%A, %B %e, %Y") %></td></tr>
+        <tr><td style="width:120px;">Publish Date</td><td><%= document.published_at.strftime("%A, %B %e, %Y") %></td></tr>
       </tbody>
     </table>
     <div style="text-align: right;">

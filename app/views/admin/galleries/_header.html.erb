@@ -1,0 +1,6 @@
+<% if @document.parent.present? %>
+<%= link_to(admin_past_event_path(id: @document.parent_id), class: "btn-floating teal right") do %><i class="material-icons">arrow_back</i><% end %>
+<% else %>
+<%= link_to(admin_galleries_path, class: "btn-floating teal right") do %><i class="material-icons">arrow_back</i><% end %>
+<% end %>
+<h1><%= @document.page_type.pluralize.humanize.titleize %>: Edit</h1>

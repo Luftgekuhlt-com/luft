@@ -53,6 +53,8 @@ class DocumentPartImage < ApplicationRecord
     case part_type
     when "cast_list"
       [800, 800]
+    when "hero_spot"
+      [1100, 800]
     else
       [800, 600]
     end

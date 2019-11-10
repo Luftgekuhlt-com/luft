@@ -6,19 +6,8 @@
       <%= f.input :slug, wrapper_html: { class: "col m6" }  %>
     </div>
     <div class="row">
-      <div class="form-group datetime optional published_at col m6">
-            <label class="control-label datetime optional" for="created_at">Publish Date</label>
-            <%= f.input :published_at, as: :hidden, input_html: { class: "fh-date-picker" }  %>
-          </div>
+      <%= f.input :published_at, as: :date, label: 'Publish Date', input_html: {value: @document&.published_at&.to_date}, wrapper_html: { class: "col m6" }  %>
     </div>
-      <div class="categories">
-        <%= f.association :categories, as: :check_boxes,
-               label_method: :name,
-               value_method: :id,
-               collection: Category.all.order(:name),
-               item_wrapper_class: "category-item",
-               label: 'Categories' %>
-      </div>
   </div>
 
   <div class="form-actions">

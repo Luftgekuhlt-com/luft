@@ -1,0 +1,40 @@
+<%= link_to("javascript:;",
+  class: "btn-floating teal right modal-remote",
+  data: { key: "new_storyline_modal", url: new_admin_storyline_path(parent_id: @document.id)}) do %>
+  <i class="material-icons">add</i>
+<% end %>
+<h3>Storylines</h3>
+
+<div class="pages-list">
+  <% if @document.storylines.any? %>
+    <% @document.storylines.each do |storyline| %>
+    <div class="pages-item">
+      <div class="row">
+        <div class="col m10">
+          <h4><%= storyline.title %></h4>
+          <div><%= storyline.slug %></div>
+        </div>
+        <div class="col m2 actions">
+          <div class="fixed-action-btn direction-left">
+            <a class="btn-floating btn-large teal">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul>
+              <li>
+                <%= link_to(storyline.site_url, target: '_blank', class: 'btn-floating teal darken-1') do %><i class="material-icons" title="View Page">present_to_all</i><% end %>
+              </li>
+              <li>
+                <%= link_to(admin_storyline_path(storyline), class: 'btn-floating teal darken-1') do %><i class="material-icons" title="Edit">edit</i><% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% else %>
+    <div>
+      <div class="alert alert-info" style="margin:0;">There are no storylines for this event</div>
+    </div>
+  <% end %>
+</div>

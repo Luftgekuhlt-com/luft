@@ -1,0 +1,61 @@
+<div class="content-wrap">
+    <h1>News</h1>
+    <div class="tile-grid">
+        <% @pages.each do |page| %>
+            <div class="tile">
+                <a class="news-list-item" href="<%= page.site_url %>">
+                    <img src="<%= page.main_image_url %>" title="<%= page.title %>" style="width:100%;max-width:100%;" />
+                    <h4><%= page.title %></h4>
+                    <div class="publish-date"><%= l(page.published_at.to_date) %></div>
+                </a>
+            </div>
+        <% end %>
+    </div>
+</div>
+<script type="text/javascript">
+  $('.tile-grid').each(function(ind, grid){
+    $grid = $(grid);
+    var cols = 3;
+    var items = $('.tile', $grid);
+    var row = $('<div class="row"/>');
+    $grid.append(row);
+    var colClasses = "col xl3 l4 m6 s12";
+    if (cols == 2) {
+        colClasses = "col xl6 l6 m12 s12";
+    }
+    if (cols == 3) {
+        colClasses = "col xl4 l4 m6 s12";
+    }
+    for (var i = 1; i <= cols; i++) {
+        row.append('<div id="column_' + i + '" class="'+colClasses+'"/>');
+    }
+    $grid.distributeItems = function(){
+      var cols = Math.floor($grid.width() / $('#column_1').width());
+      $grid.append(items);
+      $(items).each(function(ind, el){
+        if (ind < cols) {
+            $('#column_' + (ind + 1)).append(el);
+        } else {
+            var shortestColumn = 1;
+            var shortestColumnHeight = $('#column_1').height();
+            for (var i = 2; i <= cols; i++) {
+                var h = $('#column_' + i).height();
+                if (h < shortestColumnHeight) {
+                    shortestColumn = i;
+                    shortestColumnHeight = h;
+                }
+            }
+            $('#column_' + shortestColumn).append(el);
+        }
+        $(el).show();
+      });
+    }
+    $grid.distributeItems();
+    $(window).on('load', function () {
+        $grid.distributeItems();
+         $(window).on('resize', function () {
+          $grid.distributeItems();
+      });
+    });
+  });
+</script>

@@ -1,6 +1,6 @@
 <div class="document-section">
-    <% if section.title.present? %><h2><%= section.title %></h2><% end -%>
-    <div class="section-panes <%= section.layout.presence || 'full' %>">
+    <% if section.title.present? %><h3><%= section.title %></h3><% end -%>
+    <div class="section-panes <%= section.layout.presence || 'standard' %>">
       <% if section.panes.key?(:left) %>
         <div class="pane left-pane">
           <% section.panes[:left].each do |part| %>
@@ -15,7 +15,7 @@
       <div class="pane main-pane">
         <% section.panes[:main].each do |part| %>
             <% begin %>
-          <%= render partial: part.partial_name, locals: { document: @document, part: part, use_tiles: true } %>
+          <%= render partial: part.partial_name, locals: { document: @document, part: part, use_tiles: false } %>
             <% rescue => ex %>
             <!-- <%= ex.inspect %> -->
             <% end %>

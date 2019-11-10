@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "home#index"
     get 'content-areas' => "home#content", as: :content_areas
+    get 'home-page' => "documents#homepage", as: :home_page
     get 'oauth2-redirect' => "oauth#oauth2_redirect", as: :oauth2_redirect
 
     resources :documents, path: "pages" do
@@ -42,27 +43,13 @@ Rails.application.routes.draw do
         end
       end
     end
-    resources :production_pages, path: "productions" do
-      resources :document_sections, path: "sections" do
-        member do
-          get :move
-        end
-        resources :document_parts, path: "parts" do
-          member do
-            get :move
-            get :bulk
-            match :bulk_upload, via: [:get, :post, :patch]
-          end
-          resources :document_part_images do
-            member do
-              get :move
-            end
-            collection do
-            end
-          end
-        end
-      end
-    end
+    resources :build_pages, path: "build-pages"
+    resources :news_items, path: "news-items"
+    resources :past_events, path: "past-events"
+    resources :storylines, path: "storylines"
+    resources :galleries, path: "galleries"
+
+    
     match 'home-slides/preview' => 'home_slides#preview', as: :home_slide_preview, via: [:get, :post, :patch]
     match 'home-slides/preview-upload' => 'home_slides#preview_upload', as: :home_slide_preview_upload, via: [:get, :post]
     resources :home_slides do
@@ -85,18 +72,32 @@ Rails.application.routes.draw do
     end
     resources :news_links
     resources :press_releases
-    resources :performance_histories
+    resources :videos
   end
 
-  resources :performances, path: 'tickets' do
-    member do
-      get 'best-avail' => 'performances#show', as: :best_avail
-      get 'syos' => 'performances#syos', as: :syos
-      get 'syos-screen/:screen' => 'performances#syos_screen', as: :syos_screen
-      post 'purchase' => 'performances#purchase', as: :purchase
-      post 'syos_reserve' => 'performances#syos_reserve', as: :syos_reserve
-
+  resources :build_pages, path: 'builds' do
+    collection do
+      get ':path' => 'build_pages#index', as: :build_page_detail
     end
+  end
+  resources :news_items, path: 'news' do
+    collection do
+      get ':path' => 'news_items#index', as: :news_item_detail
+    end
+  end
+  get 'galleries/:slug' => 'galleries#show', as: :gallery_show
+  resources :galleries, path: 'galleries' do
+    collection do
+      get ':path' => 'galleries#index', as: :gallery_detail
+    end
+  end
+  get 'past-events/:event_slug/:slug' => 'past_events#storyline', as: :past_events_storyline
+  resources :past_events, path: 'past-events' do
+    collection do
+      get ':path' => 'past_events#index', as: :past_event_detail
+    end
+    resources :galleries
+    resources :storylines
   end
 
   get 'cart' => 'cart#show', as: :view_cart
@@ -105,6 +106,7 @@ Rails.application.routes.draw do
   delete 'remove-flex-package/:id' => 'cart#remove_flex_package', as: :cart_remove_flex_package
 
 
+  resources :videos, path: :videos, only: [:index, :show]
 
   match '*.php', to: redirect('/404'), via: [:get, :post, :patch]
 

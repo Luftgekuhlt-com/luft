@@ -73,7 +73,7 @@ class Admin::DocumentPartsController < AdminController
         @document_part.images.create(image: image)
       }
     end
-    return redirect_to edit_admin_document_document_part_path(@document, @document_part)
+    return redirect_to edit_admin_document_document_section_document_part_path(@document, @document_section, @document_part)
   end
 
   # DELETE /document_parts/1

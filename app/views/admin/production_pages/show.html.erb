@@ -22,7 +22,7 @@
     <% @document.sections.order(:display_order).each do |section| %>
       <div class="document-section">
         <h6><%= section.title.presence || "Section #{section.display_order}" %></h6>
-        <div class="section-panes <%= section.layout.presence || 'full' %> <%= section.hidden? ? "hidden-section" : "" %>">
+        <div class="section-panes <%= section.layout.presence || 'standard' %> <%= section.hidden? ? "hidden-section" : "" %>">
           <% if section.panes.key?(:left) %>
             <div class="pane left-pane">
               <% section.panes[:left].each do |part| %>

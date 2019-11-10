@@ -2,7 +2,7 @@
 <% if part.title.present? %>
   <h3><%= part.title %></h3>
 <% end %>
-<div id="doc_part_<%= part.id %>" class="doc-part image-strip-part">
+<div id="doc_part_<%= part.id %>" class="doc-part image-strip-part <%= part.document.home_page? ? 'home-page-part' : '' %>">
 <% if use_tiles %>
 <div class="tile-grid">
   <% part.images.order(:display_order).each do |image| %>
@@ -16,7 +16,12 @@
 <div class="image-strip-ctr">
   <% part.images.order(:display_order).each do |image| %>
         <div class="image-strip-item">
-            <a href="<%= image.image.url %>"><img src="<%= image.image.url(:medium) %>" title="<%= image.title %>" /></a>
+          <a href="<%= image.link_url.presence || image.image.url %>">
+            <img src="<%= image.image.url(:medium) %>" title="<%= image.title %>" />
+            <% if part.document.home_page? && image.caption.present? %>
+            <div class="caption"><%= image.caption %></div>
+            <% end %>
+          </a>
         </div>
   <% end %>
 </div>

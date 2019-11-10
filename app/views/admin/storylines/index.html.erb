@@ -1,0 +1,62 @@
+<% content_for :admin_header do %>
+<%= link_to("javascript:;",
+        class: "btn-floating teal right modal-remote",
+        data: { key: "new_build_page_modal", url: new_admin_build_page_path}) do %>
+        <i class="material-icons">add</i>
+      <% end %>
+<h1>Build Pages</h1>
+<% end %>
+
+<div class="row">
+  <div class="col m9 pages-list">
+    <% if @documents.any? %>
+      <% @documents.each do |document| %>
+      <div class="row pages-item">
+        <div class="col m10">
+          <h4><%= document.title %></h4>
+          <div><%= document.slug %></div>
+        </div>
+        <div class="col m2 actions">
+          <div class="fixed-action-btn direction-left">
+            <a class="btn-floating btn-large teal">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul>
+              <li>
+                <%= link_to(document.site_url, target: '_blank', class: 'btn-floating teal darken-1') do %><i class="material-icons" title="View Page">present_to_all</i><% end %>
+              </li>
+              <li>
+                <%= link_to(admin_build_page_path(document), class: 'btn-floating teal darken-1') do %><i class="material-icons" title="Edit">edit</i><% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+      <div>
+        <div class="alert alert-info" style="margin:0;">There are no pages matching the current criteria</div>
+      </div>
+    <% end %>
+    <%= paginate @documents %>
+  </div>
+  <div class="col m3">
+    <%= simple_form_for :search, url: admin_build_pages_path, method: :get do |f| %>
+      <%= f.input :q, as: :string, label: false, placeholder: 'Keyword Search', input_html: { value: @search_params[:q]}, wrapper_html: { class: "col m12" }  %>
+      <%= f.input :include_hidden, as: :boolean, input_html: { checked: @search_params[:include_hidden].to_s == '1' }, wrapper_html: { class: "col m12" }  %>
+      <%= f.input :include_archived, as: :boolean, input_html: { checked: @search_params[:include_archived].to_s == '1'}, wrapper_html: { class: "col m12" }  %>
+      <%= f.submit 'Search', class: 'btn' %>
+      <a href="<%= admin_documents_path %>" class="cancel-link">Clear Filters</a>
+    <% end -%>
+  </div>
+</div>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+  $('.page-type-filter a').on('click', function(){
+    var pt = $(this).data('type');
+    $('#pt').val(pt);
+    $('#page_filter_form').submit();
+  });
+</script>
+<% end %>

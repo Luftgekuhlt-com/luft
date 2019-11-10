@@ -1,167 +1,66 @@
-<div id="slideshow_home" class="carousel carousel-slider center">
-    <% @home_slides.each_with_index do |slide, ctr| %>
-    <div class="carousel-item <%= slide.has_video? ? "has-video" : "" %>" data-delay="<%= slide.slide_duration %>" href="#slide-<%= slide.id %>!">
-      <% if slide.button_link.present? && slide.button_text.blank? %>
-      <a href="<%= slide.button_link %>">
-      <% end %>
-        <div class="home-slide-wrap <%= slide.has_video? ? "video" : "" %>" style="<%= slide.main_image_url.present? ? "background: url(#{slide.main_image_url}) no-repeat scroll center center;" : "" %>">
-          <% if slide.main_image_url.present? && !slide.has_video? %>
-            <img src="<%= slide.main_image_url %>" class="img-placeholder" />
-          <% end %>
-          <% if slide.content.present? %>
-            <%= slide.content.html_safe %>
-          <% else %>
-            <% if slide.has_video? %>
-            <%= slide.player_html.html_safe %>
-            <% end %>
-            <div class="slide-content <%= slide.content_anchor %>">
-              <% unless slide.title.blank? %>
-              <h1><%= slide.title %></h1>
-              <% end %>
-              <% unless slide.sub_title.blank? %>
-              <h3><%= slide.sub_title %></h3>
-              <% end %>
-              <% if slide.button_link.present? && slide.button_text.present? %>
-              <%= link_to(slide.button_text.presence || "More Info", slide.button_link, class: "btn btn-primary btn-cta" ) %>
-              <% end %>
-            </div>
-          <% end %>
-      </div>
-      <% if slide.button_link.present? && slide.button_text.blank? %>
-      </a>
-      <% end %>
-      </div>
-    <% end -%>
-</div>
-
-  <% unless @primary_spotlight.blank? %>
-    <% @primary_spotlight.sections.order(:display_order).reject(&:hidden).each do |section| %>
-      <%= render partial: 'documents/section', locals: { document: @primary_spotlight, section: section } %>
-    <% end %>
-  <% end %>
-
-  <% unless @primary_portals.blank? %>
-  <div class="row home-portals-list">
-  <% @primary_portals.each do |portal| %>
-    <div class="col s4">
-      <div class="card medium sticky-action home-portal-item">
-        <div class="card-image">
-          <img src="<%= portal.main_image_url %>"/>
-          <span class="card-title"><%= portal.title %></span>
-        </div>
-        <div class="card-content">
-          <%= portal.content.html_safe %>
-        </div>
-        <div class="card-action">
-          <% if portal.link_url_1.present? && portal.link_text_1.present? %>
-            <%= link_to(portal.link_text_1, portal.link_url_1) %>
-          <% end %>
-          <% if portal.link_url_2.present? && portal.link_text_2.present? %>
-            <%= link_to(portal.link_text_2, portal.link_url_2) %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-  </div>
-  <% end %>
-
-  <% unless @secondary_spotlight.blank? %>
-    <% @secondary_spotlight.sections.order(:display_order).reject(&:hidden).each do |section| %>
-      <%= render partial: 'documents/section', locals: { document: @secondary_spotlight, section: section } %>
-    <% end %>
-  <% end %>
-
-
-  <% unless @secondary_portals.blank? %>
-  <div class="container">
-    <div class="row home-portals-list">
-    <% @secondary_portals.each do |portal| %>
-      <div class="col s6">
-        <div class="card medium sticky-action home-portal-item">
-          <div class="card-image">
-            <img src="<%= portal.main_image_url %>"/>
-            <span class="card-title"><%= portal.title %></span>
-          </div>
-          <div class="card-content">
-            <%= portal.content.html_safe %>
-          </div>
-          <div class="card-action">
-            <% if portal.link_url_1.present? && portal.link_text_1.present? %>
-              <%= link_to(portal.link_text_1, portal.link_url_1) %>
-            <% end %>
-            <% if portal.link_url_2.present? && portal.link_text_2.present? %>
-              <%= link_to(portal.link_text_2, portal.link_url_2) %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    </div>
-  </div>
-  <% end %>
-
-  <!-- Place <div> tag where you want the feed to appear -->
-  <div id="curator-feed"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
-  <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
-  <script type="text/javascript">
-  /* curator-feed */
-  (function(){
-  var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
-  i.src = "https://cdn.curator.io/published/118a0722-6a56-4d07-a0cf-6ea101cf69da.js";
-  e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-  })();
-  </script>
-  <script type="text/javascript">
-    $(window).load(function () {
-      var h = $('#slideshow_home').height();
-      var ratio = h / 800;
-      var w = ratio * 2000;
-      $('#slideshow_home .home-slide-wrap.video .html5-video-wrap').each(function(ind, el){
-        $(el).width(w);
-        $(el).height(h);
-      });
-
-      $('#slideshow_home').carousel({
+<% @document.sections.order(:display_order).reject(&:hidden).each do |section| %>
+   <%= render partial: 'documents/section', locals: { document: @document, section: section } %>   
+<% end %>
+<% content_for :scripts do %>
+<script type="text/javascript">
+    $(document).ready(function () {
+      $('.carousel').carousel({
         fullWidth: true,
-        indicators: true,
-        onCycleTo: function(slide){
-          console.log('slide', $(slide).data('delay'), slide);
-          $('#slideshow_home video').each(function(ind, el){
-            $(el).get(0).load();
-            $('ul.indicators', '#slideshow_home').hide();
-          })
-          if($(slide).hasClass('has-video')){
-            var video = $(slide).find('video').get(0);
-            if(video){
-              $(video).on('ended', function(e2){
-                console.log('video finished, resuming slideshow');
-                $('#slideshow_home').carousel('next');
-              })
-              $('ul.indicators', '#slideshow_home').hide();
-              video.play();
-            }
-          }
-          else{
-            window.setTimeout(function(){
-              $('#slideshow_home').carousel('next');
-            }, 5000);
-          }
-        }
+        indicators: true
       });
+      setInterval(function() {
+        $('.carousel').carousel('next');
+      }, 5000);
     });
-    $(window).on('resize', function(){
-      console.log('resize');
-      var h = $('#slideshow_home').height();
-      var ratio = h / 800;
-      var w = ratio * 2000;
-      $('#slideshow_home .home-slide-wrap.video .html5-video-wrap').each(function(ind, el){
-        $(el).width(w);
-        $(el).height(h);
+    /*$(window).on('load', function(){
+      $('.image-strip-ctr a').each(function(ind, el){
+        var img = new Image();
+        img.src = $(el).attr('href');
       });
+    });*/
+  var grid = $('.tile-grid');
+  var cols = 2;
+  var items = $('.tile', grid);
+  var row = $('<div class="row"/>');
+  grid.append(row);
+  var colClasses = "col xl3 l4 m6 s12";
+  if (cols == 2) {
+      colClasses = "col xl6 l6 m12 s12";
+  }
+  if (cols == 3) {
+      colClasses = "col xl4 l4 m6 s12";
+  }
+  for (var i = 1; i <= cols; i++) {
+      row.append('<div id="column_' + i + '" class="'+colClasses+'"/>');
+  }
+  function distributeItems(){
+    var cols = Math.floor(grid.width() / $('#column_1').width());
+    grid.append(items);
+    $(items).each(function(ind, el){
+      if (ind < cols) {
+          $('#column_' + (ind + 1)).append(el);
+      } else {
+          var shortestColumn = 1;
+          var shortestColumnHeight = $('#column_1').height();
+          for (var i = 2; i <= cols; i++) {
+              var h = $('#column_' + i).height();
+              if (h < shortestColumnHeight) {
+                  shortestColumn = i;
+                  shortestColumnHeight = h;
+              }
+          }
+          $('#column_' + shortestColumn).append(el);
+      }
+      $(el).show();
     });
+  }
+  distributeItems();
+  $(window).on('load', function () {
+      distributeItems();
+       $(window).on('resize', function () {
+        distributeItems();
+    });
+  });
 
-  </script>
-
-  <% content_for :scripts do %>
-  <% end %>
+</script>
+<% end %>

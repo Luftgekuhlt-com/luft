@@ -1,7 +1,5 @@
-<div id="new_image_modal" class="modal fade video-modal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" style="width: 940px;max-width:95vw;">
-    <%= render partial: "form", locals: { video: @video } %>
-  </div> <!-- /.modal-dialog -->
+<div id="new_video_modal" class="modal video-modal" tabindex="-1" role="dialog" aria-hidden="true">
+   <%= render partial: "form", locals: { video: @video } %>
 </div> <!-- /.modal -->
 
 <%= content_for :scripts %>

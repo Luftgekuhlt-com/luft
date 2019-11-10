@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= [@browser_title, "San Diego Opera"].select{|x| !x.blank?}.join(" - ") %></title>
+    <title><%= [@browser_title, "Luft"].select{|x| !x.blank?}.join(" - ") %></title>
     <meta name="description" content="<%= @meta_description || "" %>" />
     <meta name="keywords" content="<%= @meta_keywords || "" %>" />
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -31,11 +31,19 @@
   <body class="<%= body_classes %>">
      <div class="navbar-fixed">
     <nav role="navigation">
-        <a id="logo-container" href="<%= root_url %>"><img src="https://sdo-media.s3-us-west-1.amazonaws.com/2019/site/sdo_logo.png"/></a>
+      <div class="page-ctr">
+        <a id="logo-container" href="<%= root_url %>"><img src="https://luft-qa.s3-us-west-1.amazonaws.com/luftgekuhlt_logo.png"/></a>
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Navbar Link</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/past-events">Past Events</a></li>
+            <li><a href="/videos">Videos</a></li>
+            <li><a href="/builds">Builds</a></li>
+            <li><a href="/galleries">Galleries</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="https://shop.luftgekuhlt.com/">Store</a></li>
         </ul>
+      </div>
     </nav>
     </div>
     <main>
@@ -46,7 +54,7 @@
        <% end %>
     <!-- page-wrap -->
     <div class="page-wrap">
-
+    <%= render partial: "shared/flash" %>
 
         <div class="content">
             <%= content_for?(:content) ? yield(:content) : yield %>
@@ -57,51 +65,14 @@
         <footer class="page-footer">
             <div class="row">
                 <div class="col m4 left-align">
-                    <h5>CONNECT WITH US</h5>
-                    <div class="social-media-nav">
-                            <a class="social-icon social-icon-facebook" href="https://www.facebook.com/SanDiegoOpera" target="_blank" title="Facebook">
-                                <i class="fab fa-facebook-square"></i>
-                            </a>
-                            <a class="social-icon social-icon-youtube" href="http://www.youtube.com/SanDiegoOpera" target="_blank" title="YouTube">
-                                <i class="fab fa-youtube-square"></i>
-                            </a>
-                            <a class="social-icon social-icon-twitter" href="https://twitter.com/SDOpera" target="_blank" title="Twitter">
-                                <i class="fab fa-twitter-square"></i>
-                            </a>
-                            <a class="social-icon social-icon-instagram" href="http://instagram.com/sandiegoopera" target="_blank" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a class="social-icon social-icon-blogspot" href="http://ariaserious.blogspot.com/" target="_blank" title="Blog">
-                                <i class="fab fa-blogger"></i>
-                            </a>
-                    </div>
-                    <br>
-                    <a href="http://www.operaamerica.org/index.aspx" target="_blank">
-                        <img src="https://s3.amazonaws.com/sdo.media/logos/social/OperaAmerica2015.png" alt="Opera America">
-                    </a>
                 </div>
                 <div class="col m4 center-align">
-                    <h5>THANK YOU TO OUR MAJOR SPONSORS</h5>
-
                 </div>
                 <div class="col m4 right-align">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/get-tickets/single-tickets">Tickets</a></li>
-                        <li><a href="/about/contact-us">Contact Us</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="/experience/getting-to-the-opera">Directions</a></li>
-                        <li><a href="/experience/fabulous-nights">Plan Your Visit</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="/about/photo-credits">Photo Credits</a></li>
-                        <li><a href="/about/privacy-policy">Privacy Policy</a></li>
-                    </ul>
                 </div>
             </div>
             <div class="footer-copyright">
-                <span>&copy;2019 San Diego Opera</span>
+                <span>&copy;2019 Luftgekuhlt</span>
             </div>
         </footer>
         <!-- ./footer -->
@@ -109,7 +80,8 @@
     <script type="text/javascript">
 
         $(document).ready(function(){
-            $('.modal').modal();
+            M.AutoInit();
+            /*$('.modal').modal();
             $(".dropdown-trigger").dropdown();
             $('.carousel').carousel({fullWidth: true});
             $('.collapsible').collapsible();
@@ -124,13 +96,23 @@
               format: 'yyyy-mm-dd',
               formatSubmit: 'yyyy-mm-dd'
             });
+            */
         });
-
-        $.get('/top-nav', function(resp){
-            $('nav .hide-on-med-and-down').append(resp);
-            $('body').prepend($('#top_nav'));
-            $(".dropdown-trigger").dropdown();
-            $('select').formSelect();
+        $(window).on('load', function(){
+            $('.image-strip-part').each(function(ind, el){
+                if(!$(el).hasClass('home-page-part')){
+                    $("a", $(el)).colorbox({ rel: 'image-strip-part', slideshow: true, slideshowSpeed: 5000, maxWidth: "90%", maxHeight: "90%", speed: 1000, transition: "fade"});
+             
+                    $('a', $(el)).each(function(ind2, el2){
+                      var imageUrl = $(el2).attr('href');
+                      if(imageUrl.indexOf('amazonaws') !== -1){
+                        var img = new Image();
+                        img.src = imageUrl;
+                        console.log('loaded', imageUrl);
+                      }
+                    });
+                }
+            });
         });
     </script>
   </body>

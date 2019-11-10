@@ -1,12 +1,11 @@
 class ApplicationController < ActionController::Base
-  include TicketHelper
   protect_from_forgery with: :exception
   
   
   helper_method :iphone?
   helper_method :android?
   helper_method :mobile?
-  helper_method :body_classes, :content_areas, :content_area
+  helper_method :body_classes, :content_areas, :content_area, :home_page
   
   
   def body_classes
@@ -36,6 +35,7 @@ class ApplicationController < ActionController::Base
     request.user_agent =~ /android/i
   end
   
+  
   def content_areas
     @content_areas ||= Document.find_or_create_by(slug: "content-areas", type: "Document::ContentAreas", title: "Content Areas")
   end
@@ -45,20 +45,14 @@ class ApplicationController < ActionController::Base
       @content_areas.sections.where(title: key).first rescue nil
   end
   
-  helper_method :current_session
-	
-	def current_session
-	    @current_session ||= begin
-	        cookies[:session_key] = Session.new_session_key(request.remote_ip) unless cookies[:session_key].present?
-            session = Session.find(cookies[:session_key])
-            session.session_key = cookies[:session_key]
-            session
-            rescue
-            cookies[:session_key] = Session.new_session_key(request.remote_ip)
-            session = Session.find(cookies[:session_key])
-            session.session_key = cookies[:session_key]
-            session
-        end
-	end
+  def home_page
+    @home_page ||= begin
+      Document::HomePage.find_by(slug: 'home-page').presence || 
+      Document::HomePage.create(
+        slug: 'home-page',
+        title: 'Home'
+      )
+    end
+  end
   
 end

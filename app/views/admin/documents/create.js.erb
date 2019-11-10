@@ -1,8 +1,0 @@
-<% if @document.persisted? %>
-  console.log(<%= @document.to_json.html_safe %>);
-  window.setTimeout(function(){
-    window.location.reload(true);
-  },1000);
-<% else %>
-  $("#<%= dom_id @document, :new %>").replaceWith("<%= j render(partial: 'new_form', locals: { document: @document }) %>")
-<% end %>

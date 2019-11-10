@@ -73,10 +73,15 @@ class Document < ApplicationRecord
 
   PAGE_TYPES = {
     'Document::Page': 'Content Page',
+    'Document::PastEvent': 'Past Event',
+    'Document::BuildPage': 'Build Page',
+    'Document::NewsItem': 'News Item',
+    'Document::Gallery': 'Gallery',
     "Document::LandingPage": "Landing Page"
   }
 
   SECTION_LAYOUTS = {
+    'standard': 'Standard Width',
     'full': 'Full Width',
     "halves": "2 Columns",
     "left-pane": "Left Side Pane",
@@ -88,18 +93,19 @@ class Document < ApplicationRecord
     "DocumentPart::HtmlContent": "HTML Content",
     "DocumentPart::ImageGallery": "Image Gallery",
     "DocumentPart::Slideshow": "Full-Width Image or Slideshow",
-    "DocumentPart::Video": "Video Player",
-    "DocumentPart::NewsLinksList": "News Links List",
-    "DocumentPart::PressReleaseList": "Press Release List",
-    "DocumentPart::PerformanceHistoriesList": "Performance Histories"
+    "DocumentPart::HeroSpot": "Hero Spot",
+    "DocumentPart::TabContent": "Tab Content",
+    "DocumentPart::Video": "Video Player"
   }
 
   def self.preferred_image_dimensions(page_type)
     case page_type.underscore
     when "story"
       [2200, 800]
+    when "past_event"
+      [2200, 800]
     else
-      [2200, 600]
+      [2200, 1400]
     end
   end
 
@@ -112,12 +118,19 @@ class Document < ApplicationRecord
       return Document.find_by(id: parent_id) rescue nil
     end
   end
+  
+  def self.url_prefix
+    nil
+  end
 
   def site_url
     @site_url = begin
       url = "/#{slug}"
       if parent.present?
         url = "#{parent.site_url}#{url}"
+      end
+      if self.class.url_prefix.present?
+        url = "/#{self.class.url_prefix}#{url}"
       end
       url
     end
@@ -280,13 +293,37 @@ class Document < ApplicationRecord
 
     @documents = Document.search("*", criteria)
   end
+  
+  def page_type
+    self.class.page_type
+  end
+  
+  def self.page_type
+    "page"
+  end
 
   def partial_page?
     false
   end
 
-  def production_page?
-    false
+  def build_page?
+    page_type == 'build_page'
+  end
+
+  def past_event?
+    page_type == 'past_event'
+  end
+
+  def gallery?
+    page_type == 'gallery'
+  end
+
+  def storyline?
+    page_type == 'storyline'
+  end
+
+  def home_page?
+    page_type == 'home_page'
   end
 
   private
@@ -302,7 +339,7 @@ class Document < ApplicationRecord
   end
 
   def init_sections
-    sec = self.sections.create(display_order: 0, layout: 'full')
+    sec = self.sections.create(display_order: 0, layout: 'standard')
     sec.parts.create({
       type: "DocumentPart::HtmlContent",
       document_id: sec.document_id,

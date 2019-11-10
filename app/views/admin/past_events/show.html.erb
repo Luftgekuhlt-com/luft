@@ -1,0 +1,252 @@
+<% content_for :head do %>
+  <style type="text/css">
+    .pane{position: relative; border: dotted 2px #BBB;padding: 15px;margin:30px 0 0px;min-height: 80px;}
+    .pane > h3{margin: 0;line-height: 1em;text-align:center;position:absolute;left:50%;margin-left: -75px; width: 150px;top: -15px;padding: 0 8px;background: #FFF;}
+  </style>
+<% end %>
+
+<% content_for(:admin_header) do %>
+  <% if @document.partial_page? %>
+    <h1>Edit <%= @document.title %></h1>
+  <% else %>
+    <%= link_to(admin_documents_path, class: "btn-floating teal right") do %><i class="material-icons">arrow_back</i><% end %>
+    <h1><%= @document.page_type.pluralize.humanize.titleize %>: Edit</h1>
+  <% end %>
+<% end %>
+
+<div class="row">
+  <div class="col m9">
+    <% unless @document.partial_page? %>
+      <%= render partial: "document_info", locals: { document: @document } %>
+    <% end %>
+    <% @document.sections.where('display_order < 1000').order(:display_order).each do |section| %>
+      <div class="document-section">
+        <h6><%= section.title.presence || "Section #{section.display_order}" %></h6>
+        <div class="section-panes <%= section.layout.presence || 'standard' %> <%= section.hidden? ? "hidden-section" : "" %>">
+          <% if section.panes.key?(:left) %>
+            <div class="pane left-pane">
+              <% section.panes[:left].each do |part| %>
+                <div class="card">
+                  <div class="fixed-action-btn direction-left">
+                    <a class="btn-floating teal">
+                      <i class="material-icons">menu</i>
+                    </a>
+                    <ul>
+                      <li>
+                        <%= link_to(admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete this content block?" }, class: 'btn-floating red') do %><i class="material-icons">delete</i><% end %>
+                      </li>
+                      <li>
+                        <%= link_to(move_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id, direction: 'up'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_up</i><% end %>
+                      </li>
+                      <li>
+                        <%= link_to(move_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id, direction: 'down'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_down</i><% end %>
+                      </li>
+                      <li>
+                        <%= link_to(edit_admin_document_document_section_document_part_path(@document, part.document_section, part), class: "btn-floating teal darken-1") do %><i class="material-icons">edit</i><% end %>
+                      </li>
+                    </ul>
+                  </div>
+                  <h4 class="card-title"><%= [part.friendly_type, part.title].select{|x| x.present?}.join(": ") %></h4>
+                  <div class="card-content white">
+                    <%= render partial: part.partial_name(true), locals: { document: @document, part: part } %>
+                  </div>
+                </div>
+              <% end %>
+              <div class="new-doc-part">
+                <%= link_to("javascript:;",
+                  class: "btn-floating grey darken-2 btn-new-part modal-remote",
+                  data: { key: "new_part_modal", url: new_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, pane: "left")}) do %>
+                  <i class="material-icons">add</i>
+                <% end %>
+                <em>New Content Block</em>
+              </div>
+            </div>
+          <% end %>
+          <div class="pane main-pane">
+            <% section.panes[:main].each do |part| %>
+              <div class="card">
+                <div class="fixed-action-btn direction-left">
+                  <a class="btn-floating teal">
+                    <i class="material-icons">menu</i>
+                  </a>
+                  <ul>
+                    <li>
+                      <%= link_to(admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete this content block?" }, class: 'btn-floating red') do %><i class="material-icons">delete</i><% end %>
+                    </li>
+                    <li>
+                      <%= link_to(move_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id, direction: 'up'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_up</i><% end %>
+                    </li>
+                    <li>
+                      <%= link_to(move_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id, direction: 'down'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_down</i><% end %>
+                    </li>
+                    <li>
+                      <%= link_to(edit_admin_document_document_section_document_part_path(@document, part.document_section, part), class: "btn-floating teal darken-1") do %><i class="material-icons">edit</i><% end %>
+                    </li>
+                  </ul>
+                </div>
+                <h4 class="card-title"><%= [part.friendly_type, part.title].select{|x| x.present?}.join(": ") %></h4>
+                <div class="card-content white">
+                  <%= render partial: part.partial_name(true), locals: { document: @document, part: part } %>
+                </div>
+              </div>
+            <% end %>
+            <div class="new-doc-part">
+              <%= link_to("javascript:;",
+                class: "btn-floating grey darken-2 btn-new-part modal-remote",
+                data: { key: "new_part_modal", url: new_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, pane: "main")}) do %>
+                <i class="material-icons">add</i>
+              <% end %>
+              <em>New Content Block</em>
+            </div>
+          </div>
+          <% if section.panes.key?(:right) %>
+            <div class="pane right-pane">
+              <% section.panes[:right].each do |part| %>
+                <div class="card">
+                  <div class="fixed-action-btn direction-left">
+                    <a class="btn-floating teal">
+                      <i class="material-icons">menu</i>
+                    </a>
+                    <ul>
+                      <li>
+                        <%= link_to(admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id), method: :delete, remote: true, data: { confirm: "Are you sure you want to delete this content block?" }, class: 'btn-floating red') do %><i class="material-icons">delete</i><% end %>
+                      </li>
+                      <li>
+                        <%= link_to(move_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id, direction: 'up'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_up</i><% end %>
+                      </li>
+                      <li>
+                        <%= link_to(move_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, id: part.id, direction: 'down'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_down</i><% end %>
+                      </li>
+                      <li>
+                        <%= link_to(edit_admin_document_document_section_document_part_path(@document, part.document_section, part), class: "btn-floating teal darken-1") do %><i class="material-icons">edit</i><% end %>
+                      </li>
+                    </ul>
+                  </div>
+                  <h4 class="card-title"><%= [part.friendly_type, part.title].select{|x| x.present?}.join(": ") %></h4>
+                  <div class="card-content white">
+                    <%= render partial: part.partial_name(true), locals: { document: @document, part: part } %>
+                  </div>
+                </div>
+              <% end %>
+              <div class="new-doc-part">
+                <%= link_to("javascript:;",
+                  class: "btn-floating grey darken-2 btn-new-part modal-remote",
+                  data: { key: "new_part_modal", url: new_admin_document_document_section_document_part_path(document_id: @document.id, document_section_id: section.id, pane: "right")}) do %>
+                  <i class="material-icons">add</i>
+                <% end %>
+                <em>New Content Block</em>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <!-- Modal Trigger -->
+        <div class="fixed-action-btn direction-left">
+            <a class="btn-floating grey">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul>
+              <li>
+                <%= link_to(admin_document_document_section_path(document_id: @document.id, id: section.id), method: :delete, data: { confirm: "Are you sure you want to delete this section?" }, class: 'btn-floating red') do %><i class="material-icons">delete</i><% end %>
+              </li>
+              <li>
+                <%= link_to(move_admin_document_document_section_path(document_id: @document.id, id: section.id, direction: 'up'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_up</i><% end %>
+              </li>
+              <li>
+                <%= link_to(move_admin_document_document_section_path(document_id: @document.id, id: section.id, direction: 'down'), class: 'btn-floating green') do %><i class="material-icons">keyboard_arrow_down</i><% end %>
+              </li>
+              <li>
+                <a class="btn-floating teal darken-2 modal-trigger btn-section-settings" href="#section_<%= section.id %>"><i class="material-icons">settings</i></a>
+              </li>
+            </ul>
+          </div>
+      
+        <!-- Modal Structure -->
+        <div id="section_<%= section.id %>" class="modal">
+          <div class="modal-content">
+            <%= simple_form_for section, { url: admin_document_document_section_path(document_id: @document.id, id: section.id) } do |f| %>
+              <h4 class="modal-title">Section Settings</h4>
+              <%= f.error_notification %>
+          
+              <div class="row">
+                <%= f.input :title, wrapper_html: { class: "col m12" }  %>
+              </div>
+              <div class="row">
+                <%= f.input :layout, as: :select, label: "Section Layout", collection: Document::SECTION_LAYOUTS.map{|k, v| [v, k]}, wrapper_html: { class: "col m4" }  %>
+                <div class="col m4">
+                  <br/>
+                  <label>
+                    <%= f.input_field :hidden, as: :boolean, label: false, boolean_style: :inline %>
+                    <span>Hidden?</span>
+                  </label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="javascript:;" class="btn modal-close">Cancel</a>
+                  <%= f.button :submit, "Save", class: "btn btn-primary btn-submit", data: { disable_with: "Save" } %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="new-section">
+      <em>New Section</em>
+      <!-- Modal Trigger -->
+      <a class="btn-floating grey darken-2 modal-trigger btn-new-section" href="#new_section"><i class="material-icons">add</i></a>
+    
+      <!-- Modal Structure -->
+      <div id="new_section" class="modal">
+        <div class="modal-content">
+          <%= simple_form_for @document.sections.build, { url: admin_document_document_sections_path(document_id: @document.id), method: :post } do |f| %>
+            <h4 class="modal-title">Section Settings</h4>
+            <%= f.error_notification %>
+        
+            <div class="row">
+              <%= f.input :title, wrapper_html: { class: "col m12" }  %>
+            </div>
+            <div class="row">
+              <%= f.input :layout, as: :select, label: "Section Layout", collection: Document::SECTION_LAYOUTS.map{|k, v| [v, k]}, wrapper_html: { class: "col m4" }  %>
+              <div class="col m4">
+                <br/>
+                <label>
+                  <%= f.input_field :hidden, as: :boolean, label: false, boolean_style: :inline %>
+                  <span>Hidden?</span>
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn modal-close">Cancel</a>
+                <%= f.button :submit, "Save", class: "btn btn-primary btn-submit", data: { disable_with: "Save" } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <%= render partial: "storylines", locals: { document: @document } %>
+    <br/>
+    <hr/>
+    <br/>
+    <div class="card">
+      <div class="fixed-action-btn direction-left">
+        <a class="btn-floating teal">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul>
+          <li>
+            <%= link_to(edit_admin_document_document_section_document_part_path(@document, @document.products.document_section, @document.products), class: "btn-floating teal darken-1") do %><i class="material-icons">edit</i><% end %>
+          </li>
+        </ul>
+      </div>
+      <h4 class="card-title">Products</h4>
+      <div class="card-content white">
+        <%= render partial: @document.products.partial_name(true), locals: { document: @document, part: @document.products } %>
+      </div>
+    </div>
+  </div>
+  <div class="col m3">
+    <% unless @document.partial_page? %>
+      <%= render partial: "settings", locals: { document: @document } %>
+    <% end %>
+  </div>
+</div>

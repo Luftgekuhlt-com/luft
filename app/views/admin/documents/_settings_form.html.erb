@@ -27,7 +27,7 @@
           <a href="javascript:;" class="btn btn-default btn-keep-image">Keep Current Image</a>
       </div>
       <% end %>
-      <%= f.input :parent_id, as: :select, collection: Document.active.pages.where("id != ?", @document.id).select{|d| !d.parent_pages.include?(@document.id)}.map{|d| [d.hierarchical_display.html_safe, d.id]}, prompt: "-- Select Parent Page --", include_blank: '-- None --', wrapper_html: { class: "col m3" }  %>
+      <%= f.input :parent_id, as: :select, collection: Document.active.where("id != ?", @document.id).select{|d| !d.parent_pages.include?(@document.id)}.map{|d| [d.hierarchical_display.html_safe, d.id]}, prompt: "-- Select Parent Page --", include_blank: '-- None --', wrapper_html: { class: "col m3" }  %>
       <div class="col m3">
         <%= f.input :hidden, wrapper_html: { class: "radio-input-wrap" }  %>
       </div>
@@ -37,7 +37,7 @@
     </div>
     
     <div class="form-actions">
-      <%= f.button :submit, disable_with: "Saving...", class: "btn btn-primary" %>
+      <%= f.button :submit, disable_with: "Saving...", class: "btn" %>
     </div>
   
     <div class="card">

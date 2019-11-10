@@ -1,3 +1,15 @@
+<% if part.images.size == 1 %>
+<% slide = part.images.first %>
+<div id="doc_part_<%= part.id %>" class="doc-part fullwidth-image-part">
+  <% if slide.link_url.present?%>
+    <a href="<%= slide.link_url %>">
+  <% end %>
+  <img src="<%= slide.image.url %>" style="width: 100%; max-width: 100%;">
+  <% if slide.link_url.present? %>
+  </a>
+  <% end %>
+</div>
+<% else %>
 <div id="doc_part_<%= part.id %>" class="doc-part slideshow-part">
   <div id="slideshow_<%= part.id %>" class="carousel carousel-slider center">
     <% part.images.order(:display_order).each_with_index do |slide, ctr| %>
@@ -26,3 +38,4 @@
     <% end -%>
   </div>
 </div>
+<% end %>

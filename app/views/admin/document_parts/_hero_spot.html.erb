@@ -1,0 +1,17 @@
+<div class="row hero-spot">
+  <div class="col m6">
+    <img src="<%= part&.hero_image&.image&.url(:cropped) %>" style="width:100%;max-width: 100%;"/>
+  </div>
+  <div class="col m6">
+    <h3><%= part.title %></h3>
+    <% if part.subtitle.present? %>
+      <h5><%= part.title %></h5>
+    <% end %>
+    <% if part.content.present? %>
+      <div><%= part.content.html_safe %></div>
+    <% end %>
+    <% if part.button_url.present? %>
+      <a href="<%= part.button_url %>" class="btn btn-primary"><%= part.button_text.presence || 'Read More' %></a>
+    <% end %>
+  </div>
+</div>

@@ -16,7 +16,7 @@
    %>
     <div class="alert alert-<%= @level%> alert-dismissable" role="alert">
     <div><span class="alert-close" style="float:right;cursor:pointer;"><i class="el-icon-remove-sign"></i></span>
-      <%= (@translate ? tt(value) : value).html_safe %>
+      <%= value.html_safe %>
      </div>
    </div>
   <% end -%>

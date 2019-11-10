@@ -1,7 +1,5 @@
 class Document::ContentAreas < Document
-  def page_type
-    "content_areas"
-  end
+ 
   def self.page_type
     "content_areas"
   end
