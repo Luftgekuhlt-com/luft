@@ -2,8 +2,9 @@
 
 </style>
 <div class="page-ctr">
+  <h1>Videos</h1>
 <% if @videos.present? %>
-  <div class="row equalize-grid-items">
+  <div class="videos row equalize-grid-items">
     <% @videos.each do |video| %>
     <div class="col m4 col s6">
       <a class="video-item" href="<%= video_path(id: video.slug) %>">

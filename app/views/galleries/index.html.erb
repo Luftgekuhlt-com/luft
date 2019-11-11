@@ -1,11 +1,13 @@
-
-<div class="gallery-list">
-    <% @pages.each do |page| %>
-    <div class="gallery-list-item">
-        <%= link_to(gallery_show_path(slug: page.slug)) do %>
-        <img src="<%= page.main_image_url %>" style="width:100%;max-width: 100%;"/>
-        <h4><%= page.title %></h4>
+<div class="page-ctr">
+    <h1>Galleries</h1>
+    <div class="gallery-list row equalize-grid-items">
+        <% @pages.each do |page| %>
+        <div class="col m4 col s6">
+            <%= link_to(gallery_show_path(slug: page.slug), class: 'gallery-list-item') do %>
+            <img src="<%= page.main_image_url %>" style="width:100%;max-width: 100%;"/>
+            <h4><%= page.title %></h4>
+            <% end %>
+        </div>
         <% end %>
     </div>
-    <% end %>
 </div>

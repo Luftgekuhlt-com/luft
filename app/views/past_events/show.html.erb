@@ -12,8 +12,8 @@
 <div class="page-ctr">
 <h1><%= @document.title %></h1>
 </div>
-<% @document.sections.order(:display_order).reject(&:hidden).each do |section| %>
-   <%= render partial: 'section', locals: { document: @document, section: section } %>   
+<% @document.sections.where('display_order < 1000').order(:display_order).reject(&:hidden).each do |section| %>
+   <%= render partial: 'section', locals: { document: @document, section: section } %>
 <% end %>
 <% if @document.storylines.any? %>
 <div class="storylines">
@@ -59,6 +59,12 @@
     </div>
     <% end %>
     </div>
+</div>
+<% end %>
+<% if @document.products.images.any? %>
+<div class="page-ctr with-cols">
+<h3>Products</h3>
+<%= render partial: @document.products.partial_name(true), locals: { document: @document, part: @document.products } %>
 </div>
 <% end %>
 <% content_for :scripts do %>
@@ -124,7 +130,7 @@
       });
     });
   });
-  
+
 
 </script>
 <% end %>
