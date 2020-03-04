@@ -7,7 +7,7 @@ gem 'bcrypt_pbkdf', '< 2.0', :require => false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
 # Use Puma as the app server
-gem 'puma', '3.8.1'
+gem 'puma', '3.12.4'
 # Use SCSS for stylesheets
 #gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'sass-rails', '~> 5.0'
