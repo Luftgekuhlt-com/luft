@@ -125,7 +125,7 @@ GEM
     faraday_middleware-aws-signers-v4 (0.1.9)
       aws-sdk-resources (>= 2, < 3)
       faraday (~> 0.9)
-    ffi (1.9.18)
+    ffi (1.11.1)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hashie (3.5.6)
