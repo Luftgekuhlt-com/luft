@@ -196,7 +196,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
     puma (3.8.1)
-    rack (2.0.7)
+    rack (2.2.3)
     rack-oauth2 (1.6.2)
       activesupport (>= 2.3)
       attr_required (>= 0.0.5)
