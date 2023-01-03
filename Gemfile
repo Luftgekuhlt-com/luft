@@ -42,7 +42,7 @@ gem 'faraday_middleware-aws-signers-v4'
 gem 'searchkick'
 # pagination
 gem 'kaminari'
-gem 'httparty', '~> 0.13'
+gem 'httparty', '~> 0.21'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
